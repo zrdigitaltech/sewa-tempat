@@ -2,7 +2,9 @@ import dynamic from 'next/dynamic';
 
 // css
 import '@/styles/scss/style.scss';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import '../../fontawesome.config';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // Components

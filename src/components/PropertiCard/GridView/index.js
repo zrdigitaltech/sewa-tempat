@@ -12,6 +12,9 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { iconTipeProperti } from '@/helpers';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+
 export default function PropertiCard(props) {
   const router = useRouter();
   const {
@@ -215,7 +218,7 @@ export default function PropertiCard(props) {
                   className="btn btn-primary align-items-center d-sm-flex w-100"
                   onClick={handlePhone}
                   aria-label={`Telepon ${formatPhone(no_whatsapp)}`}>
-                  <i className="fa fa-phone pe-1" aria-hidden="true"></i> {formatPhone(no_whatsapp)}
+                  <FontAwesomeIcon icon={faPhone} className="pe-1" /> {formatPhone(no_whatsapp)}
                 </button>
               )}
             </div>
