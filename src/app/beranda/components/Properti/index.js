@@ -9,6 +9,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import { HubungiPengiklanPropertiModal } from '@/app/modal';
+import Link from 'next/link';
 
 export default function Index() {
   const kontrakanList = useSelector((state) => state?.kontrakan?.kontrakanList);
@@ -80,12 +81,11 @@ export default function Index() {
             {/* Tombol "Lihat Semua" */}
             {!isLoading && kontrakanList?.length > 8 && (
               <div className="col-12 text-center mt-4">
-                <a
+                <Link
                   className="btn btn-warning fw-semibold rounded-3 px-5"
-                  href="/search?keyword=&viewMode=list"
-                  target="_blank">
+                  href="/search?keyword=&viewMode=list">
                   Lihat Semua
-                </a>
+                </Link>
               </div>
             )}
           </div>
