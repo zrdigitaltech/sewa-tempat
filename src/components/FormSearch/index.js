@@ -73,13 +73,13 @@ export default function Index(props) {
             </div>
 
             {/* Harga Maksimal */}
-            <div className="pe-2" style={{ minWidth: '200px' }}>
+            <div className="pe-2 " style={{ minWidth: 180 }}>
               <div className="input-group">
                 <span className="bg-primary input-group-text text-white">Rp</span>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Harga Maksimal"
+                  placeholder="Harga Max"
                   name="harga_max"
                   value={formData?.harga_max || ''}
                   onChange={handleChange}
