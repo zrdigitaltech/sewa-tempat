@@ -65,52 +65,65 @@ export default function Index(props) {
       </div>
 
       {page && (
-        <div className="d-flex flex-wrap gap-2 mt-2">
-          {/* Urutan */}
-          <div className="flex-fill flex-md-grow-0">
-            <Urutan formData={formData?.sort} handleChange={handleChange} />
-          </div>
+        <Fragment>
+          <div className="d-flex p-2  flex-nowrap overflow-x-auto" style={{ marginLeft: '-8px' }}>
+            {/* Urutan */}
+            <div className="pe-2" style={{ minWidth: '180px' }}>
+              <Urutan formData={formData?.sort} handleChange={handleChange} />
+            </div>
 
-          {/* Harga Maksimal */}
-          <div className="flex-fill flex-md-grow-0">
-            <div className="input-group">
-              <span className="bg-primary input-group-text text-white">Rp</span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Harga Maksimal"
-                name="harga_max"
-                value={formData?.harga_max || ''}
-                onChange={handleChange}
-              />
+            {/* Harga Maksimal */}
+            <div className="pe-2" style={{ minWidth: '180px' }}>
+              <div className="input-group">
+                <span className="bg-primary input-group-text text-white">Rp</span>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Harga Maksimal"
+                  name="harga_max"
+                  value={formData?.harga_max || ''}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {/* Tipe Sewa */}
+            <div
+              className={`${tipeProperti === 'kost' || isApartemenOrRumah ? 'pe-2' : ''}`}
+              style={{ minWidth: '180px' }}>
+              <TipeSewa tipeSewa={formData?.tipeSewa} handleChange={handleChange} />
+            </div>
+
+            {/* Tipe Kost */}
+            {tipeProperti === 'kost' && (
+              <div className="pe-2" style={{ minWidth: '180px' }}>
+                <TipeKost tipeKost={formData?.tipeKost} handleChange={handleChange} />
+              </div>
+            )}
+
+            {/* Tipe Kamar / Kamar Tidur */}
+            {isApartemenOrRumah && (
+              <div className="pe-2" style={{ minWidth: '180px' }}>
+                <TipeKamar
+                  tipeKamar={formData?.tipeKamar}
+                  handleChange={handleChange}
+                  tipeProperti={formData?.tipeProperti}
+                />
+              </div>
+            )}
+
+            {/* Tombol Cari */}
+            <div className="ms-lg-auto ST--w-100 d-none d-lg-block">
+              <button
+                className="btn btn-warning w-100 fw-semibold rounded-3"
+                onClick={handleSearch}
+                disabled={isLoading || isLoadingData?.tipeProperti}>
+                {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
+              </button>
             </div>
           </div>
-
-          {/* Tipe Sewa */}
-          <div className="flex-fill flex-md-grow-0">
-            <TipeSewa tipeSewa={formData?.tipeSewa} handleChange={handleChange} />
-          </div>
-
-          {/* Tipe Kost */}
-          {tipeProperti === 'kost' && (
-            <div className="flex-fill flex-md-grow-0">
-              <TipeKost tipeKost={formData?.tipeKost} handleChange={handleChange} />
-            </div>
-          )}
-
-          {/* Tipe Kamar / Kamar Tidur */}
-          {isApartemenOrRumah && (
-            <div className="flex-fill flex-md-grow-0">
-              <TipeKamar
-                tipeKamar={formData?.tipeKamar}
-                handleChange={handleChange}
-                tipeProperti={formData?.tipeProperti}
-              />
-            </div>
-          )}
-
           {/* Tombol Cari */}
-          <div className="ms-lg-auto ST--w-100">
+          <div className="ms-lg-auto ST--w-100 d-lg-none mt-2">
             <button
               className="btn btn-warning w-100 fw-semibold rounded-3"
               onClick={handleSearch}
@@ -118,7 +131,7 @@ export default function Index(props) {
               {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
             </button>
           </div>
-        </div>
+        </Fragment>
       )}
     </section>
   );
