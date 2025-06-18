@@ -4,7 +4,7 @@ import { formatPriceLocale, iconTipeProperti } from '@/helpers';
 import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDoorOpen, faBed } from '@fortawesome/free-solid-svg-icons';
+import { faDoorOpen, faBed, faBath } from '@fortawesome/free-solid-svg-icons';
 
 const Index = (props) => {
   const { item } = props;
@@ -107,7 +107,7 @@ const Index = (props) => {
                 item?.tipe_properti?.informasi_interior,
                 ['Kamar Mandi', 'Kamar Mandi ART'],
                 'Kamar Mandi',
-                'fa-bath'
+                faBath
               )}
             </div>
 

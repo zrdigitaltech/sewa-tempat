@@ -57,19 +57,31 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    const profile = mockPemilikProfiles.find((profile) => profile.slug === slug);
-    setPemilikProfile(
-      profile || {
-        name: slug,
-        avatar: 'https://placehold.co/100x100?text=User',
-        bio: 'Profil penulis belum tersedia.',
-        socials: {},
-        slug: '/pemilik/' + slug,
-        nama: slug,
-        no_whatsapp: profile?.no_whatsapp || '+62812xxxx'
-      }
-    );
-  }, [dispatch, slug]);
+    const fetchProfile = async () => {
+      setIsLoading((prev) => ({ ...prev, profile: true }));
+
+      // Simulasikan proses fetch (meskipun ini data lokal)
+      await new Promise((resolve) => setTimeout(resolve, 300)); // Tambahkan delay kecil
+
+      const profile = mockPemilikProfiles.find((p) => p.slug === slug);
+
+      setPemilikProfile(
+        profile || {
+          name: slug,
+          avatar: 'https://placehold.co/100x100?text=User',
+          bio: 'Profil penulis belum tersedia.',
+          socials: {},
+          slug: '/pemilik/' + slug,
+          nama: slug,
+          no_whatsapp: profile?.no_whatsapp || '+62812xxxx'
+        }
+      );
+
+      setIsLoading((prev) => ({ ...prev, profile: false }));
+    };
+
+    fetchProfile();
+  }, [slug]);
 
   const handleGoToWhatsApp = (number) => {
     if (!number) return;
