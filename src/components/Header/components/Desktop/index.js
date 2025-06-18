@@ -114,7 +114,16 @@ export default function Desktop(props) {
             href="/user/login"
             rel="noreferrer"
             onClick={() => setOpenDisewa(false)}>
-            LogIn
+            Daftar
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link text-dark a-hover"
+            href="/user/login"
+            rel="noreferrer"
+            onClick={() => setOpenDisewa(false)}>
+            Masuk
           </a>
         </li>
       </ul>
