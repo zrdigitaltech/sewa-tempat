@@ -48,10 +48,9 @@ const Breadcrumb = ({ className = '', containerClassName = '', isLoading = false
                 <li
                   key={idx}
                   className={`breadcrumb-item ${
-                    idx === segments.length - 1 ? 'active text-truncate w-75' : ''
+                    idx === segments.length - 1 ? 'active text-truncate w-50' : ''
                   }`}
-                  aria-current={idx === segments.length - 1 ? 'page' : undefined}
-                >
+                  aria-current={idx === segments.length - 1 ? 'page' : undefined}>
                   {idx !== segments.length - 1 ? (
                     <Link href={item.href} className="text-primary">
                       {item.name}
