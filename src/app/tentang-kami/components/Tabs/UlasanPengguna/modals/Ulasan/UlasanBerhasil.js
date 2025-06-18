@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Modals from '@/components/Modals';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const UlasanBerhasil = (props) => {
   const { show, onClose } = props;
 

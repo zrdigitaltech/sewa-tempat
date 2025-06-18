@@ -6,6 +6,8 @@ import './preview.scss';
 import { ShareModal } from '@/app/modal';
 import { UseModals } from '@/components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const PreviewModal = (props) => {
   const {
     show,

@@ -31,6 +31,22 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 import { iconTipeProperti, unFormatStrip } from '@/helpers';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowLeft,
+  faShareAlt,
+  faBolt,
+  faClock,
+  faLocationDot,
+  faMapLocationDot,
+  faChevronUp,
+  faChevronDown,
+  faCouch,
+  faBed,
+  faBath,
+  faSearch
+} from '@fortawesome/free-solid-svg-icons';
+
 const Index = () => {
   // React Router & Redux
   const params = useParams();
@@ -100,7 +116,7 @@ const Index = () => {
     return (
       <div className="align-content-center border-0 card p-3 text-capitalize text-secondary bg-white shadow-sm">
         <div>
-          {iconClass && <i className={`fa ${iconClass} me-2`}></i>}
+          {iconClass && <FontAwesomeIcon icon={iconClass} className="me-2" />}
           {total}
         </div>
         <div>{label}</div>
@@ -117,7 +133,7 @@ const Index = () => {
 
     return (
       <div className="align-content-center border-0 card p-3 text-capitalize text-secondary bg-white shadow-sm">
-        <div>{iconClass && <i className={`fa ${iconClass} me-2`}></i>}</div>
+        <div>{iconClass && <FontAwesomeIcon icon={iconClass} className="me-2" />}</div>
         <div>{value}</div>
       </div>
     );
@@ -131,7 +147,7 @@ const Index = () => {
             <UseBreadcrumb title={'Properti Tidak Ditemukan'} />
           </section>
           <div className="text-center pt-5">
-            <i className="fa-4x fa-search fas mb-3"></i>
+            <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />
             <h5 className="fw-bold mb-2">Properti Tidak Ditemukan</h5>
             <p className="text-muted">
               Maaf, properti dengan kode{' '}
@@ -159,7 +175,7 @@ const Index = () => {
                   `/search?keyword=&tipeProperti=${kontrakanDetail?.tipe_properti?.nama.toLowerCase()}&viewMode=list`
                 )
               }>
-              <i className="fa fa-arrow-left"></i> Kembali
+              <FontAwesomeIcon icon={faArrowLeft} /> Kembali
             </button>
           )}
         </div>
@@ -168,7 +184,7 @@ const Index = () => {
             <Skeleton width={100} height={40} borderRadius={8} />
           ) : (
             <button className="btn bg-white shadow" onClick={() => setShowShare(true)}>
-              <i className="fa fa-share-alt"></i> Bagikan
+              <FontAwesomeIcon icon={faShareAlt} /> Bagikan
             </button>
           )}
         </div>
@@ -210,7 +226,7 @@ const Index = () => {
                               ? 'text-bg-primary'
                               : 'text-bg-warning'
                           }`}>
-                          <i className="fa fa-bolt pe-1"></i>
+                          <FontAwesomeIcon icon={faBolt} className="pe-1" />
                           {kontrakanDetail?.member}
                         </span>
                       )}
@@ -223,7 +239,7 @@ const Index = () => {
                       </span>
 
                       <span className="bg-primary-subtle align-content-center badge text-secondary text-capitalize">
-                        <i className="fa fa-clock"></i> Diperbarui: {kontrakanDetail?.upload}
+                        <FontAwesomeIcon icon={faClock} /> Diperbarui: {kontrakanDetail?.upload}
                       </span>
                     </Fragment>
                   )}
@@ -244,7 +260,7 @@ const Index = () => {
                   </h2>
                   <div className="mb-3">
                     <p className="text-muted text-truncate mb-1" title={kontrakanDetail?.kota}>
-                      <i className="fa-solid fa-location-dot me-1"></i>
+                      <FontAwesomeIcon icon={faLocationDot} className="me-1" />
                       {kontrakanDetail?.area + ', ' + kontrakanDetail?.kota}
                     </p>
                     <button
@@ -254,7 +270,7 @@ const Index = () => {
                           ? handleGoToWhatsApp(kontrakanDetail?.no_whatsapp)
                           : setShowWhatsApp(true)
                       }>
-                      <i className="fa-solid fa-map-location-dot me-1"></i>
+                      <FontAwesomeIcon icon={faMapLocationDot} className="me-1" />
                       Dapatkan Detail Lokasi
                     </button>
                   </div>
@@ -297,7 +313,7 @@ const Index = () => {
                       (kontrakanDetail?.daya_listrik && (
                         <div className="align-content-center border-0 card p-3 text-capitalize text-secondary bg-white shadow-sm">
                           <div className="">
-                            <i className="fa-solid fa-bolt"></i>{' '}
+                            <FontAwesomeIcon icon={faBolt} />{' '}
                             {formatPriceLocale(kontrakanDetail?.daya_listrik)} Watt <br />
                             {kontrakanDetail?.biaya_listrik && (
                               <small>( {kontrakanDetail?.biaya_listrik} Listrik )</small>
@@ -310,20 +326,20 @@ const Index = () => {
                       kontrakanDetail?.tipe_properti?.informasi_interior,
                       'Kondisi Perabotan',
                       'Kondisi Perabotan',
-                      'fa-couch' // pakai icon lain kalau mau
+                      faCouch
                     )}
                     {renderCombinedInteriorCard(
                       kontrakanDetail?.tipe_properti?.informasi_interior,
                       ['Kamar Tidur', 'Kamar Tidur ART'],
                       'Kamar Tidur',
-                      'fa-bed'
+                      faBed
                     )}
 
                     {renderCombinedInteriorCard(
                       kontrakanDetail?.tipe_properti?.informasi_interior,
                       ['Kamar Mandi', 'Kamar Mandi ART'],
                       'Kamar Mandi',
-                      'fa-bath'
+                      faBath
                     )}
                   </div>
                 )
@@ -370,7 +386,7 @@ const Index = () => {
                             style={{ cursor: 'pointer' }}>
                             <small>
                               Lihat {isExpanded ? 'Lebih Sedikit' : 'Selengkapnya'}{' '}
-                              <i className={`fa fa-chevron-${isExpanded ? 'up' : 'down'}`}></i>
+                              <FontAwesomeIcon icon={isExpanded ? faChevronUp : faChevronDown} />
                             </small>
                           </button>
                         )}

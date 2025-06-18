@@ -3,6 +3,8 @@ import React, { Fragment, useState } from 'react';
 import Modals from '@/components/Modals';
 import { KonsultasiModal, BeriSaranModal } from '@/app/modal';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Index = (props) => {
   const { show, onClose, setShowBantuan } = props;
   const [showKonsultasi, setShowKonsultasi] = useState(false);
@@ -25,12 +27,10 @@ const Index = (props) => {
               onClick={() => {
                 setShowKonsultasi(true);
                 onClose();
-              }}
-            >
+              }}>
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: 48, height: 48 }}
-              >
+                style={{ width: 48, height: 48 }}>
                 <i className="fa-solid fa-house-circle-check fs-4 text-primary"></i>
               </div>
               <div>
@@ -48,12 +48,10 @@ const Index = (props) => {
               onClick={() => {
                 setShowBeriSaran(true);
                 onClose();
-              }}
-            >
+              }}>
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: 48, height: 48 }}
-              >
+                style={{ width: 48, height: 48 }}>
                 <i className="fa-solid fa-comment-dots fs-4 text-info"></i>
               </div>
               <div>

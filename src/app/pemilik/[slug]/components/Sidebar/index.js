@@ -6,6 +6,10 @@ import { formatPriceLocale, formatPhone } from '@/helpers';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 const Index = (props) => {
   const {
     slug,
@@ -69,17 +73,17 @@ const Index = (props) => {
       ) : (
         <Fragment>
           <button className="btn btn-success w-100 text-white" onClick={handleWhatsApp}>
-            <i className="fa-brands fa-whatsapp"></i> WhatsApp
+            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
           </button>
 
           <button className="btn btn-outline-primary w-100 mt-2" onClick={handlePhone}>
-            <i className="fa fa-phone"></i> {formatPhone(data?.no_whatsapp)}
+            <FontAwesomeIcon icon={faPhone} /> {formatPhone(data?.no_whatsapp)}
           </button>
 
           <button
             className="btn btn-outline-dark border border-black w-100 mt-2"
             onClick={handleBagikan}>
-            <i className="fa fa-share-alt me-1"></i> Bagikan
+            <FontAwesomeIcon icon={faShareAlt} className="me-1" /> Bagikan
           </button>
         </Fragment>
       )}

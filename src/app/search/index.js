@@ -20,6 +20,8 @@ import classNames from 'classnames';
 // Modals
 import { HubungiPengiklanPropertiModal, KonsultasiModal } from '@/app/modal';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function Index() {
   const searchResultList = useSelector((state) => state?.kontrakan?.searchResultList);
   const dispatch = useDispatch();

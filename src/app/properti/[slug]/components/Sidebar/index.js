@@ -6,6 +6,8 @@ import { formatPriceLocale, formatPhone } from '@/helpers';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Index = (props) => {
   const {
     slug,

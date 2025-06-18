@@ -4,6 +4,10 @@ import { formatPhone } from '@/helpers';
 import classNames from 'classnames'; // optional: to simplify class toggling
 import './sidebar.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBagikan }) => {
   const [showOnScroll, setShowOnScroll] = useState(false);
 
@@ -36,15 +40,15 @@ const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBa
       style={{ bottom: 0, left: 0, zIndex: 1030 }}>
       <div className="d-flex gap-2">
         <button className="btn btn-success flex-fill text-white" onClick={handleWhatsApp}>
-          <i className="fa-brands fa-whatsapp"></i> WhatsApp
+          <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
         </button>
         <button className="btn btn-outline-primary flex-fill" onClick={handlePhone}>
-          <i className="fa fa-phone"></i> {formatPhone(data?.no_whatsapp)}
+          <FontAwesomeIcon icon={faPhone} /> {formatPhone(data?.no_whatsapp)}
         </button>
         <button
           className="btn border border-black bg-white d-flex align-items-center"
           onClick={handleBagikan}>
-          <i className="fa fa-share-alt"></i>
+          <FontAwesomeIcon icon={faShareAlt} />
         </button>
       </div>
     </div>

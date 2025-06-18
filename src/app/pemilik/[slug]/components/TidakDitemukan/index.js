@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
-import Breadcrumb from '@/components/Breadcrumb';
+import { UseBreadcrumb } from '@/components';
 import { unFormatStrip } from '@/helpers';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Index = (props) => {
   const { slug } = props;
@@ -9,10 +12,10 @@ const Index = (props) => {
   return (
     <div className="pb-5">
       <section className="mt-3">
-        <Breadcrumb title={'Panduan Tidak Ditemukan'} />
+        <UseBreadcrumb title={'Panduan Tidak Ditemukan'} />
       </section>
       <div className="text-center pt-5">
-        <i className="fa-4x fa-search fas mb-3"></i>
+        <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />
         <h5 className="fw-bold mb-2">Panduan Tidak Ditemukan</h5>
         <p className="text-muted">
           Maaf, panduan dengan kata kunci{' '}

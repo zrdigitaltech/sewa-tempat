@@ -9,6 +9,8 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import '@/components/Header/header.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBantuan }) {
   const [openDisewa, setOpenDisewa] = useState(false);
   const pathname = usePathname();

@@ -14,6 +14,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './kategori.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function KategoriTempat() {
   const tempatList = useSelector((state) => state?.tipeProperti?.tempatList);
   const dispatch = useDispatch();

@@ -2,6 +2,8 @@
 import React from 'react';
 import { formatPriceLocale, formatPhone } from '@/helpers';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Mobile = ({ kontrakanDetail, handlePhone, handleWhatsApp, isLoading = false }) => {
   if (isLoading || kontrakanDetail?.status?.toLowerCase() !== 'tersedia') return null;
 

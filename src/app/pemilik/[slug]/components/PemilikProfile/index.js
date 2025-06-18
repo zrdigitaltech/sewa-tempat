@@ -1,6 +1,15 @@
 'use client';
 import React from 'react';
 import { formatPhone } from '@/helpers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapLocationDot, faPhone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faInstagram,
+  faLinkedin,
+  faFacebook,
+  faXTwitter,
+  faWhatsapp
+} from '@fortawesome/free-brands-svg-icons';
 
 const PemilikProfileCard = ({
   profile,
@@ -48,7 +57,7 @@ const PemilikProfileCard = ({
         <p className="text-muted mb-2">
           Alamat:
           <a className="text-primary ms-2 cursor-pointer text-muted" onClick={handleLokasi}>
-            <i className="fa-solid fa-map-location-dot me-1"></i>
+            <FontAwesomeIcon icon={faMapLocationDot} className="me-1" />
             Dapatkan Detail Lokasi
           </a>
         </p>
@@ -61,7 +70,7 @@ const PemilikProfileCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-instagram me-1"></i> Instagram
+              <FontAwesomeIcon icon={faInstagram} className="me-1" /> Instagram
             </a>
           )}
           {profile.socials?.linkedin && (
@@ -70,7 +79,7 @@ const PemilikProfileCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-linkedin me-1"></i> LinkedIn
+              <FontAwesomeIcon icon={faLinkedin} className="me-1" /> LinkedIn
             </a>
           )}
           {profile.socials?.facebook && (
@@ -79,7 +88,7 @@ const PemilikProfileCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-facebook me-1"></i> Facebook
+              <FontAwesomeIcon icon={faFacebook} className="me-1" /> Facebook
             </a>
           )}
           {profile.socials?.twitter && (
@@ -88,7 +97,7 @@ const PemilikProfileCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-x-twitter me-1"></i> Twitter
+              <FontAwesomeIcon icon={faXTwitter} className="me-1" /> Twitter
             </a>
           )}
         </div>
@@ -100,17 +109,17 @@ const PemilikProfileCard = ({
           <button
             className="btn btn-success text-white d-flex align-items-center"
             onClick={handleWhatsApp}>
-            <i className="fa-brands fa-whatsapp me-1" aria-hidden="true"></i> WhatsApp
+            <FontAwesomeIcon icon={faWhatsapp} className="me-1" /> WhatsApp
           </button>
           <button className="btn btn-primary d-flex align-items-center" onClick={handlePhone}>
-            <i className="fa fa-phone me-1" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faPhone} className="me-1" />
             <span className="d-none d-sm-inline">{formatPhone(profile.no_whatsapp)}</span>
             <span className="d-inline d-sm-none">Telepon</span>
           </button>
           <button
             className="btn btn-outline-dark border border-black d-flex align-items-center"
             onClick={handleBagikan}>
-            <i className="fa fa-share-alt me-1"></i> Bagikan
+            <FontAwesomeIcon icon={faShareAlt} className="me-1" /> Bagikan
           </button>
         </div>
       </div>
