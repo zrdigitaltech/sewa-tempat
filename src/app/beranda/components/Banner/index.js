@@ -18,7 +18,6 @@ export default function HomeHeroSection() {
   const [formData, setFormData] = useState({
     tipeProperti: '',
     keyword: '',
-    tipeSewa: '',
     viewMode: 'list'
   });
 
@@ -29,7 +28,7 @@ export default function HomeHeroSection() {
 
   const handleOnSearch = async () => {
     setIsLoading((prev) => ({ ...prev, btnSearch: true }));
-    const { keyword, tipeProperti, tipeSewa, viewMode } = formData;
+    const { keyword, tipeProperti, viewMode } = formData;
 
     const keywordCleaned = formatStrip(keyword);
     let query = `/search?keyword=${keywordCleaned}`;
@@ -37,9 +36,6 @@ export default function HomeHeroSection() {
     if (tipeProperti) {
       const tipePropertiCleaned = formatStrip(tipeProperti);
       query += `&tipeProperti=${tipePropertiCleaned}`;
-    }
-    if (tipeSewa) {
-      query += `&tipeSewa=${tipeSewa}`;
     }
     query += `&viewMode=${viewMode}`;
 
@@ -65,8 +61,7 @@ export default function HomeHeroSection() {
         backgroundPosition: 'center',
         position: 'relative',
         padding: '3rem 0'
-      }}
-    >
+      }}>
       {/* Overlay hitam */}
       <div
         className="position-absolute w-100 h-100"

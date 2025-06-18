@@ -51,18 +51,12 @@ export default function Index(props) {
 
         {homePage && (
           <Fragment>
-            {/* Tipe Sewa */}
-            <div className="col-12 col-md-2">
-              <TipeSewa tipeSewa={formData?.tipeSewa} handleChange={handleChange} />
-            </div>
-
             {/* Tombol Cari */}
             <div className="col-12 col-md-3">
               <button
                 className="btn btn-warning w-100 fw-semibold rounded-3"
                 onClick={handleSearch}
-                disabled={isLoading || isLoadingData?.tipeProperti}
-              >
+                disabled={isLoading || isLoadingData?.tipeProperti}>
                 {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
               </button>
             </div>
@@ -120,8 +114,7 @@ export default function Index(props) {
             <button
               className="btn btn-warning w-100 fw-semibold rounded-3"
               onClick={handleSearch}
-              disabled={isLoading || isLoadingData?.tipeProperti}
-            >
+              disabled={isLoading || isLoadingData?.tipeProperti}>
               {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
             </button>
           </div>
