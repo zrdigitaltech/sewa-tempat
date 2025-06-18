@@ -7,6 +7,8 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Index = (props) => {
   const {
@@ -102,11 +104,11 @@ const Index = (props) => {
           <Fragment>
             <div className="align-items-center d-flex d-lg-block gap-3">
               <button className="btn btn-success w-100 text-white" onClick={handleWhatsApp}>
-                <i className="fa-brands fa-whatsapp"></i> WhatsApp
+                <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
               </button>
 
               <button className="btn btn-outline-primary w-100 mt-lg-2" onClick={handlePhone}>
-                <i className="fa fa-phone"></i> {formatPhone(kontrakanDetail?.no_whatsapp)}
+                <FontAwesomeIcon icon={faPhone} /> {formatPhone(kontrakanDetail?.no_whatsapp)}
               </button>
 
               {/* <Link className="btn btn-primary w-100 mt-2 mb-2" href={`/properti/${slug}/booking`}>

@@ -11,6 +11,17 @@ import { UseTooltips } from '@/components';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { iconTipeProperti } from '@/helpers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faClock,
+  faBolt,
+  faPhone,
+  faShareAlt,
+  faDoorOpen,
+  faBed,
+  faBath
+} from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export default function Index(props) {
   const router = useRouter();
@@ -78,7 +89,7 @@ export default function Index(props) {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title={label}>
-        {iconClass && <i className={`fa ${iconClass} me-1`}></i>}
+        {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {total}
       </small>
     );
@@ -99,7 +110,7 @@ export default function Index(props) {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title={label}>
-        {iconClass && <i className={`fa ${iconClass} me-1`}></i>}
+        {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {value}
       </small>
     );
@@ -153,7 +164,7 @@ export default function Index(props) {
                       ))}
 
                   <span className="bg-primary-subtle align-content-center badge text-secondary text-capitalize">
-                    <i className="fa fa-clock"></i> Diperbarui: {upload}
+                    <FontAwesomeIcon icon={faClock} /> Diperbarui: {upload}
                   </span>
                 </div>
               </Fragment>
@@ -178,20 +189,20 @@ export default function Index(props) {
                 tipe_properti?.informasi_interior,
                 'Tipe Kamar',
                 'Ruang',
-                'fa-door-open'
+                faDoorOpen
               )}
               {renderCombinedInteriorCard(
                 tipe_properti?.informasi_interior,
                 ['Kamar Tidur', 'Kamar Tidur ART', 'Tipe Kamar'],
                 'Kamar Tidur',
-                'fa-solid fa-bed'
+                faBed
               )}
 
               {renderCombinedInteriorCard(
                 tipe_properti?.informasi_interior,
                 ['Kamar Mandi', 'Kamar Mandi ART'],
                 'Kamar Mandi',
-                'fa-bath'
+                faBath
               )}
             </div>
           </div>
@@ -296,7 +307,7 @@ export default function Index(props) {
                     (member === 'Super Featured' && 'bg-primary') ||
                     (member === 'Premium' && 'bg-warning')
                   } `}>
-                  <i className="fa fa-bolt"></i>
+                  <FontAwesomeIcon icon={faBolt} />
                   <span>{member}</span>
                 </div>
               )}
@@ -394,7 +405,7 @@ export default function Index(props) {
                         <button
                           className="w-100 btn btn-outline-primary ST__kontrol-btn"
                           onClick={handlePhone}>
-                          <i className="fa fa-phone" />
+                          <FontAwesomeIcon icon={faPhone} />
                         </button>
                       )}
                     </div>
@@ -405,7 +416,7 @@ export default function Index(props) {
                         <button
                           className="w-100 btn btn-success text-white ST__kontrol-btn"
                           onClick={handleWhatsApp}>
-                          <i className="fa-brands fa-whatsapp me-1" /> WhatsApp
+                          <FontAwesomeIcon icon={faWhatsapp} className="me-1" /> WhatsApp
                         </button>
                       )}
                     </div>
@@ -436,7 +447,7 @@ export default function Index(props) {
                   <button
                     className="btn bg-white shadow"
                     onClick={() => (setShowShare(true), setDataItem())}>
-                    <i className="fa fa-share-alt"></i>
+                    <FontAwesomeIcon icon={faShareAlt} />
                   </button>
                 </div>
               )}

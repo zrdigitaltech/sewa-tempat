@@ -15,6 +15,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './kategori.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function KategoriTempat() {
   const tempatList = useSelector((state) => state?.tipeProperti?.tempatList);
@@ -78,7 +79,7 @@ export default function KategoriTempat() {
       className={`${className} ST--arrow ST--arrow--next`}
       onClick={onClick}
       style={{ zIndex: 10 }}>
-      <i className="fas fa-chevron-right text-dark fs-4"></i>
+      <FontAwesomeIcon icon={faChevronRight} className="text-dark fs-4" />
     </div>
   );
 
@@ -87,7 +88,7 @@ export default function KategoriTempat() {
       className={`${className} ST--arrow ST--arrow--prev`}
       onClick={onClick}
       style={{ zIndex: 10 }}>
-      <i className="fas fa-chevron-left text-dark fs-4"></i>
+      <FontAwesomeIcon icon={faChevronLeft} className="text-dark fs-4" />
     </div>
   );
 

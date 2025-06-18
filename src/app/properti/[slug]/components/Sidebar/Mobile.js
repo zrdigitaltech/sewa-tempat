@@ -3,6 +3,8 @@ import React from 'react';
 import { formatPriceLocale, formatPhone } from '@/helpers';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Mobile = ({ kontrakanDetail, handlePhone, handleWhatsApp, isLoading = false }) => {
   if (isLoading || kontrakanDetail?.status?.toLowerCase() !== 'tersedia') return null;
@@ -20,10 +22,10 @@ const Mobile = ({ kontrakanDetail, handlePhone, handleWhatsApp, isLoading = fals
         </div>
         <div className="d-flex gap-2">
           <button className="btn btn-outline-primary btn flex-fill" onClick={handlePhone}>
-            <i className="fa fa-phone"></i> {formatPhone(kontrakanDetail?.no_whatsapp)}
+            <FontAwesomeIcon icon={faPhone} /> {formatPhone(kontrakanDetail?.no_whatsapp)}
           </button>
           <button className="btn btn-success btn flex-fill text-white" onClick={handleWhatsApp}>
-            <i className="fa-brands fa-whatsapp"></i> WhatsApp
+            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
           </button>
         </div>
       </div>

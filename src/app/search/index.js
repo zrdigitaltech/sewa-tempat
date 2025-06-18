@@ -21,6 +21,8 @@ import classNames from 'classnames';
 import { HubungiPengiklanPropertiModal, KonsultasiModal } from '@/app/modal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export default function Index() {
   const searchResultList = useSelector((state) => state?.kontrakan?.searchResultList);
@@ -267,7 +269,7 @@ export default function Index() {
                   {searchResultList?.length === 0 && (
                     <Fragment>
                       <div className="text-center py-5">
-                        <i className="fa-4x fa-search fas mb-3"></i>
+                        <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />
                         <h5 className="fw-bold mb-2">Tidak Ditemukan Properti yang Sesuai</h5>
                         <p className="text-muted">
                           Maaf, properti dengan kata kunci{' '}
@@ -336,7 +338,7 @@ export default function Index() {
                     {searchResultList?.length === 0 && (
                       <Fragment>
                         <div className="text-center pt-5">
-                          <i className="fa-4x fa-search fas mb-3"></i>
+                          <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />
                           <h5 className="fw-bold mb-2">Tidak Ditemukan Properti yang Sesuai</h5>
                           <p className="text-muted">
                             Maaf, properti dengan kata kunci{' '}
@@ -390,8 +392,7 @@ export default function Index() {
                       transform: 'translateY(-50%)'
                     }}>
                     <button className="btn btn-primary btn-lg">
-                      <i className="fa-brands fa-whatsapp pe-1" aria-hidden="true"></i> Konsultasi
-                      Gratis
+                      <FontAwesomeIcon icon={faWhatsapp} className="pe-1" /> Konsultasi Gratis
                     </button>
                   </div>
                 </div>

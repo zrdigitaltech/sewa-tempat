@@ -4,6 +4,7 @@ import Modals from '@/components/Modals';
 import { KonsultasiModal, BeriSaranModal } from '@/app/modal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseCircleCheck, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 const Index = (props) => {
   const { show, onClose, setShowBantuan } = props;
@@ -31,7 +32,7 @@ const Index = (props) => {
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
                 style={{ width: 48, height: 48 }}>
-                <i className="fa-solid fa-house-circle-check fs-4 text-primary"></i>
+                <FontAwesomeIcon icon={faHouseCircleCheck} className="fs-4 text-primary" />
               </div>
               <div>
                 <div className="fw-semibold text-dark">Carikan Properti</div>
@@ -52,7 +53,7 @@ const Index = (props) => {
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
                 style={{ width: 48, height: 48 }}>
-                <i className="fa-solid fa-comment-dots fs-4 text-info"></i>
+                <FontAwesomeIcon icon={faCommentDots} className="fs-4 text-info" />
               </div>
               <div>
                 <div className="fw-semibold text-dark">Beri Saran</div>

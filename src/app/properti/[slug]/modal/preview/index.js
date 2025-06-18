@@ -7,6 +7,8 @@ import { ShareModal } from '@/app/modal';
 import { UseModals } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShareAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const PreviewModal = (props) => {
   const {
@@ -78,7 +80,7 @@ const PreviewModal = (props) => {
                   transform: isMobile ? '' : 'translateX(-50%)'
                 }}>
                 <button className="btn bg-white w-100 shadow" onClick={() => setShowShare(true)}>
-                  <i className="fa fa-share-alt me-1"></i>{' '}
+                  <FontAwesomeIcon icon={faShareAlt} className="me-1" />{' '}
                   <span className="d-none d-lg-inline">Bagikan</span>
                 </button>
               </div>
@@ -92,7 +94,7 @@ const PreviewModal = (props) => {
                 }}>
                 <div>
                   <button className="btn btn-primary w-100 shadow" onClick={handlePhone}>
-                    <i className="fa fa-phone" aria-hidden="true"></i>{' '}
+                    <FontAwesomeIcon icon={faPhone} />{' '}
                     <span className="d-none d-lg-inline">{kontrakanDetail?.no_whatsapp}</span>
                   </button>
                 </div>
@@ -100,7 +102,7 @@ const PreviewModal = (props) => {
                   <button
                     className="btn btn-success w-100 text-white shadow"
                     onClick={handleWhatsApp}>
-                    <i className="fa-brands fa-whatsapp" aria-hidden="true"></i> Tanya Detail
+                    <FontAwesomeIcon icon={faWhatsapp} /> Tanya Detail
                   </button>
                 </div>
               </div>
@@ -111,14 +113,14 @@ const PreviewModal = (props) => {
             <div className="d-flex px-2 py-3">
               <div className="me-auto">
                 <button className="btn bg-white w-100 shadow" onClick={() => setShowShare(true)}>
-                  <i className="fa fa-share-alt me-1"></i>{' '}
+                  <FontAwesomeIcon icon={faShareAlt} className="me-1" />{' '}
                   <span className="d-none d-lg-inline">Bagikan</span>
                 </button>
               </div>
               <div className="d-flex gap-2 ms-auto">
                 <div>
                   <button className="btn btn-primary w-100 shadow" onClick={handlePhone}>
-                    <i className="fa fa-phone" aria-hidden="true"></i>{' '}
+                    <FontAwesomeIcon icon={faPhone} />{' '}
                     <span className="d-none d-lg-inline">{kontrakanDetail?.no_whatsapp}</span>
                   </button>
                 </div>
@@ -126,7 +128,7 @@ const PreviewModal = (props) => {
                   <button
                     className="btn btn-success w-100 text-white shadow"
                     onClick={handleWhatsApp}>
-                    <i className="fa-brands fa-whatsapp" aria-hidden="true"></i> Tanya Detail
+                    <FontAwesomeIcon icon={faWhatsapp} /> Tanya Detail
                   </button>
                 </div>
               </div>

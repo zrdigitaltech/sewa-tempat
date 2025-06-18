@@ -3,6 +3,7 @@ import React from 'react';
 import { UseTooltips } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faList, faThLarge } from '@fortawesome/free-solid-svg-icons';
 
 export default function Index(props) {
   const { viewMode, handleGridView, handleListView } = props;
@@ -16,7 +17,7 @@ export default function Index(props) {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title="Tampilan List">
-        <i className="fas fa-list"></i>
+        <FontAwesomeIcon icon={faList} />
       </button>
       <button
         className={`btn btn-outline-primary ${viewMode === 'grid' ? 'active' : ''}`}
@@ -25,7 +26,7 @@ export default function Index(props) {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title="Tampilan Grid">
-        <i className="fas fa-th-large"></i>
+        <FontAwesomeIcon icon={faThLarge} />
       </button>
     </div>
   );

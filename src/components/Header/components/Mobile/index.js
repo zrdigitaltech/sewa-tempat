@@ -10,6 +10,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import '@/components/Header/header.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBantuan }) {
   const [openDisewa, setOpenDisewa] = useState(false);
@@ -85,7 +86,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
             onClick={toggleDisewa}
             type="button">
             Disewa
-            <i className={`fa fa-chevron-${openDisewa ? 'up' : 'down'} small`}></i>
+            <FontAwesomeIcon icon={openDisewa ? faChevronUp : faChevronDown} className="small" />
           </button>
 
           <div className={`submenu-wrapper ${openDisewa ? 'open' : ''} ps-3`}>

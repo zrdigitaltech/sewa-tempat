@@ -4,6 +4,7 @@ import React, { Fragment, useState } from 'react';
 import './DeskripsiExpandable.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Index = ({ deskripsi, maxLength = 200 }) => {
   const [expanded, setExpanded] = useState(false);
@@ -32,7 +33,7 @@ const Index = ({ deskripsi, maxLength = 200 }) => {
           style={{ cursor: 'pointer' }}>
           <small>
             Lihat {expanded ? 'Lebih Sedikit' : 'Selengkapnya'}{' '}
-            <i className={`fa fa-chevron-${expanded ? 'up' : 'down'}`}></i>
+            <FontAwesomeIcon icon={expanded ? faChevronUp : faChevronDown} />
           </small>
         </button>
       )}
