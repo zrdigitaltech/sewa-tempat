@@ -68,14 +68,6 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
       </div>
 
       <div className="offcanvas-body d-flex flex-column gap-2">
-        <a
-          className={`nav-link text-dark ${pathname === '/user/login' ? 'active' : ''}`}
-          href="/user/login"
-          target="_blank"
-          onClick={handleClose}>
-          LogIn
-        </a>
-
         <div>
           <button
             className={`btn btn-link nav-link text-dark w-100 d-flex justify-content-between align-items-center px-0 ${
@@ -122,6 +114,15 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
       </div>
 
       <div className="offcanvas-footer p-3 border-top shadow ST--PasangIklan__mobile">
+        <div className="mb-2 d-flex gap-2 justify-content-center  border btn border-primary">
+          <Link href="/register" className="" onClick={handleClose}>
+            Daftar
+          </Link>
+          /
+          <Link href="/login" className="" onClick={handleClose}>
+            Masuk
+          </Link>
+        </div>
         <Link className="btn btn-primary w-100" href="/pasang-iklan-properti" onClick={handleClose}>
           + Pasang Iklan
         </Link>
