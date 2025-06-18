@@ -13,7 +13,8 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { iconTipeProperti } from '@/helpers';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export default function PropertiCard(props) {
   const router = useRouter();
@@ -187,7 +188,7 @@ export default function PropertiCard(props) {
             className={`ST__badge ${
               member === 'Super Featured' ? 'bg-primary' : member === 'Premium' ? 'bg-warning' : ''
             }`}>
-            <i className="fa fa-bolt"></i>
+            <FontAwesomeIcon icon={faBolt} />
             <span>{member}</span>
           </div>
         )}
@@ -227,10 +228,10 @@ export default function PropertiCard(props) {
                 <Skeleton height={40} />
               ) : (
                 <button
-                  className="btn btn-success d-sm-flex align-items-center text-white w-100 pe-1"
+                  className="btn btn-success d-sm-flex align-items-center text-white w-100 pe-1 text-shadow"
                   onClick={handleWhatsApp}
                   aria-label={`WhatsApp ${formatPhone(no_whatsapp)}`}>
-                  <i className="fa-brands fa-whatsapp pe-1" aria-hidden="true"></i> WhatsApp
+                  <FontAwesomeIcon icon={faWhatsapp} className="pe-1" /> WhatsApp
                 </button>
               )}
             </div>

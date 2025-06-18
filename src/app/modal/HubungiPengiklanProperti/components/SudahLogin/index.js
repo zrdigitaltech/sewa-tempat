@@ -1,5 +1,7 @@
 'use client';
 import React, { Fragment, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 const Index = (props) => {
   const { dataItem = '' } = props;
@@ -32,8 +34,9 @@ const Index = (props) => {
                 className="rounded-circle img-fluid"
                 style={{ width: '120px', height: '120px', objectFit: 'cover' }}
               />
-              <i
-                className="fa fa-check-circle text-primary"
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="text-primary"
                 style={{
                   position: 'absolute',
                   bottom: 0,
@@ -42,7 +45,7 @@ const Index = (props) => {
                   borderRadius: '50%',
                   fontSize: '14px'
                 }}
-              ></i>
+              />
             </div>
           </div>
           <div className="mt-1">
@@ -52,9 +55,8 @@ const Index = (props) => {
             <span
               className="text-primary cursor-pointer"
               onClick={() => handleCopy(dataItem?.no_whatsapp)}
-              ref={copyBtnRef}
-            >
-              {dataItem?.no_whatsapp} <i className="fa-solid fa-copy"></i>
+              ref={copyBtnRef}>
+              {dataItem?.no_whatsapp} <FontAwesomeIcon icon={faCopy} />
             </span>
 
             {/* Pesan sukses */}

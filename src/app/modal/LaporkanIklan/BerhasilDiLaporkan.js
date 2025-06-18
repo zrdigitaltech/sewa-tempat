@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const BerhasilDiLaporkan = (props) => {
   const { show, onClose } = props;
 
   return (
-    <Modals
+    <UseModals
       title="Iklan berhasil dilaporkan"
       show={show}
       onClose={onClose}
@@ -14,7 +16,7 @@ const BerhasilDiLaporkan = (props) => {
         <Fragment>
           <div className="text-center">
             <h2>
-              <i className="fa fa-check-circle fa-5x text-primary"></i>
+              <FontAwesomeIcon icon={faCheckCircle} size="5x" className="text-primary" />
             </h2>
             <div>
               <p>

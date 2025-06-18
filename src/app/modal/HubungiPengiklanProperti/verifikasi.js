@@ -5,6 +5,9 @@ import { useDispatch } from 'react-redux';
 import { submitVerifikasi } from '@/redux/action/hubungiPengiklanProperti/creator';
 import { UseToasts } from '@/components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons';
+
 const Verifikasi = (props) => {
   const { show, onClose, formData, handleGantiNomor, setFormData, setIsPageVerified } = props;
   const dispatch = useDispatch();
@@ -142,7 +145,7 @@ const Verifikasi = (props) => {
       modalBody={
         isVerified ? (
           <div className="text-center my-5">
-            <i className="fas fa-check-circle text-primary fs-1 mb-3" />
+            <FontAwesomeIcon icon={faCheckCircle} className="text-primary fs-1 mb-3" />
             <h5 className="text-primary mb-2">Verifikasi Berhasil</h5>
             <p className="small text-muted">Nomor HP kamu telah berhasil diverifikasi.</p>
           </div>
@@ -186,7 +189,9 @@ const Verifikasi = (props) => {
                 disabled={timer > 0 || isSendingOtp}
                 onClick={handleResendOtp}
                 className="btn btn-link  text-primary fw-medium p-0">
-                {timer === 0 && !isSendingOtp && <i className="fas fa-arrow-rotate-right me-1" />}
+                {timer === 0 && !isSendingOtp && (
+                  <FontAwesomeIcon icon={faArrowRotateRight} className="me-1" />
+                )}
                 {isSendingOtp ? 'Mengirim ulang...' : 'Kirim ulang OTP'}
                 {timer > 0 && <span> ({formatTimer()})</span>}
               </button>

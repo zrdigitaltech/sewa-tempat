@@ -7,6 +7,10 @@ import VerifikasiModal from '@/app/modal/HubungiPengiklanProperti/verifikasi';
 import { useDispatch } from 'react-redux';
 import { submitHubungiPengiklanProperti } from '@/redux/action/hubungiPengiklanProperti/creator';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock, faCheckCircle, faCommentSms } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 const Index = (props) => {
   const {
     show,
@@ -157,7 +161,7 @@ const Index = (props) => {
               <div className="container p-2 border-top">
                 <div className="row row-cols-1 row-cols-md-2 g-3">
                   <div className="col-6 text-center border-end">
-                    <i className="fa-solid fa-lock text-primary me-2 mt-1"></i>
+                    <FontAwesomeIcon icon={faLock} className="text-primary me-2 mt-1" />
                     <br />
                     <small>
                       <strong>
@@ -167,7 +171,7 @@ const Index = (props) => {
                     </small>
                   </div>
                   <div className="col-6 text-center">
-                    <i className="fa-solid fa-check-circle text-primary me-2 mt-1"></i>
+                    <FontAwesomeIcon icon={faCheckCircle} className="text-primary me-2 mt-1" />
                     <br />
                     <small> 1x verifikasi untuk komunikasi dengan seluruh pemilik properti.</small>
                   </div>
@@ -182,7 +186,7 @@ const Index = (props) => {
               type="button"
               className="btn btn-success w-100 text-white"
               onClick={handleGoWhatsApp}>
-              <i className="fa-whatsapp fa-brands"></i> WhatsApp
+              <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
             </button>
           ) : (
             <Fragment>
@@ -197,12 +201,9 @@ const Index = (props) => {
                 } w-100 text-white`}
                 onClick={handleSubmit}
                 disabled={isSubmitting}>
-                <i
-                  className={` fa-${
-                    formData.verifikasi === 'whatsapp'
-                      ? 'whatsapp fa-brands'
-                      : 'comment-sms fa-solid'
-                  }`}></i>{' '}
+                <FontAwesomeIcon
+                  icon={formData.verifikasi === 'whatsapp' ? faWhatsapp : faCommentSms}
+                />
                 {isSubmitting ? 'Memproses...' : 'Lanjutkan'}
               </button>
               <small>

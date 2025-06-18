@@ -15,6 +15,9 @@ import './kategori.scss';
 
 import { iconTipeProperti } from '@/helpers';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 export default function KategoriCepat() {
   const tipePropertiList = useSelector((state) => state?.tipeProperti?.tipePropertiList);
   const dispatch = useDispatch();
@@ -41,7 +44,7 @@ export default function KategoriCepat() {
       className={`${className} ST--arrow ST--arrow--next`}
       onClick={onClick}
       style={{ zIndex: 10 }}>
-      <i className="fas fa-chevron-right text-dark fs-4"></i>
+      <FontAwesomeIcon icon={faChevronRight} className="text-dark fs-4" />
     </div>
   );
 
@@ -50,7 +53,7 @@ export default function KategoriCepat() {
       className={`${className} ST--arrow ST--arrow--prev`}
       onClick={onClick}
       style={{ zIndex: 10 }}>
-      <i className="fas fa-chevron-left text-dark fs-4"></i>
+      <FontAwesomeIcon icon={faChevronLeft} className="text-dark fs-4" />
     </div>
   );
 

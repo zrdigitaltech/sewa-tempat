@@ -1,7 +1,11 @@
+'use client';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { submitRegister } from '@/redux/action/register/creator';
 import { UseToasts } from '@/components';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default function FormRegister() {
   const [formData, setFormData] = useState({
@@ -184,7 +188,11 @@ export default function FormRegister() {
                 id="button-addon2"
                 onClick={() => setShowPassword((prev) => !prev)}
                 tabIndex={-1}>
-                {showPassword ? <i className="fa fa-eye-slash" /> : <i className="fa fa-eye" />}
+                {showPassword ? (
+                  <FontAwesomeIcon icon={faEyeSlash} />
+                ) : (
+                  <FontAwesomeIcon icon={faEye} />
+                )}
               </button>
               {errors.password && <div className="invalid-feedback">{errors.password}</div>}
             </div>

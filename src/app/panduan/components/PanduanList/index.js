@@ -8,6 +8,9 @@ import { unFormatStrip } from '@/helpers';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 const Index = (props) => {
   const { guides, keyword, kategori, isLoading } = props;
 
@@ -31,7 +34,7 @@ const Index = (props) => {
     return (
       <Fragment>
         <div className="text-center pt-5">
-          <i className="fa-4x fa-search fas mb-3"></i>
+          <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />
           <h5 className="fw-bold mb-2">Tidak Ditemukan Panduan yang Sesuai</h5>
           <p className="text-muted">
             Maaf, panduan dengan kata kunci{' '}

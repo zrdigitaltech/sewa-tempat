@@ -2,6 +2,9 @@
 import React, { Fragment } from 'react';
 import Modals from '@/components/Modals';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+
 const PermintaanBerhasil = (props) => {
   const { show, onClose } = props;
 
@@ -15,7 +18,7 @@ const PermintaanBerhasil = (props) => {
         <Fragment>
           <div className="text-center">
             <h2>
-              <i className="fas fa-circle-check fa-5x text-primary"></i>
+              <FontAwesomeIcon icon={faCircleCheck} className="text-primary" />
             </h2>
             <div>
               <p>

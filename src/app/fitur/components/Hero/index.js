@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+
 export default function Index() {
   return (
     <section
@@ -26,7 +29,7 @@ export default function Index() {
           <a
             href="#ProdukBooster"
             className="text-white text-decoration-none mt-2 d-flex align-items-center gap-2">
-            <i className="fa fa-chevron-circle-down fa-lg text-primary"></i>
+            <FontAwesomeIcon icon={faChevronCircleDown} className="fa-lg text-primary" />
           </a>
         </div>
       </div>

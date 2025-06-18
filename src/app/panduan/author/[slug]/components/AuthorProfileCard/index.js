@@ -1,5 +1,12 @@
 'use client';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faInstagram,
+  faLinkedin,
+  faFacebook,
+  faXTwitter
+} from '@fortawesome/free-brands-svg-icons';
 
 const AuthorProfileCard = ({ profile }) => {
   if (!profile) return null;
@@ -23,7 +30,7 @@ const AuthorProfileCard = ({ profile }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-instagram me-1"></i> Instagram
+              <FontAwesomeIcon icon={faInstagram} className="me-1" /> Instagram
             </a>
           )}
           {profile.socials?.linkedin && (
@@ -32,7 +39,7 @@ const AuthorProfileCard = ({ profile }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-linkedin me-1"></i> LinkedIn
+              <FontAwesomeIcon icon={faLinkedin} className="me-1" /> LinkedIn
             </a>
           )}
           {profile.socials?.facebook && (
@@ -41,7 +48,7 @@ const AuthorProfileCard = ({ profile }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-facebook me-1"></i> Facebook
+              <FontAwesomeIcon icon={faFacebook} className="me-1" /> Facebook
             </a>
           )}
           {profile.socials?.twitter && (
@@ -50,7 +57,7 @@ const AuthorProfileCard = ({ profile }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-dark d-flex align-items-center">
-              <i className="fa-brands fa-x-twitter me-1"></i> Twitter
+              <FontAwesomeIcon icon={faXTwitter} className="me-1" /> Twitter
             </a>
           )}
         </div>

@@ -1,64 +1,81 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCamera,
+  faImage,
+  faCompress,
+  faCubes,
+  faInfoCircle,
+  faCube,
+  faBan,
+  faThLarge,
+  faMap,
+  faCheckCircle,
+  faEdit,
+  faTag,
+  faLightbulb
+} from '@fortawesome/free-solid-svg-icons';
+
 export default function Tips() {
   const tips = [
     [
       'Gunakan Foto Properti Asli',
       'Pastikan foto properti yang Anda gunakan adalah foto asli. Jangan gunakan foto properti lain yang tidak sesuai.',
-      'fa-camera'
+      faCamera
     ],
     [
       'Foto Berkualitas Baik',
       'Gunakan foto dengan resolusi tinggi, fokus, dan tidak gelap agar menarik lebih banyak peminat.',
-      'fa-image'
+      faImage
     ],
     [
       'Gunakan Foto Ukuran Sesuai',
       'Gunakan ukuran foto di bawah 4 MB agar lebih cepat dimuat.',
-      'fa-compress'
+      faCompress
     ],
     [
       'Sertakan Foto Berbagai Sudut',
       'Ambil foto dari berbagai sudut: depan rumah, garasi, ruang tamu, kamar tidur, dapur, hingga halaman belakang.',
-      'fa-cubes'
+      faCubes
     ],
     [
       'Foto Boleh Memuat Informasi',
       'Selama tidak menutupi gambar properti, Anda boleh menyisipkan informasi seperti harga, kontak, atau logo.',
-      'fa-info-circle'
+      faInfoCircle
     ],
     [
       'Foto 3D untuk Primary',
       'Boleh menambahkan foto 3D atau maket pada iklan properti utama.',
-      'fa-cube'
+      faCube
     ],
     [
       'Jangan Gunakan Brosur sebagai Foto Utama',
       'Brosur boleh diunggah sebagai foto tambahan, namun bukan sebagai foto utama.',
-      'fa-ban'
+      faBan
     ],
     [
       'Gunakan Satu Foto per Bingkai',
       'Hindari kolase. Gunakan satu foto untuk satu tampilan agar lebih jelas.',
-      'fa-th-large'
+      faThLarge
     ],
     [
       'Foto Site Plan sebagai Pelengkap',
       'Jangan hanya mengunggah site plan tanpa tambahan foto properti kecuali iklan tanah.',
-      'fa-map'
+      faMap
     ],
     [
       'Isi Keterangan dengan Benar',
       'Pastikan properti sesuai dengan kategorinya, seperti rumah, kost, apartemen, atau tanah.',
-      'fa-check-circle'
+      faCheckCircle
     ],
     [
       'Lengkapi Informasi Properti',
       'Isi deskripsi lengkap agar pembeli atau penyewa lebih mudah memahami kondisi properti.',
-      'fa-edit'
+      faEdit
     ],
     [
       'Harga Properti Sesuai',
       'Tentukan harga sewa yang sesuai. Harga yang janggal dapat menyebabkan iklan diturunkan.',
-      'fa-tag'
+      faTag
     ]
   ];
 
@@ -79,8 +96,9 @@ export default function Tips() {
       </p>
 
       <div className="mt-5 mb-4">
-        <div className="d-flex align-items-center mb-2">
-          <i className="bi bi-lightbulb-fill text-primary"></i>
+        <div className="d-flex  mb-2">
+          <FontAwesomeIcon icon={faLightbulb} className="text-primary me-2 fs-4" />
+
           <h5 className="fw-bold mb-0">
             Tips Pasang Iklan di <strong className="text-primary">tempatSewa.Com</strong>
           </h5>
@@ -97,7 +115,7 @@ export default function Tips() {
             <div className="p-3 border rounded-3 h-100 bg-white shadow-sm">
               <div className="d-flex align-items-start">
                 <div className="me-3 text-center">
-                  <i className={`fa ${icon} fa-lg text-primary`}></i>
+                  <FontAwesomeIcon icon={icon} className="text-primary" size="lg" />
                 </div>
                 <div>
                   <h6 className="fw-bold mb-1">{title}</h6>

@@ -3,6 +3,9 @@ import React, { Fragment } from 'react';
 import { formatPriceLocale, iconTipeProperti } from '@/helpers';
 import Link from 'next/link';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDoorOpen, faBed } from '@fortawesome/free-solid-svg-icons';
+
 const Index = (props) => {
   const { item } = props;
 
@@ -24,7 +27,7 @@ const Index = (props) => {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title={label}>
-        {iconClass && <i className={`fa ${iconClass} me-1`}></i>}
+        {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {total} {label}
       </span>
     );
@@ -45,7 +48,7 @@ const Index = (props) => {
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
         data-bs-title={label}>
-        {iconClass && <i className={`fa ${iconClass} me-1`}></i>}
+        {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {value} {label}
       </span>
     );
@@ -91,13 +94,13 @@ const Index = (props) => {
                 item?.tipe_properti?.informasi_interior,
                 'Tipe Kamar',
                 'Ruang',
-                'fa-door-open'
+                faDoorOpen
               )}
               {renderCombinedInteriorCard(
                 item?.tipe_properti?.informasi_interior,
                 ['Kamar Tidur', 'Kamar Tidur ART', 'Tipe Kamar'],
                 'Kamar Tidur',
-                'fa-solid fa-bed'
+                faBed
               )}
 
               {renderCombinedInteriorCard(

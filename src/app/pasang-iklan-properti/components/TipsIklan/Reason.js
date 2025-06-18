@@ -1,19 +1,22 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt, faGlobe, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
+
 export default function Reason() {
   const reasons = [
     [
       'Mudah & Praktis',
       'Proses pasang iklan dilakukan dengan cepat dan tanpa hambatan, cukup dalam beberapa langkah sederhana.',
-      'fa-bolt'
+      faBolt
     ],
     [
       'Jangkauan Luas',
       'Iklan Anda ditampilkan kepada ribuan calon penyewa setiap harinya, meningkatkan peluang properti cepat tersewa.',
-      'fa-globe'
+      faGlobe
     ],
     [
       'Fitur Terpadu',
       'TempatSewa.Com menyediakan sistem pencarian, pemasaran, dan pengelolaan properti dalam satu platform yang efisien.',
-      'fa-layer-group'
+      faLayerGroup
     ]
   ];
 
@@ -27,7 +30,7 @@ export default function Reason() {
           <div className="col-md-4" key={i}>
             <div className="p-4 rounded-3 shadow-sm h-100 bg-white border">
               <div className="mb-3 text-primary">
-                <i className={`fa ${icon} fa-2x`}></i>
+                <FontAwesomeIcon icon={icon} size="2x" />
               </div>
               <h5 className="fw-semibold mb-2">{title}</h5>
               <p className="text-muted small mb-0">{desc}</p>
