@@ -1,7 +1,12 @@
 'use client';
 
 import React, { Fragment, useRef } from 'react';
-import { UseModals } from '@/components'; // Pastikan ini adalah client component
+import { UseModals } from '@/components';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faCopy as faCopySolid } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const ShareModal = ({ show, onClose, data }) => {
   const copyBtnRef = useRef(null);
@@ -88,16 +93,17 @@ const ShareModal = ({ show, onClose, data }) => {
                   }`}
                   data-bs-toggle={item.platform === 'copylink' ? 'tooltip' : null}
                   data-bs-placement="top">
-                  <i
-                    className={
+                  <FontAwesomeIcon
+                    icon={
                       item.platform === 'copylink'
-                        ? 'fa-solid fa-copy'
+                        ? faCopySolid
                         : item.platform === 'whatsapp'
-                          ? 'fa-brands fa-whatsapp'
+                          ? faWhatsapp
                           : item.platform === 'facebook'
-                            ? 'fa-brands fa-facebook'
-                            : 'fa-brands fa-twitter'
-                    }></i>
+                            ? faFacebook
+                            : faTwitter
+                    }
+                  />
                   <span>{item.text}</span>
                 </button>
               </div>
