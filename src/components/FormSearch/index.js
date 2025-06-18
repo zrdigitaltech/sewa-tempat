@@ -73,7 +73,7 @@ export default function Index(props) {
             </div>
 
             {/* Harga Maksimal */}
-            <div className="pe-2" style={{ minWidth: '180px' }}>
+            <div className="pe-2" style={{ minWidth: '200px' }}>
               <div className="input-group">
                 <span className="bg-primary input-group-text text-white">Rp</span>
                 <input
