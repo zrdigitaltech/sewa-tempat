@@ -65,7 +65,8 @@ const Index = () => {
         bio: 'Profil penulis belum tersedia.',
         socials: {},
         slug: '/pemilik/' + slug,
-        nama: slug
+        nama: slug,
+        no_whatsapp: profile?.no_whatsapp || '+62812xxxx'
       }
     );
   }, [dispatch, slug]);

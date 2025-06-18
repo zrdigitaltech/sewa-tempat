@@ -8,32 +8,32 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: `Tentang ${data?.name}`,
-      description: `${data?.bio || 'Informasi belum tersedia.'}`
+      title: `${data?.name} - ${data?.bio}`,
+      description: `${data?.bio}`
     };
   }
 
   return {
-    title: `${data.title} | tempatSewa.Com`,
-    description: data.deskripsi || 'Baca panduan lengkap seputar properti di tempatSewa.Com.',
+    title: `${data?.name} - ${data?.bio}`,
+    description: data?.bio,
     openGraph: {
-      title: `${data.title} | tempatSewa.Com`,
-      description: data.deskripsi,
-      url: `${process.env.NEXT_PUBLIC_DOMAIN || ''}/panduan/${slug}`,
+      title: `${data?.name} - ${data?.bio}`,
+      description: data.bio,
+      url: `${process.env.NEXT_PUBLIC_DOMAIN || ''}/pemilik/${slug}`,
       images: [
         {
-          url: data.image || 'https://placehold.co/722x358',
+          url: data?.image || 'https://placehold.co/722x358',
           width: 1200,
           height: 630,
-          alt: data.title
+          alt: `${data?.name} - ${data?.bio}`
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${data.title} | tempatSewa.Com`,
-      description: data.deskripsi,
-      images: [data?.image || 'https://placehold.co/1200x630?text=Panduan+Properti']
+      title: `${data?.name} - ${data?.bio}`,
+      description: data.bio,
+      images: [data?.image || 'https://placehold.co/1200x630?text=Pemilik+Properti']
     }
   };
 }
