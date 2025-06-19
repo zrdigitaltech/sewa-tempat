@@ -88,8 +88,6 @@ const IndexUlasan = (props) => {
           komentar: formData.komentar.trim()
         };
 
-        console.log('Data submit:', bodyFormData);
-
         // Contoh fetch POST
         const result = await dispatch(submitUlasanPengguna(bodyFormData));
         if (result.success) {

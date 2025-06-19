@@ -69,7 +69,6 @@ const Verifikasi = (props) => {
     try {
       setIsSendingOtp(true);
       // TODO: Panggil API kirim ulang OTP di sini (misalnya await sendOtpAPI(formData.phone))
-      console.log('Mengirim ulang OTP ke +62' + formData.phone);
 
       setTimer(60);
     } catch (err) {
@@ -81,7 +80,6 @@ const Verifikasi = (props) => {
 
   const handleSubmitOtp = async () => {
     const kodeOtp = otp.join('');
-    console.log('Submit OTP:', kodeOtp);
 
     const otpBenar = '123';
 
@@ -93,7 +91,6 @@ const Verifikasi = (props) => {
         const response = await dispatch(submitVerifikasi(otp));
 
         if (response.success) {
-          console.log('Submit berhasil:', response.data);
           // Lanjutkan ke langkah berikutnya (tutup modal, redirect, dsb.)
         } else {
           console.error('Gagal submit:', response.error);

@@ -84,8 +84,6 @@ const Index = (props) => {
     if (validate()) {
       setIsSubmitting(true);
       try {
-        console.log('Form data valid:', formData);
-
         // Kirim ke server
         const result = await dispatch(submitHubungiPengiklanProperti(formData));
         if (result.success) {

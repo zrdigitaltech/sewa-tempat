@@ -142,8 +142,6 @@ const Index = (props) => {
           tipe_properti: formData.tipe_properti // ubah array jadi string .join(',')
         };
 
-        console.log('Form data valid:', bodyFormData);
-
         // Kirim ke server
         const result = await dispatch(submitKonsultasi(formData));
         if (result.success) {

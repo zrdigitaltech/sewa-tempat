@@ -83,8 +83,6 @@ const Index = (props) => {
           userType: formData.userType
         };
 
-        console.log('Data submit:', bodyFormData);
-
         // Contoh fetch POST
         const result = await dispatch(submitBeriSaran(bodyFormData));
         if (result.success) {

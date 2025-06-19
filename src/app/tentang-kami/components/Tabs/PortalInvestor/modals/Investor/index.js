@@ -163,8 +163,6 @@ const Index = (props) => {
           tipe_properti: formData.tipe_properti
         };
 
-        console.log('Data submit:', bodyFormData);
-
         // Contoh fetch POST
         const result = await dispatch(submitInvestor(bodyFormData));
         if (result.success) {
