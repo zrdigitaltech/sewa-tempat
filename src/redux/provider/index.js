@@ -10,7 +10,8 @@ import {
   UseFooter,
   UseRouteLoading,
   UseScripts,
-  UseScrollToTop
+  UseScrollToTop,
+  UseScrollToTopButtons
 } from '@/components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -40,6 +41,7 @@ export default function Index({ children }) {
       {shouldShowCTA && <UseCTA />}
       <UseFooter />
       <UseScripts />
+      <UseScrollToTopButtons />
     </Provider>
   );
 }

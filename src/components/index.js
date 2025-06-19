@@ -9,6 +9,7 @@ export { default as UseModals } from './Modals';
 export * from './PropertiCard';
 export { default as UseRouteLoading } from './RouteLoading';
 export { default as UseScrollToTop } from './ScrollToTop';
+export { default as UseScrollToTopButtons } from './ScrollToTop/buttons';
 export { default as UseScripts } from './Scripts';
 export { default as UseToasts } from './Toasts';
 export { default as UseTooltips } from './Tooltips';
