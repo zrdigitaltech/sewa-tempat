@@ -24,12 +24,12 @@ export default function Index() {
             efisien.
           </p>
 
-          <span className="fw-bold mb-3">Pelajari Selengkapnya</span>
+          <span className="fw-bold mb-3 fs-5">Pelajari Selengkapnya</span>
           {/* Link scroll ke bawah */}
           <a
             href="#ProdukBooster"
             className="text-white text-decoration-none mt-2 d-flex align-items-center gap-2">
-            <FontAwesomeIcon icon={faChevronCircleDown} className="fa-lg text-primary" />
+            <FontAwesomeIcon icon={faChevronCircleDown} className="text-primary fs-2" />
           </a>
         </div>
       </div>

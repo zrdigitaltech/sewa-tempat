@@ -1,5 +1,5 @@
 'use client';
-import { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 export default function Index(props) {
   const [activeId, setActiveId] = useState('');

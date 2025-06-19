@@ -34,6 +34,7 @@ export default function Index(props) {
             handleChange={handleChange}
             isLoading={isLoadingData?.tipeProperti}
             setIsLoading={setIsLoadingData}
+            title="Semua Properti"
           />
         </div>
 

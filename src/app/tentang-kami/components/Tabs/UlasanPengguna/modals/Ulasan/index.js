@@ -1,3 +1,4 @@
+'use client';
 import React, { Fragment, useState } from 'react';
 import Modals from '@/components/Modals';
 import classNames from 'classnames';
@@ -5,6 +6,9 @@ import UlasanBerhasil from './UlasanBerhasil';
 import { UseToasts } from '@/components';
 import { useDispatch } from 'react-redux';
 import { submitUlasanPengguna } from '@/redux/action/ulasanPengguna/creator';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 
 const IndexUlasan = (props) => {
   const { show, onClose } = props;
@@ -157,14 +161,16 @@ const IndexUlasan = (props) => {
               <label className="form-label">Rating</label>
               <div>
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <i
+                  <FontAwesomeIcon
                     key={star}
-                    className={classNames('fas fa-star me-1', {
+                    icon={solidStar}
+                    className={classNames('me-1', {
                       'text-warning': formData.rating >= star,
                       'text-secondary': formData.rating < star,
                       'cursor-pointer': true
                     })}
-                    onClick={() => handleRating(star)}></i>
+                    onClick={() => handleRating(star)}
+                  />
                 ))}
               </div>
               {errors.rating && <small className="text-danger">{errors.rating}</small>}
