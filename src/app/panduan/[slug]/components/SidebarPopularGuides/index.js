@@ -27,7 +27,8 @@ const SidebarPopularGuides = (props) => {
               <li key={item.slug} className="d-flex mb-3">
                 <Link
                   href={`/panduan/${item.slug}`}
-                  className="d-flex text-decoration-none w-100 gap-2">
+                  className="d-flex text-decoration-none w-100 gap-2"
+                >
                   <div>
                     <img
                       src={item.image}
@@ -43,7 +44,8 @@ const SidebarPopularGuides = (props) => {
                   <div>
                     <div
                       className="fw-semibold text-dark ST--Text lh-sm"
-                      title={item.title.length > 50 ? item.title : ''}>
+                      title={item.title.length > 50 ? item.title : ''}
+                    >
                       <small>{item.title}</small>
                     </div>
                     <div className="text-muted">

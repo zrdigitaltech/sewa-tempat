@@ -61,7 +61,8 @@ export default function HomeHeroSection() {
         backgroundPosition: 'center',
         position: 'relative',
         padding: '3rem 0'
-      }}>
+      }}
+    >
       {/* Overlay hitam */}
       <div
         className="position-absolute w-100 h-100"

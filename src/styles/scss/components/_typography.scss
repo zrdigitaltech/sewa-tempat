@@ -1,5 +1,5 @@
 /* Typography */
-@use '../base/variables'as *;
+@use '../base/variables' as *;
 
 h1 {
   font-size: clamp($font-size-xl, $vw-xl, $font-size-xxl);
@@ -40,7 +40,6 @@ span {
 
 @mixin ST-text-white {
   color: $white !important;
-
 }
 
 .text-white {

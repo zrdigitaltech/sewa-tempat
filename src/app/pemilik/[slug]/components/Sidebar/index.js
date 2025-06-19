@@ -26,7 +26,8 @@ const Index = (props) => {
       className="card shadow p-4 position-sticky border-0 d-none d-lg-block"
       style={{
         top: '100px' // jarak dari atas saat sticky
-      }}>
+      }}
+    >
       <div className="align-items-center d-flex mb-3">
         <div className="d-flex">
           <div className="position-relative me-2" style={{ width: '80px' }}>
@@ -50,7 +51,8 @@ const Index = (props) => {
                   background: 'white',
                   borderRadius: '50%',
                   fontSize: '14px'
-                }}></i>
+                }}
+              ></i>
             )}
           </div>
         </div>
@@ -82,7 +84,8 @@ const Index = (props) => {
 
           <button
             className="btn btn-outline-dark border border-black w-100 mt-2"
-            onClick={handleBagikan}>
+            onClick={handleBagikan}
+          >
             <FontAwesomeIcon icon={faShareAlt} className="me-1" /> Bagikan
           </button>
         </Fragment>

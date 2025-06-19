@@ -68,7 +68,8 @@ const Index = (props) => {
               className={`btn ${
                 formData.verifikasi === 'whatsapp' ? 'btn-primary' : 'btn-outline-primary'
               }`}
-              htmlFor="verifikasi-wa">
+              htmlFor="verifikasi-wa"
+            >
               WhatsApp
             </label>
           </div>
@@ -87,7 +88,8 @@ const Index = (props) => {
               className={`btn ${
                 formData.verifikasi === 'sms' ? 'btn-primary' : 'btn-outline-primary'
               }`}
-              htmlFor="verifikasi-sms">
+              htmlFor="verifikasi-sms"
+            >
               SMS
             </label>
           </div>

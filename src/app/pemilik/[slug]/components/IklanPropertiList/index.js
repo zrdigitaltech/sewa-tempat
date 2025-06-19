@@ -89,7 +89,8 @@ const Index = (props) => {
           {/* Header Kolom (Desktop) */}
           <div
             className="d-none d-md-flex px-1 fw-semibold text-muted mb-2"
-            style={{ fontSize: '0.9rem' }}>
+            style={{ fontSize: '0.9rem' }}
+          >
             <div style={{ flex: 1 }}>Iklan</div>
             <div style={{ width: 250 }}>Spesifikasi</div>
             <div style={{ width: 140 }} className="text-end">

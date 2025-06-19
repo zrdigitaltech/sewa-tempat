@@ -55,7 +55,8 @@ const Index = (props) => {
             <span
               className="text-primary cursor-pointer"
               onClick={() => handleCopy(dataItem?.no_whatsapp)}
-              ref={copyBtnRef}>
+              ref={copyBtnRef}
+            >
               {dataItem?.no_whatsapp} <FontAwesomeIcon icon={faCopy} />
             </span>
 

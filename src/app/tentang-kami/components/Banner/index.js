@@ -61,7 +61,8 @@ export default function SearchBannerSection() {
         backgroundPosition: 'center',
         position: 'relative',
         padding: '3rem 0'
-      }}>
+      }}
+    >
       {/* Overlay hitam */}
       <div className="position-absolute top-0 start-0 w-100 h-100" />
 

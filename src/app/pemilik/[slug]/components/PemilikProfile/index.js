@@ -41,7 +41,8 @@ const PemilikProfileCard = ({
               background: 'white',
               borderRadius: '50%',
               fontSize: '30px'
-            }}></i>
+            }}
+          ></i>
         </div>
         <div className="badge bg-primary-subtle text-primary rounded-pill">
           <small>Pemilik Properti</small>
@@ -69,7 +70,8 @@ const PemilikProfileCard = ({
               href={profile.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faInstagram} className="me-1" /> Instagram
             </a>
           )}
@@ -78,7 +80,8 @@ const PemilikProfileCard = ({
               href={profile.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faLinkedin} className="me-1" /> LinkedIn
             </a>
           )}
@@ -87,7 +90,8 @@ const PemilikProfileCard = ({
               href={profile.socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faFacebook} className="me-1" /> Facebook
             </a>
           )}
@@ -96,7 +100,8 @@ const PemilikProfileCard = ({
               href={profile.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faXTwitter} className="me-1" /> Twitter
             </a>
           )}
@@ -105,10 +110,12 @@ const PemilikProfileCard = ({
         {/* Action Buttons */}
         <div
           id="actionButtons"
-          className="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2">
+          className="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2"
+        >
           <button
             className="btn btn-success text-white d-flex align-items-center"
-            onClick={handleWhatsApp}>
+            onClick={handleWhatsApp}
+          >
             <FontAwesomeIcon icon={faWhatsapp} className="me-1" /> WhatsApp
           </button>
           <button className="btn btn-primary d-flex align-items-center" onClick={handlePhone}>
@@ -118,7 +125,8 @@ const PemilikProfileCard = ({
           </button>
           <button
             className="btn btn-outline-dark border border-black d-flex align-items-center"
-            onClick={handleBagikan}>
+            onClick={handleBagikan}
+          >
             <FontAwesomeIcon icon={faShareAlt} className="me-1" /> Bagikan
           </button>
         </div>

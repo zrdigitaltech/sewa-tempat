@@ -224,7 +224,8 @@ const Index = (props) => {
               type="button"
               className="btn btn-primary w-100"
               onClick={handleSubmit}
-              disabled={isSubmitting}>
+              disabled={isSubmitting}
+            >
               {isSubmitting ? 'Memproses...' : 'Kirim Masukan'}
             </button>
           </Fragment>

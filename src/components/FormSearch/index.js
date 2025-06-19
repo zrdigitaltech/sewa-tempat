@@ -57,7 +57,8 @@ export default function Index(props) {
               <button
                 className="btn btn-warning w-100 fw-semibold rounded-3"
                 onClick={handleSearch}
-                disabled={isLoading || isLoadingData?.tipeProperti}>
+                disabled={isLoading || isLoadingData?.tipeProperti}
+              >
                 {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
               </button>
             </div>
@@ -91,7 +92,8 @@ export default function Index(props) {
             {/* Tipe Sewa */}
             <div
               className={`${tipeProperti === 'kost' || isApartemenOrRumah ? 'pe-2' : ''}`}
-              style={{ minWidth: '180px' }}>
+              style={{ minWidth: '180px' }}
+            >
               <TipeSewa tipeSewa={formData?.tipeSewa} handleChange={handleChange} />
             </div>
 
@@ -118,7 +120,8 @@ export default function Index(props) {
               <button
                 className="btn btn-warning w-100 fw-semibold rounded-3"
                 onClick={handleSearch}
-                disabled={isLoading || isLoadingData?.tipeProperti}>
+                disabled={isLoading || isLoadingData?.tipeProperti}
+              >
                 {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
               </button>
             </div>
@@ -128,7 +131,8 @@ export default function Index(props) {
             <button
               className="btn btn-warning w-100 fw-semibold rounded-3"
               onClick={handleSearch}
-              disabled={isLoading || isLoadingData?.tipeProperti}>
+              disabled={isLoading || isLoadingData?.tipeProperti}
+            >
               {isLoading || isLoadingData?.tipeProperti ? 'Memuat...' : 'Cari Properti'}
             </button>
           </div>

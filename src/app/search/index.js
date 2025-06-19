@@ -186,7 +186,8 @@ export default function Index() {
       <section
         className={classNames('mt-3', {
           'mb-5': !(tipeProperti && searchResultList?.length === 0)
-        })}>
+        })}
+      >
         <div className="container">
           {/* Form Search */}
           <div className="mb-5">
@@ -220,7 +221,8 @@ export default function Index() {
             )}
 
             <div
-              className={`row ${searchResultList?.length === 0 && formData?.viewMode !== 'grid' && 'pb-5'}`}>
+              className={`row ${searchResultList?.length === 0 && formData?.viewMode !== 'grid' && 'pb-5'}`}
+            >
               {formData?.viewMode === 'grid' ? (
                 <Fragment>
                   <div className={`col-12 mb-3`}>
@@ -260,7 +262,8 @@ export default function Index() {
                     <div className="text-center">
                       <button
                         className="btn btn-warning fw-semibold rounded-3 px-5"
-                        onClick={handleLoadMore}>
+                        onClick={handleLoadMore}
+                      >
                         Muat Lainnya
                       </button>
                     </div>
@@ -329,7 +332,8 @@ export default function Index() {
                       <div className="text-center mt-4">
                         <button
                           className="btn btn-warning fw-semibold rounded-3 px-5"
-                          onClick={handleLoadMore}>
+                          onClick={handleLoadMore}
+                        >
                           Muat Lainnya
                         </button>
                       </div>
@@ -390,7 +394,8 @@ export default function Index() {
                       top: '50%',
                       right: '30px',
                       transform: 'translateY(-50%)'
-                    }}>
+                    }}
+                  >
                     <button className="btn btn-primary btn-lg">
                       <FontAwesomeIcon icon={faWhatsapp} className="pe-1" /> Konsultasi Gratis
                     </button>

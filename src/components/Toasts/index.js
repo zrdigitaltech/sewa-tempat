@@ -44,20 +44,23 @@ const ToastClient = ({ message, show, onClose }) => {
   return createPortal(
     <div
       className="toast-container position-fixed bottom-0 start-50 p-3 translate-middle-x"
-      style={{ zIndex: 9999999 }}>
+      style={{ zIndex: 9999999 }}
+    >
       <div
         className="toast align-items-center text-bg-dark border-0 shadow"
         role="alert"
         aria-live="assertive"
         aria-atomic="true"
-        ref={toastRef}>
+        ref={toastRef}
+      >
         <div className="d-flex">
           <div className="toast-body">{message}</div>
           <button
             type="button"
             className="btn-close btn-close-white me-2 m-auto"
             data-bs-dismiss="toast"
-            aria-label="Close"></button>
+            aria-label="Close"
+          ></button>
         </div>
       </div>
     </div>,

@@ -26,7 +26,8 @@ const Index = (props) => {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title={label}>
+        data-bs-title={label}
+      >
         {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {total} {label}
       </span>
@@ -47,7 +48,8 @@ const Index = (props) => {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title={label}>
+        data-bs-title={label}
+      >
         {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {value} {label}
       </span>
@@ -87,7 +89,8 @@ const Index = (props) => {
           {/* Wrapper Spesifikasi dan Harga */}
           <div
             className="d-flex justify-content-between mt-3 mt-md-0"
-            style={{ width: 400, maxWidth: '100%' }}>
+            style={{ width: 400, maxWidth: '100%' }}
+          >
             {/* Kolom Spesifikasi */}
             <div className="d-flex flex-column justify-content-center gap-1 small text-dark ms-lg-2">
               {renderSingleInteriorCard(

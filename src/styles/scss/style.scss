@@ -4,20 +4,22 @@
 @use 'sass:math';
 
 // ✅ STEP 1: Bootstrap functions first (for variable overrides)
-@use 'bootstrap/scss/functions'as *;
+@use 'bootstrap/scss/functions' as *;
 
 // ✅ STEP 2: Custom variables (yang override variabel Bootstrap)
-@use 'base/variables'as *;
+@use 'base/variables' as *;
 
 // ✅ STEP 3: Load Bootstrap dengan variable override
-@forward 'bootstrap/scss/bootstrap'with ($primary: $primary,
+@forward 'bootstrap/scss/bootstrap' with (
+  $primary: $primary,
   $secondary: $secondary,
   $success: $success,
   $danger: $danger,
   $warning: $warning,
   $info: $info,
   $font-size-base: $font-size-base,
-  $font-family-base: $font-family-body);
+  $font-family-base: $font-family-body
+);
 
 // ✅ STEP 4: External & custom styles
 @use 'base/reset';

@@ -1,7 +1,8 @@
 {
   "short_name": "Adira",
   "name": "Adira",
-  "icons": [{
+  "icons": [
+    {
       "src": "/assets/images/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"

@@ -88,7 +88,8 @@ export default function Index(props) {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title={label}>
+        data-bs-title={label}
+      >
         {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {total}
       </small>
@@ -109,7 +110,8 @@ export default function Index(props) {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title={label}>
+        data-bs-title={label}
+      >
         {iconClass && <FontAwesomeIcon icon={iconClass} className="me-1" />}
         {value}
       </small>
@@ -158,7 +160,8 @@ export default function Index(props) {
                       ?.map((item, index) => (
                         <span
                           key={index}
-                          className="bg-primary-subtle align-content-center badge text-secondary text-capitalize">
+                          className="bg-primary-subtle align-content-center badge text-secondary text-capitalize"
+                        >
                           {item.fasilitas && item.fasilitas?.join(', ')}
                         </span>
                       ))}
@@ -177,7 +180,8 @@ export default function Index(props) {
 
             <span
               className="card-text fw-semibold mb-0 ST--Text"
-              title={nama.length > 50 ? nama : ''}>
+              title={nama.length > 50 ? nama : ''}
+            >
               {nama}
             </span>
             <p className={`text-muted small mb-0 text-truncate ${showTipeKamar && 'mb-1'}`}>
@@ -265,12 +269,14 @@ export default function Index(props) {
                         key={index}
                         role="button"
                         tabIndex={0}
-                        aria-label={`${label} ${index + 1}`}>
+                        aria-label={`${label} ${index + 1}`}
+                      >
                         ●
                       </span>
                     );
                   }}
-                  className="overflow-hidden">
+                  className="overflow-hidden"
+                >
                   {image?.map((x, i) => (
                     <div
                       key={x || i}
@@ -286,7 +292,8 @@ export default function Index(props) {
                         }
                       }}
                       style={{ cursor: 'pointer' }}
-                      className="bg-secondary-subtle">
+                      className="bg-secondary-subtle"
+                    >
                       <img
                         src={x}
                         className="w-100"
@@ -306,7 +313,8 @@ export default function Index(props) {
                   className={`ST__badge ${
                     (member === 'Super Featured' && 'bg-primary') ||
                     (member === 'Premium' && 'bg-warning')
-                  } `}>
+                  } `}
+                >
                   <FontAwesomeIcon icon={faBolt} />
                   <span>{member}</span>
                 </div>
@@ -320,7 +328,8 @@ export default function Index(props) {
                   href={`/properti/${slug}`}
                   target="_blank"
                   className=" text-dark p-2"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   {CardContent()}
                 </a>
               ) : (
@@ -335,7 +344,8 @@ export default function Index(props) {
                   <div className="d-flex align-items-center">
                     <div
                       className="position-relative me-2 d-none d-sm-block"
-                      style={{ width: '48px', height: '48px' }}>
+                      style={{ width: '48px', height: '48px' }}
+                    >
                       {isLoading ? (
                         <Skeleton circle height={48} width={48} />
                       ) : (
@@ -376,7 +386,8 @@ export default function Index(props) {
                         <>
                           <strong
                             className="d-block text-truncate"
-                            title={pemilik?.length > (isMobile375 ? 5 : 15) ? pemilik : ''}>
+                            title={pemilik?.length > (isMobile375 ? 5 : 15) ? pemilik : ''}
+                          >
                             {(pemilik || '').length > (isMobile375 ? 5 : 15)
                               ? pemilik.substring(0, isMobile375 ? 5 : 15) + '...'
                               : pemilik}{' '}
@@ -404,7 +415,8 @@ export default function Index(props) {
                       ) : (
                         <button
                           className="w-100 btn btn-outline-primary ST__kontrol-btn"
-                          onClick={handlePhone}>
+                          onClick={handlePhone}
+                        >
                           <FontAwesomeIcon icon={faPhone} />
                         </button>
                       )}
@@ -415,7 +427,8 @@ export default function Index(props) {
                       ) : (
                         <button
                           className="w-100 btn btn-success text-white ST__kontrol-btn"
-                          onClick={handleWhatsApp}>
+                          onClick={handleWhatsApp}
+                        >
                           <FontAwesomeIcon icon={faWhatsapp} className="me-1" /> WhatsApp
                         </button>
                       )}
@@ -430,7 +443,8 @@ export default function Index(props) {
                   style={{
                     top: '3px',
                     right: '8px'
-                  }}>
+                  }}
+                >
                   <Skeleton width={40} height={40} borderRadius={8} />
                 </div>
               ) : (
@@ -443,10 +457,12 @@ export default function Index(props) {
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
                   data-bs-custom-class="custom-tooltip"
-                  data-bs-title="Bagikan">
+                  data-bs-title="Bagikan"
+                >
                   <button
                     className="btn bg-white shadow"
-                    onClick={() => (setShowShare(true), setDataItem())}>
+                    onClick={() => (setShowShare(true), setDataItem())}
+                  >
                     <FontAwesomeIcon icon={faShareAlt} />
                   </button>
                 </div>

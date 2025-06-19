@@ -29,7 +29,8 @@ const AuthorProfileCard = ({ profile }) => {
               href={profile.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faInstagram} className="me-1" /> Instagram
             </a>
           )}
@@ -38,7 +39,8 @@ const AuthorProfileCard = ({ profile }) => {
               href={profile.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faLinkedin} className="me-1" /> LinkedIn
             </a>
           )}
@@ -47,7 +49,8 @@ const AuthorProfileCard = ({ profile }) => {
               href={profile.socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faFacebook} className="me-1" /> Facebook
             </a>
           )}
@@ -56,7 +59,8 @@ const AuthorProfileCard = ({ profile }) => {
               href={profile.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none text-dark d-flex align-items-center">
+              className="text-decoration-none text-dark d-flex align-items-center"
+            >
               <FontAwesomeIcon icon={faXTwitter} className="me-1" /> Twitter
             </a>
           )}

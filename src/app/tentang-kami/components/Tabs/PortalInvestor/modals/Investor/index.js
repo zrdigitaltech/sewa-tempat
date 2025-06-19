@@ -310,7 +310,8 @@ const Index = (props) => {
                               'btn-primary': isSelected,
                               'text-dark': !isSelected
                             })}
-                            htmlFor={`checkbox-${item.id}`}>
+                            htmlFor={`checkbox-${item.id}`}
+                          >
                             {item.nama}
                           </label>
                         </div>
@@ -332,7 +333,8 @@ const Index = (props) => {
               type="button"
               className="btn btn-primary w-100"
               onClick={handleSubmit}
-              disabled={isSubmitting || isLoading}>
+              disabled={isSubmitting || isLoading}
+            >
               {isSubmitting ? 'Mengirim...' : 'Ajukan Investasi'}
             </button>
           </Fragment>

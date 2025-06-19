@@ -46,12 +46,14 @@ export default function Index() {
                 <section
                   className="pb-5"
                   id="ProdukBooster"
-                  style={{ scrollMarginTop: isMobile ? '140px' : '100px' }}>
+                  style={{ scrollMarginTop: isMobile ? '140px' : '100px' }}
+                >
                   <ProdukBooster />
                 </section>
                 <section
                   id="DaftarPeminat"
-                  style={{ scrollMarginTop: isMobile ? '140px' : '100px' }}>
+                  style={{ scrollMarginTop: isMobile ? '140px' : '100px' }}
+                >
                   <DaftarPeminat />
                 </section>
               </div>

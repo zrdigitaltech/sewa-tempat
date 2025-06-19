@@ -70,12 +70,14 @@ export default function Index() {
                         e.preventDefault();
                         onClickHandler();
                       }
-                    }}>
+                    }}
+                  >
                     ●
                   </span>
                 </li>
               );
-            }}>
+            }}
+          >
             {[1, 2, 3]?.map((x, i) => (
               <div key={x || i}>
                 <img
@@ -166,12 +168,14 @@ export default function Index() {
                         e.preventDefault();
                         onClickHandler();
                       }
-                    }}>
+                    }}
+                  >
                     ●
                   </span>
                 </li>
               );
-            }}>
+            }}
+          >
             {[1, 2, 3]?.map((x, i) => (
               <div key={x || i}>
                 <img

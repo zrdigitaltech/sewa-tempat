@@ -39,7 +39,8 @@ const Index = (props) => {
             style={{
               scrollSnapType: 'x mandatory',
               WebkitOverflowScrolling: 'touch'
-            }}>
+            }}
+          >
             {isLoading
               ? Array.from({ length: 5 }).map((_, index) => (
                   <div
@@ -48,7 +49,8 @@ const Index = (props) => {
                     style={{
                       width: '250px',
                       scrollSnapAlign: 'start'
-                    }}>
+                    }}
+                  >
                     <Skeleton height={200} />
                     <Skeleton count={2} />
                   </div>
@@ -60,7 +62,8 @@ const Index = (props) => {
                     style={{
                       width: '250px',
                       scrollSnapAlign: 'start'
-                    }}>
+                    }}
+                  >
                     <GridView
                       {...kontrakan}
                       btnTelp={false}

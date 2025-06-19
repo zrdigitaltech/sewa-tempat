@@ -78,7 +78,8 @@ export default function KategoriTempat() {
     <div
       className={`${className} ST--arrow ST--arrow--next`}
       onClick={onClick}
-      style={{ zIndex: 10 }}>
+      style={{ zIndex: 10 }}
+    >
       <FontAwesomeIcon icon={faChevronRight} className="text-dark fs-4" />
     </div>
   );
@@ -87,7 +88,8 @@ export default function KategoriTempat() {
     <div
       className={`${className} ST--arrow ST--arrow--prev`}
       onClick={onClick}
-      style={{ zIndex: 10 }}>
+      style={{ zIndex: 10 }}
+    >
       <FontAwesomeIcon icon={faChevronLeft} className="text-dark fs-4" />
     </div>
   );
@@ -134,7 +136,8 @@ export default function KategoriTempat() {
         {isLoading ? (
           <div
             className="d-flex flex-nowrap justify-content-start gap-3 overflow-auto px-2 py-4"
-            style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth' }}>
+            style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth' }}
+          >
             {Array.from({ length: 6 }).map((_, index) => (
               <div
                 key={index}
@@ -144,7 +147,8 @@ export default function KategoriTempat() {
                   maxWidth: 'calc(33.333% - 1rem)',
                   minWidth: '140px',
                   flexBasis: '140px'
-                }}>
+                }}
+              >
                 <div className="card text-center border-0 shadow h-100 rounded-3 overflow-hidden">
                   <div className="card-body py-4">
                     <div className="fs-2 mb-2">
@@ -163,7 +167,8 @@ export default function KategoriTempat() {
                 <div key={index} className="p-2">
                   <Link
                     href={`/search?keyword=&tipeProperti=${cat.slug}&viewMode=${viewMode}`}
-                    className="text-dark">
+                    className="text-dark"
+                  >
                     <div className="card text-center border-0 shadow-sm h-100">
                       <div className="card-body py-4">
                         <div className="fs-2 mb-2">{iconTipeProperti(cat?.nama)}</div>

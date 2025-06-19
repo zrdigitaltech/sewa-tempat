@@ -15,7 +15,8 @@ export default function Index() {
         backgroundPosition: 'center',
         padding: '3rem 0',
         scrollBehavior: 'smooth'
-      }}>
+      }}
+    >
       <div className="container position-relative h-100 text-primary">
         <div className="d-flex flex-column justify-content-center align-items-center text-center h-100">
           <h1 className="fw-bold display-5 mb-3">Pasang & Kelola Iklan Lebih Gampang</h1>
@@ -28,7 +29,8 @@ export default function Index() {
           {/* Link scroll ke bawah */}
           <a
             href="#ProdukBooster"
-            className="text-white text-decoration-none mt-2 d-flex align-items-center gap-2">
+            className="text-white text-decoration-none mt-2 d-flex align-items-center gap-2"
+          >
             <FontAwesomeIcon icon={faChevronCircleDown} className="text-primary fs-2" />
           </a>
         </div>

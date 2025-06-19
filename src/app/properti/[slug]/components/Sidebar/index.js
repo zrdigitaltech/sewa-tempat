@@ -25,7 +25,8 @@ const Index = (props) => {
       className="card shadow p-4 position-sticky border-0"
       style={{
         top: '135px' // jarak dari atas saat sticky
-      }}>
+      }}
+    >
       {isLoading ? (
         <div className="text-center">
           <Skeleton width={150} height={30} />
@@ -45,7 +46,8 @@ const Index = (props) => {
       <div className="d-flex justify-content-lg-center mb-3">
         <Link
           href={`/pemilik/${kontrakanDetail?.pemilikSlug}`}
-          className="text-lg-center position-relative d-flex d-lg-block">
+          className="text-lg-center position-relative d-flex d-lg-block"
+        >
           <div className="d-flex justify-content-lg-center">
             <div className="position-relative me-2 me-lg-0" style={{ width: '80px' }}>
               {isLoading ? (
@@ -68,7 +70,8 @@ const Index = (props) => {
                     background: 'white',
                     borderRadius: '50%',
                     fontSize: '14px'
-                  }}></i>
+                  }}
+                ></i>
               )}
             </div>
           </div>
@@ -82,7 +85,8 @@ const Index = (props) => {
               <Fragment>
                 <strong
                   className="d-block ST--Text"
-                  title={kontrakanDetail?.pemilik?.length > 30 ? kontrakanDetail?.pemilik : ''}>
+                  title={kontrakanDetail?.pemilik?.length > 30 ? kontrakanDetail?.pemilik : ''}
+                >
                   {(kontrakanDetail?.pemilik || '').length > 30
                     ? kontrakanDetail.pemilik.substring(0, 30) + '...'
                     : kontrakanDetail?.pemilik}
@@ -126,7 +130,8 @@ const Index = (props) => {
             right: '0',
             bottom: '-2rem'
           }}
-          onClick={handleLaporkanIklan}>
+          onClick={handleLaporkanIklan}
+        >
           Laporkan Iklan
         </small>
       )}

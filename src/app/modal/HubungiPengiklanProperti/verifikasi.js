@@ -185,7 +185,8 @@ const Verifikasi = (props) => {
               <button
                 disabled={timer > 0 || isSendingOtp}
                 onClick={handleResendOtp}
-                className="btn btn-link  text-primary fw-medium p-0">
+                className="btn btn-link  text-primary fw-medium p-0"
+              >
                 {timer === 0 && !isSendingOtp && (
                   <FontAwesomeIcon icon={faArrowRotateRight} className="me-1" />
                 )}
@@ -198,7 +199,8 @@ const Verifikasi = (props) => {
                   <Fragment>
                     <span
                       className="text-primary fw-medium cursor-pointer"
-                      onClick={handleGantiMetode}>
+                      onClick={handleGantiMetode}
+                    >
                       Kirim Via {formData?.verifikasi !== 'whatsapp' ? 'WhatsApp' : 'SMS'}
                     </span>{' '}
                     atau{' '}
@@ -210,7 +212,8 @@ const Verifikasi = (props) => {
                   onClick={() => {
                     handleGantiNomor();
                     resetState();
-                  }}>
+                  }}
+                >
                   Ganti Nomor HP
                 </span>
               </p>

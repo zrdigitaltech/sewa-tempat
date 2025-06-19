@@ -34,18 +34,21 @@ export default function Tabs() {
     <Fragment>
       <section
         className="bg-light pt-3 border-top border-bottom position-sticky mb-3 d-block d-lg-none"
-        style={{ top: '4.5rem', zIndex: 1 }}>
+        style={{ top: '4.5rem', zIndex: 1 }}
+      >
         <div className="container-fluid px-3">
           <div className="ST-nav-tabs-scroll-wrapper overflow-auto">
             <div className="d-flex flex-nowrap justify-content-center gap-4 ST-nav-tabs-custom">
               <a
                 href="#ProdukBooster"
-                className={`cursor-pointer tab-link ${activeId === 'ProdukBooster' ? 'active' : ''}`}>
+                className={`cursor-pointer tab-link ${activeId === 'ProdukBooster' ? 'active' : ''}`}
+              >
                 Produk Booster
               </a>
               <a
                 href="#DaftarPeminat"
-                className={`cursor-pointer tab-link ${activeId === 'DaftarPeminat' ? 'active' : ''}`}>
+                className={`cursor-pointer tab-link ${activeId === 'DaftarPeminat' ? 'active' : ''}`}
+              >
                 Daftar Peminat
               </a>
             </div>

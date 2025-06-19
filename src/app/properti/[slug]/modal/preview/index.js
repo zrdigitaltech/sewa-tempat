@@ -54,7 +54,8 @@ const PreviewModal = (props) => {
               showIndicators={false}
               swipeable={true}
               emulateTouch={true}
-              showThumbs={true}>
+              showThumbs={true}
+            >
               {kontrakanDetail?.image?.map((img, index) => (
                 <div key={index}>
                   <img
@@ -78,7 +79,8 @@ const PreviewModal = (props) => {
                   bottom: '7rem',
                   left: isMobile ? '8px' : '30%',
                   transform: isMobile ? '' : 'translateX(-50%)'
-                }}>
+                }}
+              >
                 <button className="btn bg-white w-100 shadow" onClick={() => setShowShare(true)}>
                   <FontAwesomeIcon icon={faShareAlt} className="me-1" />{' '}
                   <span className="d-none d-lg-inline">Bagikan</span>
@@ -91,7 +93,8 @@ const PreviewModal = (props) => {
                   bottom: '7rem',
                   right: isMobile ? '8px' : '4%',
                   transform: isMobile ? '' : 'translateX(-50%)'
-                }}>
+                }}
+              >
                 <div>
                   <button className="btn btn-primary w-100 shadow" onClick={handlePhone}>
                     <FontAwesomeIcon icon={faPhone} />{' '}
@@ -101,7 +104,8 @@ const PreviewModal = (props) => {
                 <div>
                   <button
                     className="btn btn-success w-100 text-white shadow"
-                    onClick={handleWhatsApp}>
+                    onClick={handleWhatsApp}
+                  >
                     <FontAwesomeIcon icon={faWhatsapp} /> Tanya Detail
                   </button>
                 </div>
@@ -127,7 +131,8 @@ const PreviewModal = (props) => {
                 <div>
                   <button
                     className="btn btn-success w-100 text-white shadow"
-                    onClick={handleWhatsApp}>
+                    onClick={handleWhatsApp}
+                  >
                     <FontAwesomeIcon icon={faWhatsapp} /> Tanya Detail
                   </button>
                 </div>

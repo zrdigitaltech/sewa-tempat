@@ -28,10 +28,12 @@ const Index = (props) => {
               onClick={() => {
                 setShowKonsultasi(true);
                 onClose();
-              }}>
+              }}
+            >
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: 48, height: 48 }}>
+                style={{ width: 48, height: 48 }}
+              >
                 <FontAwesomeIcon icon={faHouseCircleCheck} className="fs-4 text-primary" />
               </div>
               <div>
@@ -49,10 +51,12 @@ const Index = (props) => {
               onClick={() => {
                 setShowBeriSaran(true);
                 onClose();
-              }}>
+              }}
+            >
               <div
                 className="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: 48, height: 48 }}>
+                style={{ width: 48, height: 48 }}
+              >
                 <FontAwesomeIcon icon={faCommentDots} className="fs-4 text-info" />
               </div>
               <div>

@@ -174,7 +174,8 @@ const Index = () => {
                 router.push(
                   `/search?keyword=&tipeProperti=${kontrakanDetail?.tipe_properti?.nama.toLowerCase()}&viewMode=list`
                 )
-              }>
+              }
+            >
               <FontAwesomeIcon icon={faArrowLeft} /> Kembali
             </button>
           )}
@@ -225,7 +226,8 @@ const Index = () => {
                             kontrakanDetail?.member === 'Super Featured'
                               ? 'text-bg-primary'
                               : 'text-bg-warning'
-                          }`}>
+                          }`}
+                        >
                           <FontAwesomeIcon icon={faBolt} className="pe-1" />
                           {kontrakanDetail?.member}
                         </span>
@@ -255,7 +257,8 @@ const Index = () => {
                 <Fragment>
                   <h2
                     className="fw-bold text-primary mb-0 ST--Text"
-                    title={kontrakanDetail?.nama?.length > 50 ? kontrakanDetail?.nama : null}>
+                    title={kontrakanDetail?.nama?.length > 50 ? kontrakanDetail?.nama : null}
+                  >
                     {kontrakanDetail?.nama}
                   </h2>
                   <div className="mb-3">
@@ -269,7 +272,8 @@ const Index = () => {
                         isPageVerified
                           ? handleGoToWhatsApp(kontrakanDetail?.no_whatsapp)
                           : setShowWhatsApp(true)
-                      }>
+                      }
+                    >
                       <FontAwesomeIcon icon={faMapLocationDot} className="me-1" />
                       Dapatkan Detail Lokasi
                     </button>
@@ -303,7 +307,8 @@ const Index = () => {
                                     'Semi Furnished'
                                   ? 'fa-solid fa-chair'
                                   : 'fa-solid fa-box-open'
-                            }`}></i>
+                            }`}
+                          ></i>
                           {kontrakanDetail?.kategori_interior?.kondisi_perabotan}
                         </div>
                       </div>
@@ -369,7 +374,8 @@ const Index = () => {
                         <div
                           className={`ST--DeskripsiExpandable__wrapper ${
                             isExpanded ? 'ST--DeskripsiExpandable__wrapper--expanded' : ''
-                          }`}>
+                          }`}
+                        >
                           <ul className="list-unstyled row mb-0 ST--DeskripsiExpandable__content">
                             {displayedFasilitas.map((fasilitasItem, i) => (
                               <li key={fasilitasItem?.id || i} className="col-6 mb-2">
@@ -383,7 +389,8 @@ const Index = () => {
                           <button
                             onClick={() => toggleExpand(kategori.id)}
                             className="text-primary p-0 border-0 bg-transparent d-flex align-items-center gap-1"
-                            style={{ cursor: 'pointer' }}>
+                            style={{ cursor: 'pointer' }}
+                          >
                             <small>
                               Lihat {isExpanded ? 'Lebih Sedikit' : 'Selengkapnya'}{' '}
                               <FontAwesomeIcon icon={isExpanded ? faChevronUp : faChevronDown} />

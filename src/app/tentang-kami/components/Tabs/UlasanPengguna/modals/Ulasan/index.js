@@ -181,7 +181,8 @@ const IndexUlasan = (props) => {
                 value={formData.komentar}
                 onChange={handleChange}
                 rows={4}
-                maxLength={500}></textarea>
+                maxLength={500}
+              ></textarea>
               {errors.komentar && <small className="invalid-feedback">{errors.komentar}</small>}
             </div>
           </Fragment>
@@ -195,7 +196,8 @@ const IndexUlasan = (props) => {
               type="button"
               className="btn btn-primary w-100"
               onClick={handleSubmit}
-              disabled={isSubmitting}>
+              disabled={isSubmitting}
+            >
               {isSubmitting ? 'Mengirim...' : 'Kirim Ulasan'}
             </button>
           </Fragment>

@@ -42,7 +42,8 @@ export default function Index(props) {
             className="form-select rounded-3"
             name="tipeSewa"
             value={tipeSewa || ''}
-            onChange={handleChange}>
+            onChange={handleChange}
+          >
             <option value="">Tipe Sewa</option>
             {tipeSewaList.map((item, idx) => (
               <option key={idx} value={item.slug}>

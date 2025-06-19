@@ -92,7 +92,8 @@ const ShareModal = ({ show, onClose, data }) => {
                         : 'btn-outline-primary'
                   }`}
                   data-bs-toggle={item.platform === 'copylink' ? 'tooltip' : null}
-                  data-bs-placement="top">
+                  data-bs-placement="top"
+                >
                   <FontAwesomeIcon
                     icon={
                       item.platform === 'copylink'

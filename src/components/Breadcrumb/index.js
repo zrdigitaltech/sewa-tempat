@@ -27,7 +27,8 @@ const Breadcrumb = ({ className = '', containerClassName = '', isLoading = false
             className="breadcrumb mb-0 d-flex flex-nowrap overflow-auto"
             style={{
               whiteSpace: 'nowrap'
-            }}>
+            }}
+          >
             {/* Item pertama */}
             <li className="breadcrumb-item flex-shrink-0">
               {isLoading ? <Skeleton width={60} height={16} /> : <Link href="/">Beranda</Link>}
@@ -51,7 +52,8 @@ const Breadcrumb = ({ className = '', containerClassName = '', isLoading = false
                   style={{
                     flexShrink: 0
                   }}
-                  aria-current={idx === segments.length - 1 ? 'page' : undefined}>
+                  aria-current={idx === segments.length - 1 ? 'page' : undefined}
+                >
                   {idx !== segments.length - 1 ? (
                     <Link href={item.href} className="text-primary">
                       {item.name}

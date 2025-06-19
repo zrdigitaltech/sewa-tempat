@@ -17,7 +17,8 @@ const Index = ({ deskripsi, maxLength = 200 }) => {
       <div
         className={`ST--DeskripsiExpandable__wrapper ${
           expanded ? 'ST--DeskripsiExpandable__wrapper--expanded' : ''
-        }`}>
+        }`}
+      >
         <div
           className="ST--DeskripsiExpandable__content"
           dangerouslySetInnerHTML={{
@@ -30,7 +31,8 @@ const Index = ({ deskripsi, maxLength = 200 }) => {
         <button
           onClick={() => setExpanded(!expanded)}
           className="text-primary mt-1 p-0 border-0 bg-transparent d-flex align-items-center gap-1"
-          style={{ cursor: 'pointer' }}>
+          style={{ cursor: 'pointer' }}
+        >
           <small>
             Lihat {expanded ? 'Lebih Sedikit' : 'Selengkapnya'}{' '}
             <FontAwesomeIcon icon={expanded ? faChevronUp : faChevronDown} />

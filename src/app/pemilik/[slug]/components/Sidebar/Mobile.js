@@ -37,7 +37,8 @@ const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBa
         'd-lg-none w-100 bg-white border-top shadow-lg p-3 position-fixed',
         showOnScroll ? 'show' : 'hide'
       )}
-      style={{ bottom: 0, left: 0, zIndex: 1030 }}>
+      style={{ bottom: 0, left: 0, zIndex: 1030 }}
+    >
       <div className="d-flex gap-2">
         <button className="btn btn-success flex-fill text-white" onClick={handleWhatsApp}>
           <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
@@ -47,7 +48,8 @@ const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBa
         </button>
         <button
           className="btn border border-black bg-white d-flex align-items-center"
-          onClick={handleBagikan}>
+          onClick={handleBagikan}
+        >
           <FontAwesomeIcon icon={faShareAlt} />
         </button>
       </div>

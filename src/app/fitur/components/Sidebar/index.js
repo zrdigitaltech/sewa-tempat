@@ -40,7 +40,8 @@ export default function Index(props) {
                   ? 'text-primary fw-semibold border-start border-4 border-primary bg-light ps-3'
                   : 'text-dark bg-transparent'
               }`}
-              style={{ transition: 'all 0.3s ease' }}>
+              style={{ transition: 'all 0.3s ease' }}
+            >
               Produk Booster
             </a>
           </li>
@@ -52,7 +53,8 @@ export default function Index(props) {
                   ? 'text-primary fw-semibold border-start border-4 border-primary bg-light ps-3'
                   : 'text-dark bg-transparent'
               }`}
-              style={{ transition: 'all 0.3s ease' }}>
+              style={{ transition: 'all 0.3s ease' }}
+            >
               Daftar Peminat
             </a>
           </li>

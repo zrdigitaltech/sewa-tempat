@@ -84,7 +84,8 @@ export default function PropertiCard(props) {
                   ?.map((item, index) => (
                     <span
                       key={index}
-                      className="align-content-center badge border border-secondary text-secondary bg-transparent text-capitalize">
+                      className="align-content-center badge border border-secondary text-secondary bg-transparent text-capitalize"
+                    >
                       {item.fasilitas?.join(', ')}
                     </span>
                   ))}
@@ -96,7 +97,8 @@ export default function PropertiCard(props) {
           </h3>
           <span
             className="card-text fw-semibold mb-0 ST--Text"
-            title={nama.length > 50 ? nama : ''}>
+            title={nama.length > 50 ? nama : ''}
+          >
             {nama}
           </span>
           <p className={`text-muted small mb-0 text-truncate ${showTipeKamar && 'mb-1'}`}>{kota}</p>
@@ -148,13 +150,15 @@ export default function PropertiCard(props) {
                     onKeyDown={onClickHandler}
                     role="button"
                     tabIndex={0}
-                    aria-label={`${label} ${index + 1}`}>
+                    aria-label={`${label} ${index + 1}`}
+                  >
                     ●
                   </span>
                 </li>
               );
             }}
-            className="rounded-top-2 overflow-hidden">
+            className="rounded-top-2 overflow-hidden"
+          >
             {image?.map((x, i) => (
               <div
                 key={x || i}
@@ -168,7 +172,8 @@ export default function PropertiCard(props) {
                     }
                   }
                 }}
-                style={{ cursor: 'pointer' }}>
+                style={{ cursor: 'pointer' }}
+              >
                 <img
                   src={x}
                   className="w-100"
@@ -187,7 +192,8 @@ export default function PropertiCard(props) {
           <div
             className={`ST__badge ${
               member === 'Super Featured' ? 'bg-primary' : member === 'Premium' ? 'bg-warning' : ''
-            }`}>
+            }`}
+          >
             <FontAwesomeIcon icon={faBolt} />
             <span>{member}</span>
           </div>
@@ -199,7 +205,8 @@ export default function PropertiCard(props) {
           href={`/properti/${slug}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-dark">
+          className="text-dark"
+        >
           {CardContent()}
         </a>
       ) : (
@@ -218,7 +225,8 @@ export default function PropertiCard(props) {
                 <button
                   className="btn btn-primary align-items-center d-sm-flex w-100"
                   onClick={handlePhone}
-                  aria-label={`Telepon ${formatPhone(no_whatsapp)}`}>
+                  aria-label={`Telepon ${formatPhone(no_whatsapp)}`}
+                >
                   <FontAwesomeIcon icon={faPhone} className="pe-1" /> {formatPhone(no_whatsapp)}
                 </button>
               )}
@@ -230,7 +238,8 @@ export default function PropertiCard(props) {
                 <button
                   className="btn btn-success d-sm-flex align-items-center text-white w-100 pe-1 text-shadow"
                   onClick={handleWhatsApp}
-                  aria-label={`WhatsApp ${formatPhone(no_whatsapp)}`}>
+                  aria-label={`WhatsApp ${formatPhone(no_whatsapp)}`}
+                >
                   <FontAwesomeIcon icon={faWhatsapp} className="pe-1" /> WhatsApp
                 </button>
               )}

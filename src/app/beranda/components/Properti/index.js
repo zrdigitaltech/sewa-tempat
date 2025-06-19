@@ -83,7 +83,8 @@ export default function Index() {
               <div className="col-12 text-center mt-4">
                 <Link
                   className="btn btn-warning fw-semibold rounded-3 px-5"
-                  href="/search?keyword=&viewMode=list">
+                  href="/search?keyword=&viewMode=list"
+                >
                   Lihat Semua
                 </Link>
               </div>

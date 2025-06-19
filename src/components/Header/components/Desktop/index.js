@@ -56,7 +56,8 @@ export default function Desktop(props) {
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded={openDisewa ? 'true' : 'false'}
-            onClick={(e) => e.preventDefault()}>
+            onClick={(e) => e.preventDefault()}
+          >
             Disewa
           </a>
           <ul className={`dropdown-menu ${openDisewa ? 'show' : ''}`}>
@@ -70,7 +71,8 @@ export default function Desktop(props) {
                   <Link
                     className={`dropdown-item ${activeTipeProperti === link.slug ? 'active' : ''}`}
                     href={`/search?keyword=&tipeProperti=${link.slug}&viewMode=list`}
-                    onClick={() => setOpenDisewa(false)}>
+                    onClick={() => setOpenDisewa(false)}
+                  >
                     {iconTipeProperti(link.nama)} Sewa {link.nama}
                   </Link>
                 </li>
@@ -83,14 +85,16 @@ export default function Desktop(props) {
           <Link
             className={`nav-link text-dark a-hover ${pathname === '/panduan' ? 'active' : ''}`}
             href="/panduan"
-            onClick={() => setOpenDisewa(false)}>
+            onClick={() => setOpenDisewa(false)}
+          >
             Panduan
           </Link>
         </li>
         <li className="nav-item">
           <div
             className={`nav-link text-dark a-hover cursor-pointer ${showBantuan ? 'active' : ''}`}
-            onClick={() => (setOpenDisewa(false), setShowBantuan(true))}>
+            onClick={() => (setOpenDisewa(false), setShowBantuan(true))}
+          >
             Bantuan
           </div>
         </li>
@@ -104,7 +108,8 @@ export default function Desktop(props) {
             onClick={() => {
               router.push('/pasang-iklan-properti');
               setOpenDisewa(false);
-            }}>
+            }}
+          >
             + Pasang Iklan
           </button>
         </li>
@@ -113,7 +118,8 @@ export default function Desktop(props) {
             className="nav-link text-dark a-hover"
             href="/user/login"
             rel="noreferrer"
-            onClick={() => setOpenDisewa(false)}>
+            onClick={() => setOpenDisewa(false)}
+          >
             Daftar
           </a>
         </li>
@@ -122,7 +128,8 @@ export default function Desktop(props) {
             className="nav-link text-dark a-hover"
             href="/user/login"
             rel="noreferrer"
-            onClick={() => setOpenDisewa(false)}>
+            onClick={() => setOpenDisewa(false)}
+          >
             Masuk
           </a>
         </li>
