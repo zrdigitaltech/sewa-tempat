@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Modals from '@/components/Modals';
 import classNames from 'classnames';
 import InvestorBerhasilModal from './InvestorBerhasil';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,7 +14,7 @@ import {
   formatStrip,
   unFormatStrip
 } from '@/helpers';
-import { UseToasts } from '@/components';
+import { UseToasts, UseModals } from '@/components';
 import { submitInvestor } from '@/redux/action/investor/creator';
 
 const Index = (props) => {
@@ -197,7 +196,7 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title="Formulir Investor Properti"
         show={show}
         onClose={() => {

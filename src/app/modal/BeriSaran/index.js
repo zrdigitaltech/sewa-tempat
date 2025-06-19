@@ -1,6 +1,6 @@
 'use client';
 import React, { Fragment, useState } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
 import PermintaanBerhasilModal from '@/app/modal/BeriSaran/PermintaanBerhasil';
 import { useDispatch } from 'react-redux';
 import { submitBeriSaran } from '@/redux/action/beriSaran/creator';
@@ -117,7 +117,7 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title="Beri Saran"
         show={show}
         onClose={() => {

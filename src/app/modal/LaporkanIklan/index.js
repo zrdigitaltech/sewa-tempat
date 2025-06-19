@@ -1,10 +1,9 @@
 import React, { Fragment, useState, useRef } from 'react';
-import Modals from '@/components/Modals';
 import classNames from 'classnames';
 import BerhasilDiLaporkanModal from '@/app/modal/LaporkanIklan/BerhasilDiLaporkan';
 import { useDispatch } from 'react-redux';
 import { submitLaporkanIklan } from '@/redux/action/laporkanIklan/creator';
-import { UseToasts } from '@/components';
+import { UseToasts, UseModals } from '@/components';
 
 const Index = (props) => {
   const { show, onClose, dataItem } = props;
@@ -135,7 +134,7 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title={`Laporkan Iklan ${dataItem?.nama}`}
         show={show}
         onClose={() => (onClose(), clearForm())}

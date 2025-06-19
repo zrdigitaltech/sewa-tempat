@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ const PermintaanBerhasil = (props) => {
   const { show, onClose } = props;
 
   return (
-    <Modals
+    <UseModals
       title="Permintaan Investasi Berhasil Dikirim"
       show={show}
       onClose={onClose}

@@ -2,7 +2,6 @@
 
 import { Fragment, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import FormSearch from '@/components/FormSearch';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { formatStrip } from '@/helpers';

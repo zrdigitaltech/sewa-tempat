@@ -1,6 +1,5 @@
 'use client';
-import React, { Fragment, useState } from 'react';
-import Modals from '@/components/Modals';
+import React, { Fragment } from 'react';
 
 const Index = (props) => {
   const { formData, errors, handleChange } = props;
@@ -69,8 +68,7 @@ const Index = (props) => {
               className={`btn ${
                 formData.verifikasi === 'whatsapp' ? 'btn-primary' : 'btn-outline-primary'
               }`}
-              htmlFor="verifikasi-wa"
-            >
+              htmlFor="verifikasi-wa">
               WhatsApp
             </label>
           </div>
@@ -89,8 +87,7 @@ const Index = (props) => {
               className={`btn ${
                 formData.verifikasi === 'sms' ? 'btn-primary' : 'btn-outline-primary'
               }`}
-              htmlFor="verifikasi-sms"
-            >
+              htmlFor="verifikasi-sms">
               SMS
             </label>
           </div>

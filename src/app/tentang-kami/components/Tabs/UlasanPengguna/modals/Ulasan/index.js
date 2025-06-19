@@ -1,9 +1,8 @@
 'use client';
 import React, { Fragment, useState } from 'react';
-import Modals from '@/components/Modals';
 import classNames from 'classnames';
 import UlasanBerhasil from './UlasanBerhasil';
-import { UseToasts } from '@/components';
+import { UseToasts, UseModals } from '@/components';
 import { useDispatch } from 'react-redux';
 import { submitUlasanPengguna } from '@/redux/action/ulasanPengguna/creator';
 
@@ -122,7 +121,7 @@ const IndexUlasan = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title="Berikan Ulasan Anda"
         show={show}
         onClose={() => (onClose(), clearForm())}

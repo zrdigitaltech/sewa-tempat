@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Breadcrumb from '@/components/Breadcrumb';
+import { UseBreadcrumb } from '@/components';
 
 // Skeleton Loader
 import Skeleton from 'react-loading-skeleton';
@@ -16,7 +16,7 @@ const PanduanHeader = ({ panduanDetail, isLoading }) => {
           {isLoading ? (
             <Skeleton height={30} width={250} />
           ) : (
-            <Breadcrumb title={panduanDetail?.title} containerClassName="px-0" />
+            <UseBreadcrumb title={panduanDetail?.title} containerClassName="px-0" />
           )}
         </div>
       </section>

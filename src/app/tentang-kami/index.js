@@ -1,6 +1,6 @@
 'use client';
 import React, { Fragment, useRef, useState, useEffect } from 'react';
-import Breadcrumb from '@/components/Breadcrumb';
+import { UseBreadcrumb } from '@/components';
 
 import Banner from './components/Banner';
 import Tabs from './components/Tabs';
@@ -67,7 +67,7 @@ export default function TentangKami() {
   return (
     <Fragment>
       <section className="my-3">
-        <Breadcrumb title="Syarat Penggunaan Pemilik Properti" />
+        <UseBreadcrumb title="Syarat Penggunaan Pemilik Properti" />
       </section>
 
       <Banner />

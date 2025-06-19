@@ -1,6 +1,6 @@
 'use client';
 import React, { Fragment, useEffect, useState, useRef } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
 import { useDispatch } from 'react-redux';
 import { submitVerifikasi } from '@/redux/action/hubungiPengiklanProperti/creator';
 import { UseToasts } from '@/components';
@@ -131,7 +131,7 @@ const Verifikasi = (props) => {
   };
 
   return (
-    <Modals
+    <UseModals
       title="Verifikasi Nomor HP Kamu"
       show={show}
       onClose={() => {

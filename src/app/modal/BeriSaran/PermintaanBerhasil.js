@@ -1,6 +1,6 @@
 'use client';
 import React, { Fragment } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ const PermintaanBerhasil = (props) => {
   const { show, onClose } = props;
 
   return (
-    <Modals
+    <UseModals
       title="Masukan Anda Telah Diterima"
       show={show}
       onClose={onClose}

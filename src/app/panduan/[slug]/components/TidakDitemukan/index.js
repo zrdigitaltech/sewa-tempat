@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Breadcrumb from '@/components/Breadcrumb';
+import { UseBreadcrumb } from '@/components';
 import { unFormatStrip } from '@/helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +11,7 @@ const Index = (props) => {
   return (
     <div className="pb-5">
       <section className="mt-3">
-        <Breadcrumb title={'Panduan Tidak Ditemukan'} />
+        <UseBreadcrumb title={'Panduan Tidak Ditemukan'} />
       </section>
       <div className="text-center pt-5">
         <FontAwesomeIcon icon={faSearch} size="4x" className="mb-3" />

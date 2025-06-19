@@ -1,6 +1,6 @@
 'use client';
 import React, { Fragment, useState } from 'react';
-import Modals from '@/components/Modals';
+import { UseModals } from '@/components';
 import { KonsultasiModal, BeriSaranModal } from '@/app/modal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title="Bantuan"
         show={show}
         onClose={onClose}

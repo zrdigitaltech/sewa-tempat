@@ -1,13 +1,13 @@
 'use client';
 import React, { Fragment } from 'react';
 
-import Breadcrumb from '@/components/Breadcrumb';
+import { UseBreadcrumb } from '@/components';
 
 const Index = () => {
   return (
     <Fragment>
       <section className="mt-3">
-        <Breadcrumb title="Syarat dan Ketentuan" />
+        <UseBreadcrumb title="Syarat dan Ketentuan" />
       </section>
       <section className="pt-3 pb-5">
         <div className="container">

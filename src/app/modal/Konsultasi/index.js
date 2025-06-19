@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Modals from '@/components/Modals';
 import classNames from 'classnames';
 import PermintaanBerhasilModal from '@/app/modal/Konsultasi/PermintaanBerhasil';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +7,7 @@ import { formatRupiah, unFormatRupiah } from '@/helpers';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { submitKonsultasi } from '@/redux/action/konsultasi/creator';
-import { UseToasts } from '@/components';
+import { UseToasts, UseModals } from '@/components';
 
 const Index = (props) => {
   const { show, onClose } = props;
@@ -177,7 +176,7 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Modals
+      <UseModals
         title={`Konsultasi Gratis`}
         show={show}
         onClose={() => (onClose(), clearForm())}
