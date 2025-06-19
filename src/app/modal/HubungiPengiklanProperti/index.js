@@ -183,8 +183,7 @@ const Index = (props) => {
             <button
               type="button"
               className="btn btn-success w-100 text-white"
-              onClick={handleGoWhatsApp}
-            >
+              onClick={handleGoWhatsApp}>
               <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
             </button>
           ) : (
@@ -199,10 +198,10 @@ const Index = (props) => {
                   formData?.verifikasi === 'whatsapp' ? 'success' : 'primary'
                 } w-100 text-white`}
                 onClick={handleSubmit}
-                disabled={isSubmitting}
-              >
+                disabled={isSubmitting}>
                 <FontAwesomeIcon
                   icon={formData.verifikasi === 'whatsapp' ? faWhatsapp : faCommentSms}
+                  className="me-2"
                 />
                 {isSubmitting ? 'Memproses...' : 'Lanjutkan'}
               </button>
@@ -212,8 +211,7 @@ const Index = (props) => {
                   href="/syarat-dan-ketentuan"
                   target="_blank"
                   className=""
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <b>Syarat dan Ketentuan</b>
                 </a>{' '}
                 &amp;{' '}
