@@ -14,7 +14,11 @@ export default function Index() {
                 src="https://placehold.co/686x375?text=Member+Mulai+99"
                 alt="Paket Iklan TempatSewa.Com"
                 className="img-fluid rounded shadow"
-                style={{ height: '321px', objectFit: 'cover', width: '100%' }}
+                style={{
+                  // height: '321px',
+                  objectFit: 'cover',
+                  width: '100%'
+                }}
               />
             </div>
 

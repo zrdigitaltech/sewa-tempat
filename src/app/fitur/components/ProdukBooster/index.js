@@ -79,10 +79,10 @@ export default function Index() {
             {[1, 2, 3]?.map((x, i) => (
               <div key={x || i}>
                 <img
-                  src={`https://placehold.co/722x358`}
+                  src={`https://placehold.co/800x600`}
                   className="w-100"
                   style={{
-                    height: '330px',
+                    // height: '330px',
                     objectFit: 'cover'
                   }}
                   alt="TempatSewa.Com Indonesia: Situs Sewa Kos, Rumah, Apartemen, Ruko, Kios, dan Gudang"
@@ -175,10 +175,10 @@ export default function Index() {
             {[1, 2, 3]?.map((x, i) => (
               <div key={x || i}>
                 <img
-                  src={`https://placehold.co/722x358`}
+                  src={`https://placehold.co/800x600`}
                   className="w-100"
                   style={{
-                    height: '330px',
+                    // height: '330px',
                     objectFit: 'cover'
                   }}
                   alt="TempatSewa.Com Indonesia: Situs Sewa Kos, Rumah, Apartemen, Ruko, Kios, dan Gudang"
