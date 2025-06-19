@@ -16,7 +16,7 @@ const PanduanHeader = ({ panduanDetail, isLoading }) => {
           {isLoading ? (
             <Skeleton height={30} width={250} />
           ) : (
-            <Breadcrumb title={panduanDetail?.title} />
+            <Breadcrumb title={panduanDetail?.title} containerClassName="px-0" />
           )}
         </div>
       </section>
