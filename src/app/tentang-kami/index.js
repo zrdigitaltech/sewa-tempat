@@ -24,6 +24,7 @@ export default function TentangKami() {
     investorRef: useRef(null),
     ulasanRef: useRef(null)
   };
+  const tabRefs = useRef({});
 
   const sections = [
     { key: 'tentang', ref: refs.tentangRef },
@@ -36,24 +37,37 @@ export default function TentangKami() {
 
   const handleClick = (key, ref) => {
     setActive(key);
-    const offset = 90; // tinggi header
+    const offset = 90; // header
     if (ref.current) {
       const y = ref.current.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+    // Scroll horizontal ke tab yang diklik
+    const tabEl = tabRefs.current[key];
+    if (tabEl && typeof tabEl.scrollIntoView === 'function') {
+      tabEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.pageYOffset + 100; // padding offset
+      const scrollY = window.pageYOffset + 100;
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const ref = section.ref.current;
         if (ref) {
           const offsetTop = ref.offsetTop;
           const offsetBottom = offsetTop + ref.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+
+          if (scrollY >= offsetTop && scrollY < offsetBottom) {
             setActive(section.key);
+
+            const tabEl = tabRefs.current[section.key];
+            if (tabEl && typeof tabEl.scrollIntoView === 'function') {
+              tabEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+
             break;
           }
         }
@@ -72,7 +86,7 @@ export default function TentangKami() {
 
       <Banner />
 
-      <Tabs refs={refs} handleClick={(name, ref) => handleClick(name, ref)} active={active} />
+      <Tabs refs={refs} handleClick={handleClick} active={active} tabRefs={tabRefs} />
 
       <Tentang refs={refs} />
       <Kisah refs={refs} />

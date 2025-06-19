@@ -1,56 +1,6 @@
 'use client';
 
-import { Fragment, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
-import { formatStrip } from '@/helpers';
-
-export default function SearchBannerSection() {
-  const router = useRouter();
-
-  const [isLoading, setIsLoading] = useState({
-    banner: false,
-    btnSearch: false
-  });
-
-  const [formData, setFormData] = useState({
-    tipeProperti: '',
-    keyword: '',
-    tipeSewa: '',
-    viewMode: 'list'
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleOnSearch = async () => {
-    setIsLoading((prev) => ({ ...prev, btnSearch: true }));
-    const { keyword, tipeProperti, tipeSewa, viewMode } = formData;
-
-    const keywordCleaned = formatStrip(keyword);
-    let query = `/search?keyword=${keywordCleaned}`;
-
-    if (tipeProperti) {
-      const tipePropertiCleaned = formatStrip(tipeProperti);
-      query += `&tipeProperti=${tipePropertiCleaned}`;
-    }
-    if (tipeSewa) query += `&tipeSewa=${tipeSewa}`;
-    query += `&viewMode=${viewMode}`;
-
-    router.push(query);
-    setIsLoading((prev) => ({ ...prev, btnSearch: false }));
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading((prev) => ({ ...prev, banner: false }));
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
+export default function Index() {
   return (
     <section
       className="text-white d-flex align-items-center"
@@ -61,36 +11,21 @@ export default function SearchBannerSection() {
         backgroundPosition: 'center',
         position: 'relative',
         padding: '3rem 0'
-      }}
-    >
-      {/* Overlay hitam */}
-      <div className="position-absolute top-0 start-0 w-100 h-100" />
+      }}>
+      {/* Overlay hitam semi transparan */}
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" />
 
       <div className="container position-relative z-2 px-3 px-md-5">
-        {isLoading?.banner ? (
-          <Fragment>
-            <Skeleton height={40} width={300} className="mb-3" />
-            <Skeleton count={2} height={20} width={300} className="mb-3" />
-            <div className="row g-2">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className={`col-12 col-sm-6 col-md-3`}>
-                  <Skeleton height={40} />
-                </div>
-              ))}
-            </div>
-          </Fragment>
-        ) : (
-          <div className="bg-white text-black rounded-3 shadow p-4 text-center" data-aos="fade-up">
-            <h3 className="lead text-primary mb-2">MISI KAMI</h3>
-            <h1 className="display-6 fw-bold lh-base">
-              Mewujudkan platform sewa properti <strong className="text-primary">terdepan</strong>{' '}
-              yang menghubungkan
-              <strong className="text-success"> jutaan orang</strong> secara
-              <strong className="text-info"> efisien</strong>, dan
-              <strong className="text-danger"> terpercaya</strong> di seluruh Indonesia.
-            </h1>
-          </div>
-        )}
+        <div className="bg-white text-black rounded-3 shadow p-4 text-center animate__animated animate__fadeIn">
+          <h3 className="lead text-primary mb-2">MISI KAMI</h3>
+          <h1 className="display-6 fw-bold lh-base">
+            Mewujudkan platform sewa properti <strong className="text-primary">terdepan</strong>{' '}
+            yang menghubungkan
+            <strong className="text-success"> jutaan orang</strong> secara
+            <strong className="text-info"> efisien</strong>, dan
+            <strong className="text-danger"> terpercaya</strong> di seluruh Indonesia.
+          </h1>
+        </div>
       </div>
     </section>
   );
