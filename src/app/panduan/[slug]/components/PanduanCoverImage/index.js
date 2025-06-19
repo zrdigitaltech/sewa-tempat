@@ -1,12 +1,26 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const PanduanCoverImage = (props) => {
-  const { coverImage, isLoading } = props;
+const PanduanCoverImage = ({ coverImage, isLoading }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const height = isMobile ? '40vh' : '630px';
+
   if (isLoading) {
-    return <Skeleton height={630} width="100%" />;
+    return (
+      <div className="w-100">
+        <Skeleton height={height} width="100%" />
+      </div>
+    );
   }
 
   if (!coverImage) return null;
@@ -15,11 +29,13 @@ const PanduanCoverImage = (props) => {
     <div
       className="w-100"
       style={{
-        height: '630px',
+        height,
+        minHeight: '220px',
         backgroundImage: `url(${coverImage})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        borderRadius: '8px'
       }}
     />
   );
