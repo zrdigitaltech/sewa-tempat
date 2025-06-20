@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 // import { loginUser } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 import Link from 'next/link';
+import PermintaanBerhasilModal from '@/app/modal/Auth/components/LupaKataSandi/PermintaanBerhasil';
 
 export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
   const dispatch = useDispatch();
@@ -14,6 +15,8 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const [showPermintaanBerhasil, setShowPermintaanBerhasil] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,22 +36,23 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isSubmitting || !validate()) return;
+    setShowPermintaanBerhasil(true);
+    // if (isSubmitting || !validate()) return;
 
-    setIsSubmitting(true);
-    try {
-      // const result = await dispatch(loginUser(formData));
-      const result = { success: true, error: 'Akun tidak ditemukan' };
-      if (result.success) {
-        onClose?.();
-      } else {
-        showError(result?.error || 'Gagal mengirim tautan reset.');
-      }
-    } catch {
-      showError('Terjadi kesalahan saat mengirim tautan reset.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // setIsSubmitting(true);
+    // try {
+    //   // const result = await dispatch(loginUser(formData));
+    //   const result = { success: true, error: 'Akun tidak ditemukan' };
+    //   if (result.success) {
+    //     onClose?.();
+    //   } else {
+    //     showError(result?.error || 'Gagal mengirim tautan reset.');
+    //   }
+    // } catch {
+    //   showError('Terjadi kesalahan saat mengirim tautan reset.');
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
   };
 
   const showError = (msg) => {
@@ -63,45 +67,54 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center h-100" style={{ minHeight: '500px' }}>
-      <div className="w-100 px-4 d-flex flex-column justify-content-center flex-grow-1">
-        <h5 className="text-center fw-bold mb-3">Lupa Kata Sandi?</h5>
-        <p className="text-center text-muted mb-4">
-          Masukkan email yang terdaftar dan kami akan mengirimkan tautan untuk mengatur ulang kata
-          sandi Anda.
-        </p>
+    <Fragment>
+      <div
+        className="d-flex flex-column justify-content-center h-100"
+        style={{ minHeight: '500px' }}>
+        <div className="w-100 px-4 d-flex flex-column justify-content-center flex-grow-1">
+          <h5 className="text-center fw-bold mb-3">Lupa Kata Sandi?</h5>
+          <p className="text-center text-muted mb-4">
+            Masukkan email yang terdaftar dan kami akan mengirimkan tautan untuk mengatur ulang kata
+            sandi Anda.
+          </p>
 
-        <form onSubmit={handleSubmit} noValidate>
-          <div className="mb-3">
-            <input
-              type="email"
-              name="email"
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-              placeholder="Masukkan Alamat Email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="mb-3">
+              <input
+                type="email"
+                name="email"
+                className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                placeholder="Masukkan Alamat Email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+            </div>
+
+            {errorMessage && (
+              <UseToasts message={errorMessage} show={true} onClose={() => setErrorMessage('')} />
+            )}
+
+            <button type="submit" className="btn btn-primary w-100" disabled={isSubmitting}>
+              {isSubmitting ? 'Memproses...' : 'Kirim Tautan Reset'}
+            </button>
+          </form>
+
+          <div className="d-flex align-items-center justify-content-between mt-3 mb-1">
+            <span className="small text-muted cursor-pointer a-hover" onClick={handleMasuk}>
+              Kembali masuk
+            </span>
+            <span className="small text-muted cursor-pointer a-hover" onClick={handleDaftar}>
+              Daftar
+            </span>
           </div>
-
-          {errorMessage && (
-            <UseToasts message={errorMessage} show={true} onClose={() => setErrorMessage('')} />
-          )}
-
-          <button type="submit" className="btn btn-primary w-100" disabled={isSubmitting}>
-            {isSubmitting ? 'Memproses...' : 'Kirim Tautan Reset'}
-          </button>
-        </form>
-
-        <div className="d-flex align-items-center justify-content-between mt-3 mb-1">
-          <span className="small text-muted cursor-pointer a-hover" onClick={handleMasuk}>
-            Kembali masuk
-          </span>
-          <span className="small text-muted cursor-pointer a-hover" onClick={handleDaftar}>
-            Daftar
-          </span>
         </div>
       </div>
-    </div>
+      <PermintaanBerhasilModal
+        show={showPermintaanBerhasil}
+        onClose={() => setShowPermintaanBerhasil(false)}
+        handleMasuk={handleMasuk}
+      />
+    </Fragment>
   );
 }
