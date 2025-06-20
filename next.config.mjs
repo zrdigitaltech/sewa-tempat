@@ -14,6 +14,7 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   env: {
+    SITE_URL: process.env.SITE_URL,
     NEXT_PUBLIC_DOMAIN: process.env.NEXT_PUBLIC_DOMAIN,
     NEXT_PUBLIC_DOMAIN_API: process.env.NEXT_PUBLIC_DOMAIN_API,
     NEXT_PUBLIC_DOMAIN_PROXY: process.env.NEXT_PUBLIC_DOMAIN_PROXY
@@ -21,7 +22,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/api/:path*',
+        source: '/api/v1/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
@@ -44,7 +45,7 @@ const nextConfig = {
 
     return [
       {
-        source: '/api/:path*',
+        source: '/api/v1/:path*',
         destination: `${apiUrl}/:path*`
       }
     ];
