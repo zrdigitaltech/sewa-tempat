@@ -1,0 +1,32 @@
+@use '@/styles/scss/base/variables'as *;
+
+.ST--radio-card-group {
+  display: flex;
+  gap: 1rem;
+
+  .radio-card {
+    flex: 1;
+    cursor: pointer;
+    border: 2px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: .3125rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    background: #fff;
+
+    &:hover {
+      border-color: $primary;
+      background-color: #f0f8ff;
+    }
+
+    &.active {
+      border-color: $primary;
+      background-color: #e7f1ff;
+      color: $primary;
+    }
+
+    input[type='radio'] {
+      display: none;
+    }
+  }
+}

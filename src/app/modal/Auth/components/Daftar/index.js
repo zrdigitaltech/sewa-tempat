@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
+import './daftar.scss';
+
 export default function Index({ onClose, handleMasuk }) {
   const dispatch = useDispatch();
   const errorTimeoutRef = useRef(null);
@@ -17,7 +19,8 @@ export default function Index({ onClose, handleMasuk }) {
     phone: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    role: '1'
   });
 
   const [errors, setErrors] = useState({});
@@ -57,6 +60,8 @@ export default function Index({ onClose, handleMasuk }) {
     if (!confirmPassword.trim()) newErrors.confirmPassword = 'Harap ulangi password';
     else if (confirmPassword !== password) newErrors.confirmPassword = 'Password tidak cocok';
 
+    if (!formData.role) newErrors.role = 'Pilih tipe pengguna';
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -68,7 +73,8 @@ export default function Index({ onClose, handleMasuk }) {
       phone: '',
       email: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      role: '1'
     });
     setErrors({});
     setErrorMessage('');
@@ -106,9 +112,25 @@ export default function Index({ onClose, handleMasuk }) {
   };
 
   return (
-    <div className="align-content-center h-100 p-4" style={{ minHeight: '530px' }}>
+    <div className="align-content-center h-100 p-4" style={{ minHeight: '580px' }}>
       <h5 className="text-center fw-bold mb-4">Daftar Akun Baru</h5>
       <form onSubmit={handleSubmit} noValidate>
+        <div className="mb-4">
+          <div className="ST--radio-card-group">
+            <label className={`radio-card ${formData.role === '1' ? 'active' : ''}`}>
+              <input
+                type="radio"
+                name="role"
+                value="1"
+                checked={formData.role === '1'}
+                onChange={handleChange}
+              />
+              Pemilik Properti
+            </label>
+          </div>
+          {errors.role && <div className="text-danger small mt-1">{errors.role}</div>}
+        </div>
+
         <div className="row mb-3 g-3">
           <div className="col-6">
             <input
