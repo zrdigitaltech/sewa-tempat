@@ -96,7 +96,12 @@ export default function Header() {
         onClose={() => setShowBantuan(false)}
         setShowBantuan={setShowBantuan}
       />
-      <AuthModal show={showAuth} authType={authType} onClose={() => setShowAuth(false)} />
+      <AuthModal
+        show={showAuth}
+        authType={authType}
+        setAuthType={setAuthType}
+        onClose={() => setShowAuth(false)}
+      />
     </Fragment>
   );
 }
