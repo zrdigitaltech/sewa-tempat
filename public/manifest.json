@@ -1,8 +1,7 @@
 {
-  "short_name": "Adira",
-  "name": "Adira",
-  "icons": [
-    {
+  "short_name": "tempatSewa",
+  "name": "tempatSewa.Com",
+  "icons": [{
       "src": "/assets/images/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
@@ -20,6 +19,6 @@
   "scope": "/",
   "theme_color": "#ffffff",
   "shortcuts": [],
-  "description": "SolusiDana Pinjaman Cepat Jaminan BPKB Motor dan Mobil",
+  "description": "tempatSewa.Com adalah Platform tepercaya yang memudahkanmu menemukan tempat tinggal impian — mulai dari kontrakan, kost, hingga properti sewa lainnya. Nikmati pengalaman pencarian hunian yang cepat dan aman. Bagi pemilik properti, tempatSewa.Com juga menyediakan solusi praktis untuk memasarkan dan mengelola properti dalam satu platform yang efisien.",
   "screenshots": []
 }
