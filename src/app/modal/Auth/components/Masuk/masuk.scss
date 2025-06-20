@@ -1,0 +1,8 @@
+.ST--whatsapp-bantuan {
+  border-bottom-right-radius: 8px;
+
+  @media (max-width: 480px) {
+    // Ganti ke border kanan untuk versi desktop
+    border-bottom-left-radius: 8px;
+  }
+}
