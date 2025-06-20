@@ -215,7 +215,7 @@ export default function Index({ onClose, handleMasuk }) {
 
       <p className="text-center mt-3 mb-0">
         Sudah punya akun?{' '}
-        <span className="text-primary a-hover cursor-pointer" onClick={handleMasuk}>
+        <span className="text-primary a-hover cursor-pointer fw-semibold" onClick={handleMasuk}>
           Masuk
         </span>{' '}
         sekarang
