@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import './masuk.scss';
 
 export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
   const dispatch = useDispatch();
@@ -174,7 +175,7 @@ export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
       </div>
 
       {/* WhatsApp Bantuan */}
-      <div className="bg-primary-subtle bottom-0 p-2 position-absolute text-center w-100">
+      <div className="ST--whatsapp-bantuan bg-primary-subtle bottom-0 p-2 position-absolute text-center w-100">
         <small>
           Mengalami kendala untuk masuk?{' '}
           <Link

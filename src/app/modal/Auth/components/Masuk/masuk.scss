@@ -1,0 +1,7 @@
+.ST--whatsapp-bantuan {
+  border-bottom-right-radius: 8px;
+
+  @media (max-width: 480px) {
+    border-bottom-left-radius: 8px;
+  }
+}
