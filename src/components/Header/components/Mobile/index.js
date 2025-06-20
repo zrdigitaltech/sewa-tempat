@@ -12,7 +12,14 @@ import '@/components/Header/header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBantuan }) {
+export default function Index({
+  isMenuOpen,
+  handleClose,
+  setShowBantuan,
+  showBantuan,
+  setShowAuth,
+  setAuthType
+}) {
   const [openDisewa, setOpenDisewa] = useState(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -48,8 +55,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
       className={`offcanvas offcanvas-end ${isMenuOpen ? 'show' : ''}`}
       tabIndex="-1"
       id="mobileMenu"
-      aria-labelledby="mobileMenuLabel"
-    >
+      aria-labelledby="mobileMenuLabel">
       <div className="offcanvas-header border-bottom" style={{ height: '72px' }}>
         <div
           id="mobileMenuLabel"
@@ -57,8 +63,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
           onClick={() => {
             router.push('/');
             handleClose();
-          }}
-        >
+          }}>
           <span className="text-primary">tempat</span>Sewa.Com
         </div>
         <button
@@ -66,8 +71,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
           className="btn-close text-reset"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
-          onClick={handleClose}
-        ></button>
+          onClick={handleClose}></button>
       </div>
 
       <div className="offcanvas-body d-flex flex-column gap-2">
@@ -79,8 +83,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
                 : ''
             }`}
             onClick={toggleDisewa}
-            type="button"
-          >
+            type="button">
             Disewa
             <FontAwesomeIcon icon={openDisewa ? faChevronUp : faChevronDown} className="small" />
           </button>
@@ -96,8 +99,7 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
                     activeTipeProperti === link.slug ? 'active' : ''
                   }`}
                   href={`/search?keyword=&tipeProperti=${link.slug}&viewMode=list`}
-                  onClick={handleClose}
-                >
+                  onClick={handleClose}>
                   {iconTipeProperti(link.nama)} Sewa {link.nama}
                 </Link>
               ))
@@ -108,27 +110,37 @@ export default function Index({ isMenuOpen, handleClose, setShowBantuan, showBan
         <Link
           className={`nav-link text-dark ${pathname === '/panduan' ? 'active' : ''}`}
           href="/panduan"
-          onClick={handleClose}
-        >
+          onClick={handleClose}>
           Panduan
         </Link>
         <div
           className={`nav-link text-dark cursor-pointer ${showBantuan === true ? 'active' : ''}`}
-          onClick={() => setShowBantuan(true)}
-        >
+          onClick={() => setShowBantuan(true)}>
           Bantuan
         </div>
       </div>
 
       <div className="offcanvas-footer p-3 border-top shadow ST--PasangIklan__mobile">
         <div className="mb-2 d-flex gap-2 justify-content-center  border btn border-primary">
-          <Link href="/register" className="" onClick={handleClose}>
+          <div
+            className="text-primary"
+            onClick={() => {
+              setAuthType('register');
+              setShowAuth(true);
+              handleClose();
+            }}>
             Daftar
-          </Link>
+          </div>
           /
-          <Link href="/login" className="" onClick={handleClose}>
+          <div
+            className="text-primary"
+            onClick={() => {
+              setAuthType('login');
+              setShowAuth(true);
+              handleClose();
+            }}>
             Masuk
-          </Link>
+          </div>
         </div>
         <Link className="btn btn-primary w-100" href="/pasang-iklan-properti" onClick={handleClose}>
           + Pasang Iklan

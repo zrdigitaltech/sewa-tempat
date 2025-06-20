@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import './header.scss';
 import { Desktop, Mobile } from '@/components/Header/components';
 import BantuanModal from '@/components/Header/modal/Bantuan';
+import { AuthModal } from '@/app/modal';
 
 export default function Header() {
   const router = useRouter();
@@ -18,6 +19,9 @@ export default function Header() {
   const [showBantuan, setShowBantuan] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
+
+  const [showAuth, setShowAuth] = useState(false);
+  const [authType, setAuthType] = useState('login');
 
   // Cek jika di client (karena window hanya tersedia di browser)
   useEffect(() => {
@@ -40,8 +44,7 @@ export default function Header() {
           <Link
             href="/"
             className="navbar-brand fw-bold d-flex align-items-center"
-            onClick={() => setOpenDisewa(false)}
-          >
+            onClick={() => setOpenDisewa(false)}>
             <span className="text-primary">tempat</span>Sewa.Com
           </Link>
 
@@ -51,8 +54,7 @@ export default function Header() {
               onClick={() => {
                 setOpenDisewa(false);
                 router.push('/pasang-iklan-properti');
-              }}
-            >
+              }}>
               + Pasang Iklan
             </button>
 
@@ -62,8 +64,7 @@ export default function Header() {
               type="button"
               onClick={toggleMenu}
               aria-expanded={isMenuOpen}
-              aria-label="Toggle mobile menu"
-            >
+              aria-label="Toggle mobile menu">
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>
@@ -74,6 +75,8 @@ export default function Header() {
             setOpenDisewa={setOpenDisewa}
             showBantuan={showBantuan}
             setShowBantuan={setShowBantuan}
+            setShowAuth={setShowAuth}
+            setAuthType={setAuthType}
           />
         </div>
 
@@ -83,6 +86,8 @@ export default function Header() {
           isMenuOpen={isMenuOpen}
           showBantuan={showBantuan}
           setShowBantuan={setShowBantuan}
+          setShowAuth={setShowAuth}
+          setAuthType={setAuthType}
         />
       </nav>
 
@@ -91,6 +96,7 @@ export default function Header() {
         onClose={() => setShowBantuan(false)}
         setShowBantuan={setShowBantuan}
       />
+      <AuthModal show={showAuth} authType={authType} onClose={() => setShowAuth(false)} />
     </Fragment>
   );
 }
