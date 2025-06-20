@@ -25,8 +25,8 @@ const nextConfig = {
         source: '/api/v1/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,DELETE,PATCH,POST,PUT' },
+          { key: 'Access-Control-Allow-Origin', value: '*' }, // Sebaiknya spesifik jika memungkinkan
+          { key: 'Access-Control-Allow-Methods', value: 'GET,DELETE,PATCH,POST,PUT,OPTIONS' },
           {
             key: 'Access-Control-Allow-Headers',
             value:
@@ -36,6 +36,7 @@ const nextConfig = {
       }
     ];
   },
+
   async rewrites() {
     const apiUrl = process.env.NEXT_PUBLIC_DOMAIN_API;
     if (!apiUrl) {
