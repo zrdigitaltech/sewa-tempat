@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { submitRegister } from '@/redux/action/register/creator';
+import { submitRegisterPasangIklan } from '@/redux/action/register/creator';
 import { UseToasts } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -73,7 +73,7 @@ export default function FormRegister() {
       setIsSubmitting(true);
       try {
         // Kirim ke server
-        const result = await dispatch(submitRegister(formData));
+        const result = await dispatch(submitRegisterPasangIklan(formData));
         if (result.success) {
           onClose();
           clearForm();
@@ -187,8 +187,7 @@ export default function FormRegister() {
                 type="button"
                 id="button-addon2"
                 onClick={() => setShowPassword((prev) => !prev)}
-                tabIndex={-1}
-              >
+                tabIndex={-1}>
                 {showPassword ? (
                   <FontAwesomeIcon icon={faEyeSlash} />
                 ) : (
@@ -206,8 +205,7 @@ export default function FormRegister() {
             type="button"
             className="btn btn-primary w-100"
             onClick={handleSubmit}
-            disabled={isSubmitting}
-          >
+            disabled={isSubmitting}>
             {isSubmitting ? 'Memproses...' : 'Daftar Sekarang'}
           </button>
         </form>

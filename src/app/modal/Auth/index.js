@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { UseModals } from '@/components';
 import { Daftar, Masuk } from './components';
 
@@ -11,21 +11,40 @@ const Index = ({ show, onClose, authType = 'login', setAuthType }) => {
       show={show}
       onClose={onClose}
       position="center"
+      classModalBody="p-0"
+      modalDialog="modal-lg"
       modalBody={
         <Fragment>
-          <div
-            className="position-absolute"
-            style={{
-              right: '8px',
-              top: '8px'
-            }}>
-            <button type="button" className="btn-close" onClick={onClose}></button>
+          {/* Tombol Close */}
+          <button
+            type="button"
+            className="btn-close position-absolute"
+            style={{ top: '8px', right: '8px', zIndex: 5 }}
+            onClick={onClose}></button>
+
+          {/* Konten utama modal */}
+          <div className="d-flex flex-column flex-md-row">
+            {/* Kiri: Background Image (disembunyikan di mobile) */}
+            <div
+              className="d-none d-lg-block w-75"
+              style={{
+                backgroundImage: "url('/assets/images/bg-login.svg')",
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                minHeight: '400px'
+              }}
+            />
+
+            {/* Kanan: Form login/register */}
+            <div className="w-100 w-md-50 p-4">
+              {authType === 'register' ? (
+                <Daftar onClose={onClose} handleMasuk={() => setAuthType('login')} />
+              ) : (
+                <Masuk onClose={onClose} handleDaftar={() => setAuthType('register')} />
+              )}
+            </div>
           </div>
-          {authType === 'register' ? (
-            <Daftar onClose={onClose} handleMasuk={() => setAuthType('login')} />
-          ) : (
-            <Masuk onClose={onClose} handleDaftar={() => setAuthType('register')} />
-          )}
         </Fragment>
       }
       modalFooter={false}
