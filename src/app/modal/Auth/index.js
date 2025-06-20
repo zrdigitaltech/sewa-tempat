@@ -23,7 +23,9 @@ const Index = ({ show, onClose, authType = 'login', setAuthType }) => {
             onClick={onClose}></button>
 
           {/* Konten utama modal */}
-          <div className="d-flex flex-column flex-md-row">
+          <div
+            className="d-flex flex-column flex-md-row align-items-stretch"
+            style={{ minHeight: '500px' }}>
             {/* Kiri: Background Image (disembunyikan di mobile) */}
             <div
               className="d-none d-lg-block w-75"
@@ -31,13 +33,12 @@ const Index = ({ show, onClose, authType = 'login', setAuthType }) => {
                 backgroundImage: "url('/assets/images/bg-login.svg')",
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                minHeight: '400px'
+                backgroundPosition: 'center'
               }}
             />
 
             {/* Kanan: Form login/register */}
-            <div className="w-100 w-md-50 p-4">
+            <div className="w-100 w-50 position-relative">
               {authType === 'register' ? (
                 <Daftar onClose={onClose} handleMasuk={() => setAuthType('login')} />
               ) : (
