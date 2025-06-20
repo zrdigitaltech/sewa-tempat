@@ -28,7 +28,7 @@ const Index = ({ show, onClose, authType = 'login', setAuthType, setShowAuth }) 
             {/* Konten utama modal */}
             <div
               className="d-flex flex-column flex-md-row align-items-stretch"
-              style={{ minHeight: '580px' }}>
+              style={{ minHeight: '585px' }}>
               {/* Kiri: Background Image (disembunyikan di mobile) */}
               <div
                 className="d-none d-lg-block w-75"

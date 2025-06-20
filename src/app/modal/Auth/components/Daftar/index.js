@@ -112,7 +112,7 @@ export default function Index({ onClose, handleMasuk }) {
   };
 
   return (
-    <div className="align-content-center h-100 p-4" style={{ minHeight: '580px' }}>
+    <div className="align-content-center h-100 p-4" style={{ minHeight: '585px' }}>
       <h5 className="text-center fw-bold mb-4">Daftar Akun Baru</h5>
       <form onSubmit={handleSubmit} noValidate>
         <div className="mb-4">
