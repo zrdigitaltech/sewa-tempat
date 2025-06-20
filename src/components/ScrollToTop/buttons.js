@@ -6,8 +6,17 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 import './scrolltotop.scss';
 
+import { usePathname } from 'next/navigation';
+
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+  // Atur posisi bottom berdasarkan URL
+  const bottomSpacing = pathname.includes('/properti/')
+    ? '7.2rem'
+    : pathname.includes('/pemilik/')
+      ? '5rem'
+      : '1rem';
 
   // Tampilkan tombol jika scroll > 300px
   useEffect(() => {
@@ -30,7 +39,10 @@ export default function ScrollToTopButton() {
       className={`ST--scroll-to-top btn btn-primary rounded-circle shadow ${
         isVisible ? 'show' : 'd-none'
       }`}
-      aria-label="Scroll to top">
+      aria-label="Scroll to top"
+      style={{
+        bottom: bottomSpacing
+      }}>
       <FontAwesomeIcon icon={faArrowUp} />
     </button>
   );
