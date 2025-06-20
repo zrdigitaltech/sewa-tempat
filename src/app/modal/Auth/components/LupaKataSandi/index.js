@@ -5,9 +5,14 @@ import { useDispatch } from 'react-redux';
 // import { loginUser } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 import Link from 'next/link';
-import PermintaanBerhasilModal from '@/app/modal/Auth/components/LupaKataSandi/PermintaanBerhasil';
 
-export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
+export default function LoginForm({
+  onClose,
+  handleDaftar,
+  handleMasuk,
+  setShowAuth,
+  setShowPermintaanBerhasil
+}) {
   const dispatch = useDispatch();
   const errorTimeoutRef = useRef(null);
 
@@ -15,8 +20,6 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
-  const [showPermintaanBerhasil, setShowPermintaanBerhasil] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,23 +39,24 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowPermintaanBerhasil(true);
-    // if (isSubmitting || !validate()) return;
 
-    // setIsSubmitting(true);
-    // try {
-    //   // const result = await dispatch(loginUser(formData));
-    //   const result = { success: true, error: 'Akun tidak ditemukan' };
-    //   if (result.success) {
-    //     onClose?.();
-    //   } else {
-    //     showError(result?.error || 'Gagal mengirim tautan reset.');
-    //   }
-    // } catch {
-    //   showError('Terjadi kesalahan saat mengirim tautan reset.');
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+    if (isSubmitting || !validate()) return;
+
+    setIsSubmitting(true);
+    try {
+      // const result = await dispatch(loginUser(formData));
+      const result = { success: true, error: 'Akun tidak ditemukan' };
+      if (result.success) {
+        setShowAuth(false);
+        setShowPermintaanBerhasil(true);
+      } else {
+        showError(result?.error || 'Gagal mengirim tautan reset.');
+      }
+    } catch {
+      showError('Terjadi kesalahan saat mengirim tautan reset.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const showError = (msg) => {
@@ -110,11 +114,6 @@ export default function LoginForm({ onClose, handleDaftar, handleMasuk }) {
           </div>
         </div>
       </div>
-      <PermintaanBerhasilModal
-        show={showPermintaanBerhasil}
-        onClose={() => setShowPermintaanBerhasil(false)}
-        handleMasuk={handleMasuk}
-      />
     </Fragment>
   );
 }

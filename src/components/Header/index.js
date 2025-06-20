@@ -101,6 +101,7 @@ export default function Header() {
         authType={authType}
         setAuthType={setAuthType}
         onClose={() => setShowAuth(false)}
+        setShowAuth={setShowAuth}
       />
     </Fragment>
   );

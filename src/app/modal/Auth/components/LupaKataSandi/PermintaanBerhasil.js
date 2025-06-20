@@ -35,11 +35,18 @@ const PermintaanBerhasil = ({ show, onClose, handleMasuk }) => {
     }
   };
 
+  const resetState = () => {
+    setTimer(60);
+  };
+
   return (
     <UseModals
       title="Email Telah Dikirim"
       show={show}
-      onClose={onClose}
+      onClose={() => {
+        onClose();
+        resetState();
+      }}
       position="center"
       modalBody={
         <Fragment>
@@ -50,7 +57,12 @@ const PermintaanBerhasil = ({ show, onClose, handleMasuk }) => {
               Silakan periksa kotak masuk email Anda untuk petunjuk mengatur ulang kata sandi.
             </p>
 
-            <button className="btn btn-primary w-100 mb-2" onClick={handleMasuk}>
+            <button
+              className="btn btn-primary w-100 mb-2"
+              onClick={() => {
+                resetState();
+                handleMasuk();
+              }}>
               Kembali Masuk
             </button>
 
