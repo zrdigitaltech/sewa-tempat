@@ -1,5 +1,5 @@
 import PropertiSlugPage from './index';
-import { getPropertiDetailBySlug } from '@/lib/metaData/properti/slug';
+import { getPropertiDetailBySlug } from '@/lib/metaData/properti';
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

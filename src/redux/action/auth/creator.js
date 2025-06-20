@@ -1,4 +1,4 @@
-import { actionType } from '@/redux/action/register/type';
+import { actionType } from '@/redux/action/auth/type';
 import axios from 'axios';
 
 export const submitRegister = (formData) => {

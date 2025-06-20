@@ -1,7 +1,7 @@
-import { initialState } from '@/redux/action/register/state';
-import { actionType } from '@/redux/action/register/type';
+import { initialState } from '@/redux/action/auth/state';
+import { actionType } from '@/redux/action/auth/type';
 
-export const registerReducer = (state = initialState, action) => {
+export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.loadRegister:
       state = {
@@ -17,4 +17,4 @@ export const registerReducer = (state = initialState, action) => {
   }
 };
 
-export default registerReducer;
+export default authReducer;

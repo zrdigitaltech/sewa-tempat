@@ -1,33 +1,33 @@
 const axios = require('axios');
-const DataPanduan = require('../../../redux/action/panduan/data-panduan.json');
+const DataKontrakan = require('../../../redux/action/kontrakan/data-kontrakan.json');
 
-async function getPanduanDetailBySlug(slug) {
+async function getPropertiDetailBySlug(slug) {
   try {
     const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-    const response = await axios.get(`${domainApi}/api/v1/panduanDetail?slug=${slug}`);
+    const response = await axios.get(`${domainApi}/api/v1/kontrakanDetail?slug=${slug}`);
     const detail = response.data.data;
     if (detail) {
       return detail;
     } else {
       // fallback dari JSON statis
-      const fallback = DataPanduan.find((item) => item.slug === slug);
+      const fallback = DataKontrakan.find((item) => item.slug === slug);
       if (fallback) {
         return fallback;
       }
     }
   } catch (error) {
-    console.error('Error fetching panduan detail:', error);
-    const fallback = DataPanduan.find((item) => item.slug === slug);
+    console.error('Error fetching properti detail:', error);
+    const fallback = DataKontrakan.find((item) => item.slug === slug);
     if (fallback) {
       return fallback;
     }
   }
 }
 
-async function getPanduan() {
+async function getProperti() {
   try {
     const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-    const response = await axios.get(`${domainApi}/api/v1/panduan`);
+    const response = await axios.get(`${domainApi}/api/v1/kontrakan`);
     const detail = response.data?.data;
 
     if (Array.isArray(detail)) {
@@ -38,7 +38,7 @@ async function getPanduan() {
   }
 
   // fallback dari JSON statis
-  return DataPanduan.map((item) => item.slug).filter(Boolean);
+  return DataKontrakan.map((item) => item.slug).filter(Boolean);
 }
 
-module.exports = { getPanduanDetailBySlug, getPanduan };
+module.exports = { getProperti, getPropertiDetailBySlug };

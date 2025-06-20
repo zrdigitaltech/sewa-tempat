@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { submitRegisterPasangIklan } from '@/redux/action/register/creator';
+import { submitRegisterPasangIklan } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

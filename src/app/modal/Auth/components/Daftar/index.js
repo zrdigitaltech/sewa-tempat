@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { submitRegister } from '@/redux/action/register/creator';
+import { submitRegister } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';

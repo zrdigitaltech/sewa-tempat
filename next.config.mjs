@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // basePath: "/",
-  // output: "export",
-  // swcMinify: true,
   images: {
     unoptimized: true,
     loader: 'akamai',
@@ -10,15 +7,9 @@ const nextConfig = {
     loaderFile: ''
   },
   webpack: (config) => {
-    // Optimize and reduce bundle size
-    config.optimization.splitChunks = {
-      chunks: 'all'
-    };
-
-    // Customize Webpack configuration if needed
+    config.optimization.splitChunks = { chunks: 'all' };
     return config;
   },
-  // generateMetadata: true,
   eslint: {
     ignoreDuringBuilds: true
   },
@@ -30,11 +21,10 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // matching all API routes
         source: '/api/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: '*' }, // replace this your actual origin
+          { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET,DELETE,PATCH,POST,PUT' },
           {
             key: 'Access-Control-Allow-Headers',
@@ -60,7 +50,7 @@ const nextConfig = {
     ];
   },
   experimental: {
-    scrollRestoration: true // <--- tambahkan ini
+    scrollRestoration: true
   },
   turbopack: {
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json']

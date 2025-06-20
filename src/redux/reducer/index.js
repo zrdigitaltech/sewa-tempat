@@ -14,7 +14,7 @@ import { hubungiPengiklanPropertiReducer } from '@/redux/reducer/hubungiPengikla
 import { laporkanIklanReducer } from '@/redux/reducer/laporkanIklan/reducer';
 import { beriSaranReducer } from '@/redux/reducer/beriSaran/reducer';
 import { konsultasiReducer } from '@/redux/reducer/konsultasi/reducer';
-import { registerReducer } from '@/redux/reducer/register/reducer';
+import { authReducer } from '@/redux/reducer/auth/reducer';
 import { ulasanPenggunaReducer } from '@/redux/reducer/ulasanPengguna/reducer';
 import { investorReducer } from '@/redux/reducer/investor/reducer';
 
@@ -33,7 +33,7 @@ const rootReducer = combineReducers({
   laporkanIklan: laporkanIklanReducer,
   beriSaran: beriSaranReducer,
   konsultasi: konsultasiReducer,
-  register: registerReducer,
+  auth: authReducer,
   ulasanPengguna: ulasanPenggunaReducer,
   investor: investorReducer
 });
