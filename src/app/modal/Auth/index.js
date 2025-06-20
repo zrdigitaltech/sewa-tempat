@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 import { UseModals } from '@/components';
-import { Daftar, Masuk } from './components';
+import { Daftar, Masuk, LupaKataSandi } from './components';
 
 const Index = ({ show, onClose, authType = 'login', setAuthType }) => {
   return (
@@ -41,8 +41,18 @@ const Index = ({ show, onClose, authType = 'login', setAuthType }) => {
             <div className="w-100 w-50 position-relative">
               {authType === 'register' ? (
                 <Daftar onClose={onClose} handleMasuk={() => setAuthType('login')} />
+              ) : authType === 'forgot' ? (
+                <LupaKataSandi
+                  onClose={onClose}
+                  handleMasuk={() => setAuthType('login')}
+                  handleDaftar={() => setAuthType('register')}
+                />
               ) : (
-                <Masuk onClose={onClose} handleDaftar={() => setAuthType('register')} />
+                <Masuk
+                  onClose={onClose}
+                  handleDaftar={() => setAuthType('register')}
+                  handleLupaKataSandi={() => setAuthType('forgot')}
+                />
               )}
             </div>
           </div>

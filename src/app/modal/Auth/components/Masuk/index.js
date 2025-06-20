@@ -8,7 +8,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
-export default function LoginForm({ onClose, handleDaftar }) {
+export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
   const dispatch = useDispatch();
   const errorTimeoutRef = useRef(null);
 
@@ -109,7 +109,9 @@ export default function LoginForm({ onClose, handleDaftar }) {
 
           {/* Lupa password */}
           <div className="text-end mb-3">
-            <div className="text-decoration-none small text-muted cursor-pointer a-hover">
+            <div
+              className="text-decoration-none small text-muted cursor-pointer a-hover"
+              onClick={handleLupaKataSandi}>
               Lupa password?
             </div>
           </div>
