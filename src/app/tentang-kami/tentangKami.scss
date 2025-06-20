@@ -1,3 +1,5 @@
+@use '@/styles/scss/base/variables'as *;
+
 .ST-nav-tabs-scroll-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -10,25 +12,13 @@
       position: relative;
       padding-bottom: 8px;
       font-weight: 500;
-      color: #1d2b64;
+      color: $primary;
       white-space: nowrap;
       text-decoration: none;
       transition: color 0.2s;
 
       &:hover {
-        color: #1d2b64;
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          bottom: 0;
-          transform: translateX(-50%);
-          width: 24px;
-          height: 4px;
-          background-color: #1d2b64;
-          border-radius: 9999px;
-        }
+        color: $primary !important;
       }
 
       &.active::after {
@@ -39,7 +29,7 @@
         transform: translateX(-50%);
         width: 24px;
         height: 4px;
-        background-color: #1d2b64;
+        background-color: $primary;
         border-radius: 9999px;
       }
     }
