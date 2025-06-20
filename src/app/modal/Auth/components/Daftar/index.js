@@ -106,7 +106,7 @@ export default function Index({ onClose, handleMasuk }) {
   };
 
   return (
-    <div className="align-content-center h-100 p-4" style={{ minHeight: '500px' }}>
+    <div className="align-content-center h-100 p-4" style={{ minHeight: '530px' }}>
       <h5 className="text-center fw-bold mb-4">Daftar Akun Baru</h5>
       <form onSubmit={handleSubmit} noValidate>
         <div className="row mb-3 g-3">
@@ -219,6 +219,7 @@ export default function Index({ onClose, handleMasuk }) {
           Masuk
         </span>{' '}
         sekarang
+        <br />
         <br />
         <small>
           Dengan mendaftar, Anda menyetujui{' '}

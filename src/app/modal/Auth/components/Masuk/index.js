@@ -68,7 +68,7 @@ export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center h-100" style={{ minHeight: '500px' }}>
+    <div className="d-flex flex-column justify-content-center h-100" style={{ minHeight: '530px' }}>
       <div className="w-100 px-4 d-flex flex-column justify-content-center flex-grow-1">
         <h5 className="text-center fw-bold mb-4">Masuk</h5>
 
