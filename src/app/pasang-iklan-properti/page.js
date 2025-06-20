@@ -1,4 +1,8 @@
-import PasangIklanPropertiPage from './index';
+import dynamic from 'next/dynamic';
+
+const PasangIklanPropertiPage = dynamic(() => import('./index'), {
+  ssr: true
+});
 
 const domain = process.env.NEXT_PUBLIC_DOMAIN || '';
 export const metadata = {

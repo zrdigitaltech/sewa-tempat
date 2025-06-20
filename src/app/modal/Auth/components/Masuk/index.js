@@ -109,9 +109,9 @@ export default function LoginForm({ onClose, handleDaftar }) {
 
           {/* Lupa password */}
           <div className="text-end mb-3">
-            <Link href="/lupa-password" className="text-decoration-none small text-muted">
+            <div className="text-decoration-none small text-muted cursor-pointer a-hover">
               Lupa password?
-            </Link>
+            </div>
           </div>
 
           {/* Error Message */}

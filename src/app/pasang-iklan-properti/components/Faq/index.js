@@ -1,3 +1,4 @@
+'use client';
 export default function Faq() {
   const faqs = [
     {
@@ -57,18 +58,15 @@ export default function Faq() {
                   data-bs-target={`#collapse${idx}`}
                   aria-expanded={idx === 0}
                   aria-controls={`collapse${idx}`}
-                  dangerouslySetInnerHTML={{ __html: question }}
-                ></button>
+                  dangerouslySetInnerHTML={{ __html: question }}></button>
               </h2>
               <div
                 id={`collapse${idx}`}
                 className={`accordion-collapse collapse ${idx === 0 ? 'show' : ''}`}
-                data-bs-parent="#faqAccordion"
-              >
+                data-bs-parent="#faqAccordion">
                 <div
                   className="accordion-body text-muted small"
-                  dangerouslySetInnerHTML={{ __html: answer }}
-                ></div>
+                  dangerouslySetInnerHTML={{ __html: answer }}></div>
               </div>
             </div>
           ))}

@@ -1,4 +1,8 @@
-import SearchPage from './index';
+import dynamic from 'next/dynamic';
+
+const SearchPage = dynamic(() => import('./index'), {
+  ssr: true
+});
 
 const domain = process.env.NEXT_PUBLIC_DOMAIN || '';
 

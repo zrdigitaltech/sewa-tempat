@@ -1,3 +1,4 @@
+'use client';
 import { Fragment } from 'react';
 import ReasonSection from './Reason';
 import TipsSection from './Tips';

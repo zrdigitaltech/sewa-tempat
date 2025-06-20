@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 import { UseTooltips } from '@/components';
@@ -16,8 +17,7 @@ export default function Index(props) {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Tampilan List"
-      >
+        data-bs-title="Tampilan List">
         <FontAwesomeIcon icon={faList} />
       </button>
       <button
@@ -26,8 +26,7 @@ export default function Index(props) {
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="Tampilan Grid"
-      >
+        data-bs-title="Tampilan Grid">
         <FontAwesomeIcon icon={faThLarge} />
       </button>
     </div>
