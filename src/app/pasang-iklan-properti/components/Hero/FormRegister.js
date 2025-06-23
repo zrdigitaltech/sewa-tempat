@@ -120,7 +120,8 @@ export default function FormRegister() {
                 setAuthType('login');
                 setShowAuth(true);
               }}
-              className="cursor-pointer a-hover fw-semibold text-primary">
+              className="cursor-pointer a-hover fw-semibold text-primary"
+            >
               Masuk
             </span>{' '}
             sekarang
@@ -197,7 +198,8 @@ export default function FormRegister() {
                   type="button"
                   id="button-addon2"
                   onClick={() => setShowPassword((prev) => !prev)}
-                  tabIndex={-1}>
+                  tabIndex={-1}
+                >
                   {showPassword ? (
                     <FontAwesomeIcon icon={faEyeSlash} />
                   ) : (
@@ -215,7 +217,8 @@ export default function FormRegister() {
               type="button"
               className="btn btn-primary w-100"
               onClick={handleSubmit}
-              disabled={isSubmitting}>
+              disabled={isSubmitting}
+            >
               {isSubmitting ? 'Memproses...' : 'Daftar Sekarang'}
             </button>
           </form>

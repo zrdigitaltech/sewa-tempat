@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
+import { OneClick } from '@/app/modal';
+
 const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBagikan }) => {
   const [showOnScroll, setShowOnScroll] = useState(false);
 
@@ -39,19 +41,22 @@ const Mobile = ({ data, handlePhone, handleWhatsApp, isLoading = false, handleBa
       )}
       style={{ bottom: 0, left: 0, zIndex: 1030 }}
     >
-      <div className="d-flex gap-2">
-        <button className="btn btn-success flex-fill text-white" onClick={handleWhatsApp}>
-          <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
-        </button>
-        <button className="btn btn-outline-primary flex-fill" onClick={handlePhone}>
-          <FontAwesomeIcon icon={faPhone} /> {formatPhone(data?.no_whatsapp)}
-        </button>
-        <button
-          className="btn border border-black bg-white d-flex align-items-center"
-          onClick={handleBagikan}
-        >
-          <FontAwesomeIcon icon={faShareAlt} />
-        </button>
+      <div className="position-relative">
+        <div className="d-flex gap-2">
+          <button className="btn btn-success flex-fill text-white" onClick={handleWhatsApp}>
+            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
+          </button>
+          <button className="btn btn-outline-primary flex-fill" onClick={handlePhone}>
+            <FontAwesomeIcon icon={faPhone} /> {formatPhone(data?.no_whatsapp)}
+          </button>
+          <button
+            className="btn border border-black bg-white d-flex align-items-center"
+            onClick={handleBagikan}
+          >
+            <FontAwesomeIcon icon={faShareAlt} />
+          </button>
+        </div>
+        <OneClick />
       </div>
     </div>
   );

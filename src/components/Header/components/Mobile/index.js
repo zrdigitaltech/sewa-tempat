@@ -55,7 +55,8 @@ export default function Index({
       className={`offcanvas offcanvas-end ${isMenuOpen ? 'show' : ''}`}
       tabIndex="-1"
       id="mobileMenu"
-      aria-labelledby="mobileMenuLabel">
+      aria-labelledby="mobileMenuLabel"
+    >
       <div className="offcanvas-header border-bottom" style={{ height: '72px' }}>
         <div
           id="mobileMenuLabel"
@@ -63,7 +64,8 @@ export default function Index({
           onClick={() => {
             router.push('/');
             handleClose();
-          }}>
+          }}
+        >
           <span className="text-primary">tempat</span>Sewa.Com
         </div>
         <button
@@ -71,7 +73,8 @@ export default function Index({
           className="btn-close text-reset"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
-          onClick={handleClose}></button>
+          onClick={handleClose}
+        ></button>
       </div>
 
       <div className="offcanvas-body d-flex flex-column gap-2">
@@ -83,7 +86,8 @@ export default function Index({
                 : ''
             }`}
             onClick={toggleDisewa}
-            type="button">
+            type="button"
+          >
             Disewa
             <FontAwesomeIcon icon={openDisewa ? faChevronUp : faChevronDown} className="small" />
           </button>
@@ -99,7 +103,8 @@ export default function Index({
                     activeTipeProperti === link.slug ? 'active' : ''
                   }`}
                   href={`/search?keyword=&tipeProperti=${link.slug}&viewMode=list`}
-                  onClick={handleClose}>
+                  onClick={handleClose}
+                >
                   {iconTipeProperti(link.nama)} Sewa {link.nama}
                 </Link>
               ))
@@ -110,12 +115,14 @@ export default function Index({
         <Link
           className={`nav-link text-dark ${pathname === '/panduan' ? 'active' : ''}`}
           href="/panduan"
-          onClick={handleClose}>
+          onClick={handleClose}
+        >
           Panduan
         </Link>
         <div
           className={`nav-link text-dark cursor-pointer ${showBantuan === true ? 'active' : ''}`}
-          onClick={() => setShowBantuan(true)}>
+          onClick={() => setShowBantuan(true)}
+        >
           Bantuan
         </div>
       </div>
@@ -128,7 +135,8 @@ export default function Index({
               setAuthType('register');
               setShowAuth(true);
               handleClose();
-            }}>
+            }}
+          >
             Daftar
           </div>
           /
@@ -138,7 +146,8 @@ export default function Index({
               setAuthType('login');
               setShowAuth(true);
               handleClose();
-            }}>
+            }}
+          >
             Masuk
           </div>
         </div>

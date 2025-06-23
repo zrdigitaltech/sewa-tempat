@@ -18,7 +18,8 @@ export default function Tabs(props) {
   return (
     <section
       className="bg-light pt-3 border-top border-bottom position-sticky"
-      style={{ top: '4.5rem', zIndex: 1 }}>
+      style={{ top: '4.5rem', zIndex: 1 }}
+    >
       <div className="container-fluid px-3">
         <div className="ST-nav-tabs-scroll-wrapper overflow-auto">
           <div className="d-flex flex-nowrap justify-content-center gap-4 ST-nav-tabs-custom">
@@ -27,7 +28,8 @@ export default function Tabs(props) {
                 key={item.key}
                 ref={(el) => (tabRefs.current[item.key] = el)}
                 onClick={() => handleClick(item.key, refs[`${item.key}Ref`])}
-                className={`cursor-pointer tab-link ${active === item.key ? 'active' : ''}`}>
+                className={`cursor-pointer tab-link ${active === item.key ? 'active' : ''}`}
+              >
                 {item.label}
               </a>
             ))}

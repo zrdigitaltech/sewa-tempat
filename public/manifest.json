@@ -1,7 +1,8 @@
 {
   "short_name": "tempatSewa",
   "name": "tempatSewa.Com",
-  "icons": [{
+  "icons": [
+    {
       "src": "https://placehold.co/512x512?text=sewaTempat.Com",
       "type": "image/png",
       "sizes": "512x512"

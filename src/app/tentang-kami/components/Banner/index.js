@@ -11,7 +11,8 @@ export default function Index() {
         backgroundPosition: 'center',
         position: 'relative',
         padding: '3rem 0'
-      }}>
+      }}
+    >
       {/* Overlay hitam semi transparan */}
       <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" />
 

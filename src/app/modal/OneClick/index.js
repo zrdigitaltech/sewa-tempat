@@ -25,7 +25,8 @@ export default function OneClickPrompt({ delay = 1000, onClose, isMobile = false
   return (
     <div
       className={`bg-primary-subtle mx-2 p-3 position-absolute rounded-2 ${isMobile}`}
-      style={{ bottom: '2px', left: 0, right: 0, zIndex: 10 }}>
+      style={{ bottom: '2px', left: 0, right: 0, zIndex: 10 }}
+    >
       <div className="d-flex justify-content-between align-items-start">
         <p className="mb-0 text-dark">
           Cukup 1x klik untuk langsung terhubung dengan pemilik hunian impianmu.

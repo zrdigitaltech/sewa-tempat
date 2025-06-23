@@ -62,14 +62,16 @@ const PermintaanBerhasil = ({ show, onClose, handleMasuk }) => {
               onClick={() => {
                 resetState();
                 handleMasuk();
-              }}>
+              }}
+            >
               Kembali Masuk
             </button>
 
             <button
               disabled={timer > 0 || isSendingEmail}
               onClick={handleResendEmail}
-              className="btn btn-link text-primary fw-medium p-0">
+              className="btn btn-link text-primary fw-medium p-0"
+            >
               {timer === 0 && !isSendingEmail && (
                 <FontAwesomeIcon icon={faArrowRotateRight} className="me-1" />
               )}

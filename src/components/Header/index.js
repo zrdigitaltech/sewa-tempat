@@ -44,7 +44,8 @@ export default function Header() {
           <Link
             href="/"
             className="navbar-brand fw-bold d-flex align-items-center"
-            onClick={() => setOpenDisewa(false)}>
+            onClick={() => setOpenDisewa(false)}
+          >
             <span className="text-primary">tempat</span>Sewa.Com
           </Link>
 
@@ -54,7 +55,8 @@ export default function Header() {
               onClick={() => {
                 setOpenDisewa(false);
                 router.push('/pasang-iklan-properti');
-              }}>
+              }}
+            >
               + Pasang Iklan
             </button>
 
@@ -64,7 +66,8 @@ export default function Header() {
               type="button"
               onClick={toggleMenu}
               aria-expanded={isMenuOpen}
-              aria-label="Toggle mobile menu">
+              aria-label="Toggle mobile menu"
+            >
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>

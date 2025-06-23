@@ -23,12 +23,14 @@ const Index = ({ show, onClose, authType = 'login', setAuthType, setShowAuth }) 
               type="button"
               className="btn-close position-absolute"
               style={{ top: '8px', right: '8px', zIndex: 5 }}
-              onClick={onClose}></button>
+              onClick={onClose}
+            ></button>
 
             {/* Konten utama modal */}
             <div
               className="d-flex flex-column flex-md-row align-items-stretch"
-              style={{ minHeight: '585px' }}>
+              style={{ minHeight: '585px' }}
+            >
               {/* Kiri: Background Image (disembunyikan di mobile) */}
               <div
                 className="d-none d-lg-block w-75"

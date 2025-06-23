@@ -197,7 +197,8 @@ export default function Index({ onClose, handleMasuk }) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => setShowPassword((prev) => !prev)}>
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
           </div>
@@ -217,7 +218,8 @@ export default function Index({ onClose, handleMasuk }) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              onClick={() => setShowConfirmPassword((prev) => !prev)}
+            >
               <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
             </button>
           </div>

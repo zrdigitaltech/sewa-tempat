@@ -96,7 +96,7 @@ const Index = () => {
           <UseBreadcrumb title={`Penulis: ${pemilikProfile?.name || slug}`} />
         </section>
 
-        <section className="pt-3 pb-5">
+        <section className="pt-3">
           <div className="container">
             {isLoading.profile ? (
               <div className="align-items-center border border-primary-subtle d-flex mb-4 p-3 rounded">
