@@ -18,7 +18,7 @@ const Index = (props) => {
     isLoading
   } = props;
   return (
-    <div className="row align-items-center mb-4 g-4">
+    <div className="row align-items-center mb-4 g-lg-4 g-2">
       <div className="col-12 col-sm-3">
         {isLoading ? (
           <Skeleton height={34} borderRadius={8} />
@@ -37,19 +37,23 @@ const Index = (props) => {
         )}
       </div>
       <div className="col-12 col-sm-9">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Cari panduan berdasarkan judul..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              onSearchEnter();
-            }
-          }}
-        />
+        {isLoading ? (
+          <Skeleton height={34} borderRadius={8} />
+        ) : (
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Cari panduan berdasarkan judul..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                onSearchEnter();
+              }
+            }}
+          />
+        )}
       </div>
     </div>
   );
