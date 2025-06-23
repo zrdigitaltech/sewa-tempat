@@ -30,7 +30,8 @@ const PanduanCard = ({ guide, linkKategori = false, showAuthor = false, showDesk
             <Link href={`/panduan?kategori=${formatStrip(kategori)}`}>
               <span
                 className="ST--badge position-absolute text-white"
-                style={{ cursor: 'pointer' }}>
+                style={{ cursor: 'pointer' }}
+              >
                 <small>{kategori}</small>
               </span>
             </Link>
@@ -45,11 +46,13 @@ const PanduanCard = ({ guide, linkKategori = false, showAuthor = false, showDesk
       <div className="card-body">
         <h5
           className="card-title d-flex justify-content-between align-items-center ST--Text"
-          title={guide.title}>
+          title={guide.title}
+        >
           {slug ? (
             <Link
               href={`/panduan/${slug}`}
-              className="text-dark fw-semibold ST--Text text-decoration-none">
+              className="text-dark fw-semibold ST--Text text-decoration-none"
+            >
               {guide.title}
             </Link>
           ) : (

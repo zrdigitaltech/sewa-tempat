@@ -53,14 +53,21 @@ export default function Index() {
     <Fragment>
       <section className="py-5 bg-light">
         <div className="container">
-          <div className="row align-items-center mb-4">
+          <div
+            className="align-items-center bg-light mb-3 p-2 position-sticky px-0 row"
+            style={{
+              top: '70px',
+              zIndex: 2
+            }}
+          >
             <div className="col">
               <h2 className="fw-semibold mb-0">Properti Terbaru</h2>
             </div>
             <div className="col-auto">
               <Link
                 href="/search?keyword=&viewMode=list"
-                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill">
+                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill"
+              >
                 Lihat Semua
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>

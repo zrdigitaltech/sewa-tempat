@@ -30,7 +30,7 @@ export default function Index() {
     <Fragment>
       <section className="py-5 bg-light">
         <div className="container">
-          <div className="row align-items-center mb-4">
+          <div className="row align-items-center mb-3 p-2 px-0">
             <div className="col">
               <h2 className="fw-semibold mb-0">Panduan Properti</h2>
               <small className="d-none d-lg-block">
@@ -41,7 +41,8 @@ export default function Index() {
             <div className="col-auto">
               <Link
                 href="/panduan"
-                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill">
+                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill"
+              >
                 Lihat Semua
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
@@ -55,7 +56,8 @@ export default function Index() {
                     <div
                       key={idx}
                       className="flex-shrink-0"
-                      style={{ width: '305px', maxWidth: '70vw' }}>
+                      style={{ width: '305px', maxWidth: '70vw' }}
+                    >
                       <div className="bg-white rounded-3 shadow-sm h-100 overflow-hidden">
                         <div style={{ height: '180px', objectFit: 'cover' }}>
                           <Skeleton height="100%" />
@@ -72,7 +74,8 @@ export default function Index() {
                       href={`/panduan/${item.slug}`}
                       key={item?.id || idx}
                       className="flex-shrink-0"
-                      style={{ width: '305px', maxWidth: '70vw' }}>
+                      style={{ width: '305px', maxWidth: '70vw' }}
+                    >
                       <div className="card h-100 border-0 shadow-sm hover-shadow transition-all rounded-3">
                         {item.image && (
                           <div className="position-relative">
@@ -115,7 +118,8 @@ export default function Index() {
                                 by{' '}
                                 <Link
                                   href={`/panduan/author/${item.authorSlug}`}
-                                  className="text-decoration-none">
+                                  className="text-decoration-none"
+                                >
                                   {item.author}
                                 </Link>
                               </span>

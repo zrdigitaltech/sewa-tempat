@@ -26,7 +26,8 @@ const Index = (props) => {
           <select
             className="form-select"
             value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}>
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
             <option value="">Semua Kategori</option>
             {categories.map((category, idx) => (
               <option key={idx} value={formatStrip(category).toLowerCase()}>
