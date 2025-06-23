@@ -91,7 +91,7 @@ export default function KategoriCepat() {
         <h2 className="text-center fw-semibold mb-3">Kategori Cepat</h2>
         {isLoading ? (
           <div
-            className="d-flex flex-nowrap justify-content-start gap-3 overflow-auto px-2 py-4"
+            className="d-flex flex-nowrap justify-content-start gap-3 overflow-auto py-4"
             style={{
               WebkitOverflowScrolling: 'touch',
               scrollBehavior: 'smooth'
@@ -118,10 +118,10 @@ export default function KategoriCepat() {
             ))}
           </div>
         ) : (
-          <div className="px-2 py-4">
+          <div className="py-4">
             <Slider {...settings}>
               {tipePropertiList?.map((cat, index) => (
-                <div key={index} className="p-2">
+                <div key={index}>
                   <Link
                     href={`/search?keyword=&tipeProperti=${cat.slug}&viewMode=list`}
                     className="text-dark text-decoration-none">
