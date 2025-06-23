@@ -1,7 +1,7 @@
-import axios from 'axios';
-import DataPanduan from '@/redux/action/panduan/data-panduan.json'; // fix import
+const axios = require('axios');
+const DataPanduan = require('../../../redux/action/panduan/data-panduan.json');
 
-export async function getPanduanDetailBySlug(slug) {
+async function getPanduanAuthorBySlug(slug) {
   try {
     const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
     const response = await axios.get(`${domainApi}/api/v1/panduanDetail?slug=${slug}`);
@@ -23,3 +23,5 @@ export async function getPanduanDetailBySlug(slug) {
     }
   }
 }
+
+module.exports = { getPanduanAuthorBySlug };
