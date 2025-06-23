@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
-import { PanduanCard } from '@/app/panduan/components';
-
 // Skeleton Loader
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -70,12 +68,62 @@ export default function Index() {
                     </div>
                   ))
                 : panduanList?.slice(0, 8).map((item, idx) => (
-                    <div
+                    <Link
+                      href={`/panduan/${item.slug}`}
                       key={item?.id || idx}
                       className="flex-shrink-0"
                       style={{ width: '305px', maxWidth: '70vw' }}>
-                      <PanduanCard guide={item} showAuthor={true} showDeskripsi={false} />
-                    </div>
+                      <div className="card h-100 border-0 shadow-sm hover-shadow transition-all rounded-3">
+                        {item.image && (
+                          <div className="position-relative">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="card-img-top"
+                              style={{
+                                height: '180px',
+                                objectFit: 'cover',
+                                cursor: item.slug ? 'pointer' : 'default'
+                              }}
+                            />
+
+                            <span className="ST--badge position-absolute text-white">
+                              <small>{item.kategori}</small>
+                            </span>
+                          </div>
+                        )}
+
+                        <div className="card-body">
+                          <div className="card-title fw-semibold">
+                            <div className="ST--Text" title={item.title}>
+                              {item.title}
+                            </div>
+                          </div>
+
+                          <div className="text-muted small mt-2">
+                            {item.date && (
+                              <span className="me-1">
+                                {new Date(item.date).toLocaleDateString('id-ID', {
+                                  day: 'numeric',
+                                  month: 'short',
+                                  year: 'numeric'
+                                })}
+                              </span>
+                            )}
+                            {item.author && (
+                              <span>
+                                by{' '}
+                                <Link
+                                  href={`/panduan/author/${item.authorSlug}`}
+                                  className="text-decoration-none">
+                                  {item.author}
+                                </Link>
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   ))}
             </div>
           </div>
