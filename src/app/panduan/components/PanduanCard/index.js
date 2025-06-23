@@ -5,7 +5,7 @@ import Link from 'next/link';
 import '@/app/panduan/panduan.scss';
 import { formatStrip } from '@/helpers';
 
-const PanduanCard = ({ guide, linkKategori = false, showAuthor = false }) => {
+const PanduanCard = ({ guide, linkKategori = false, showAuthor = false, showDeskripsi = true }) => {
   const slug = guide?.slug?.trim();
   const kategori = guide?.kategori?.trim();
   const authorSlug = guide?.authorSlug?.trim();
@@ -30,8 +30,7 @@ const PanduanCard = ({ guide, linkKategori = false, showAuthor = false }) => {
             <Link href={`/panduan?kategori=${formatStrip(kategori)}`}>
               <span
                 className="ST--badge position-absolute text-white"
-                style={{ cursor: 'pointer' }}
-              >
+                style={{ cursor: 'pointer' }}>
                 <small>{kategori}</small>
               </span>
             </Link>
@@ -46,13 +45,11 @@ const PanduanCard = ({ guide, linkKategori = false, showAuthor = false }) => {
       <div className="card-body">
         <h5
           className="card-title d-flex justify-content-between align-items-center ST--Text"
-          title={guide.title}
-        >
+          title={guide.title}>
           {slug ? (
             <Link
               href={`/panduan/${slug}`}
-              className="text-dark fw-semibold ST--Text text-decoration-none"
-            >
+              className="text-dark fw-semibold ST--Text text-decoration-none">
               {guide.title}
             </Link>
           ) : (
@@ -60,7 +57,7 @@ const PanduanCard = ({ guide, linkKategori = false, showAuthor = false }) => {
           )}
         </h5>
 
-        {guide.deskripsi && (
+        {showDeskripsi && guide.deskripsi && (
           <p
             className="text-muted small mb-2 ST--Text"
             dangerouslySetInnerHTML={{ __html: guide.deskripsi }}

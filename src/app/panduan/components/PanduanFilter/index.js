@@ -18,16 +18,15 @@ const Index = (props) => {
     isLoading
   } = props;
   return (
-    <div className="row align-items-center mb-4 g-2">
-      <div className="col-12 col-sm-4">
+    <div className="row align-items-center mb-4 g-4">
+      <div className="col-12 col-sm-3">
         {isLoading ? (
           <Skeleton height={34} borderRadius={8} />
         ) : (
           <select
             className="form-select"
             value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
+            onChange={(e) => setSelectedCategory(e.target.value)}>
             <option value="">Semua Kategori</option>
             {categories.map((category, idx) => (
               <option key={idx} value={formatStrip(category).toLowerCase()}>
@@ -37,7 +36,7 @@ const Index = (props) => {
           </select>
         )}
       </div>
-      <div className="col-12 col-sm-8">
+      <div className="col-12 col-sm-9">
         <input
           type="text"
           className="form-control"

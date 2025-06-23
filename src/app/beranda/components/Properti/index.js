@@ -11,6 +11,9 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { HubungiPengiklanPropertiModal } from '@/app/modal';
 import Link from 'next/link';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 export default function Index() {
   const kontrakanList = useSelector((state) => state?.kontrakan?.kontrakanList);
   const dispatch = useDispatch();
@@ -50,7 +53,20 @@ export default function Index() {
     <Fragment>
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center fw-semibold mb-4">Properti Terbaru</h2>
+          <div className="row align-items-center mb-4">
+            <div className="col">
+              <h2 className="fw-semibold mb-0">Properti Terbaru</h2>
+            </div>
+            <div className="col-auto">
+              <Link
+                href="/search?keyword=&viewMode=list"
+                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill">
+                Lihat Semua
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Link>
+            </div>
+          </div>
+
           <div className="row g-4">
             {isLoading
               ? Array.from({ length: 8 }).map((_, index) => (
@@ -77,18 +93,6 @@ export default function Index() {
                     />
                   </div>
                 ))}
-
-            {/* Tombol "Lihat Semua" */}
-            {!isLoading && kontrakanList?.length > 8 && (
-              <div className="col-12 text-center mt-4">
-                <Link
-                  className="btn btn-warning fw-semibold rounded-3 px-5"
-                  href="/search?keyword=&viewMode=list"
-                >
-                  Lihat Semua
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       </section>

@@ -18,7 +18,7 @@ const Index = (props) => {
     return (
       <div className="row">
         {Array.from({ length: 6 }).map((_, index) => (
-          <div key={index} className="col-6 col-sm-4 mb-4">
+          <div key={index} className="col-6 col-sm-3 mb-4">
             <div>
               <Skeleton height={180} />
               <Skeleton width="80%" style={{ marginTop: 8 }} />
@@ -53,7 +53,7 @@ const Index = (props) => {
   return (
     <div className="row">
       {guides.map((item, idx) => (
-        <div key={item?.id || idx} className="col-6 col-sm-4 mb-4">
+        <div key={item?.id || idx} className="col-6 col-sm-3 mb-4">
           <PanduanCard guide={item} showAuthor={true} />
         </div>
       ))}
