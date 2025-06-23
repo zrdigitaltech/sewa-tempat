@@ -1,5 +1,5 @@
 'use client';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 import { formatPriceLocale, formatPhone } from '@/helpers';
 
@@ -9,6 +9,8 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+import { OneClick } from '@/app/modal';
 
 const Index = (props) => {
   const {
@@ -25,104 +27,103 @@ const Index = (props) => {
       className="card shadow p-4 position-sticky border-0"
       style={{
         top: '135px' // jarak dari atas saat sticky
-      }}
-    >
-      {isLoading ? (
-        <div className="text-center">
-          <Skeleton width={150} height={30} />
-        </div>
-      ) : (
-        <Fragment>
-          <h2 className="fw-bold text-primary mb-0 text-lg-center d-none d-lg-block">
-            Rp {formatPriceLocale(kontrakanDetail?.harga)}{' '}
-            <span className="text-capitalize">/ {kontrakanDetail?.durasi}</span>
-          </h2>
-          <h3 className="fw-bold text-primary mb-0 text-lg-center d-block d-lg-none">
-            Kontak Pengiklan
-          </h3>
-        </Fragment>
-      )}
-      <hr className="my-3 border-primary-subtle" />
-      <div className="d-flex justify-content-lg-center mb-3">
-        <Link
-          href={`/pemilik/${kontrakanDetail?.pemilikSlug}`}
-          className="text-lg-center position-relative d-flex d-lg-block"
-        >
-          <div className="d-flex justify-content-lg-center">
-            <div className="position-relative me-2 me-lg-0" style={{ width: '80px' }}>
+      }}>
+      <div className="position-relative">
+        {isLoading ? (
+          <div className="text-center">
+            <Skeleton width={150} height={30} />
+          </div>
+        ) : (
+          <Fragment>
+            <h2 className="fw-bold text-primary mb-0 text-lg-center d-none d-lg-block">
+              Rp {formatPriceLocale(kontrakanDetail?.harga)}{' '}
+              <span className="text-capitalize">/ {kontrakanDetail?.durasi}</span>
+            </h2>
+            <h3 className="fw-bold text-primary mb-0 text-lg-center d-block d-lg-none">
+              Kontak Pengiklan
+            </h3>
+          </Fragment>
+        )}
+        <hr className="my-3 border-primary-subtle" />
+        <div className="d-flex justify-content-lg-center mb-3">
+          <Link
+            href={`/pemilik/${kontrakanDetail?.pemilikSlug}`}
+            className="text-lg-center position-relative d-flex d-lg-block">
+            <div className="d-flex justify-content-lg-center">
+              <div className="position-relative me-2 me-lg-0" style={{ width: '80px' }}>
+                {isLoading ? (
+                  <Skeleton circle height={80} width={80} />
+                ) : (
+                  <img
+                    src={kontrakanDetail?.pemilikImage + kontrakanDetail?.pemilik}
+                    alt="Foto Profil"
+                    className="rounded-circle img-fluid"
+                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                  />
+                )}
+                {!isLoading && kontrakanDetail?.pemilik_verified && (
+                  <i
+                    className="fa fa-check-circle text-primary"
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      right: '8px',
+                      background: 'white',
+                      borderRadius: '50%',
+                      fontSize: '14px'
+                    }}></i>
+                )}
+              </div>
+            </div>
+            <div className="mt-lg-1">
               {isLoading ? (
-                <Skeleton circle height={80} width={80} />
+                <Fragment>
+                  <Skeleton width={100} />
+                  <Skeleton width={50} />
+                </Fragment>
               ) : (
-                <img
-                  src={kontrakanDetail?.pemilikImage + kontrakanDetail?.pemilik}
-                  alt="Foto Profil"
-                  className="rounded-circle img-fluid"
-                  style={{ width: '80px', height: '80px', objectFit: 'cover' }}
-                />
-              )}
-              {!isLoading && kontrakanDetail?.pemilik_verified && (
-                <i
-                  className="fa fa-check-circle text-primary"
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    right: '8px',
-                    background: 'white',
-                    borderRadius: '50%',
-                    fontSize: '14px'
-                  }}
-                ></i>
+                <Fragment>
+                  <strong
+                    className="d-block ST--Text"
+                    title={kontrakanDetail?.pemilik?.length > 30 ? kontrakanDetail?.pemilik : ''}>
+                    {(kontrakanDetail?.pemilik || '').length > 30
+                      ? kontrakanDetail.pemilik.substring(0, 30) + '...'
+                      : kontrakanDetail?.pemilik}
+                  </strong>
+                  <small className="text-secondary">Pemilik</small>
+                </Fragment>
               )}
             </div>
-          </div>
-          <div className="mt-lg-1">
-            {isLoading ? (
-              <Fragment>
-                <Skeleton width={100} />
-                <Skeleton width={50} />
-              </Fragment>
-            ) : (
-              <Fragment>
-                <strong
-                  className="d-block ST--Text"
-                  title={kontrakanDetail?.pemilik?.length > 30 ? kontrakanDetail?.pemilik : ''}
-                >
-                  {(kontrakanDetail?.pemilik || '').length > 30
-                    ? kontrakanDetail.pemilik.substring(0, 30) + '...'
-                    : kontrakanDetail?.pemilik}
-                </strong>
-                <small className="text-secondary">Pemilik</small>
-              </Fragment>
-            )}
-          </div>
-        </Link>
-      </div>
-      {isLoading ? (
-        <Fragment>
-          <Skeleton height={40} className="mb-2" />
-          <Skeleton height={40} className="mb-2" />
-          <Skeleton height={40} className="mb-2" />
-        </Fragment>
-      ) : (
-        kontrakanDetail?.status?.toLowerCase() === 'tersedia' && (
+          </Link>
+        </div>
+        {isLoading ? (
           <Fragment>
-            <div className="align-items-center d-flex d-lg-block gap-3">
-              <button className="btn btn-success w-100 text-white" onClick={handleWhatsApp}>
-                <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
-              </button>
+            <Skeleton height={40} className="mb-2" />
+            <Skeleton height={40} className="mb-2" />
+            <Skeleton height={40} className="mb-2" />
+          </Fragment>
+        ) : (
+          kontrakanDetail?.status?.toLowerCase() === 'tersedia' && (
+            <Fragment>
+              <div className="align-items-center d-flex d-lg-block gap-3">
+                <button className="btn btn-success w-100 text-white" onClick={handleWhatsApp}>
+                  <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
+                </button>
 
-              <button className="btn btn-outline-primary w-100 mt-lg-2" onClick={handlePhone}>
-                <FontAwesomeIcon icon={faPhone} /> {formatPhone(kontrakanDetail?.no_whatsapp)}
-              </button>
+                <button className="btn btn-outline-primary w-100 mt-lg-2" onClick={handlePhone}>
+                  <FontAwesomeIcon icon={faPhone} /> {formatPhone(kontrakanDetail?.no_whatsapp)}
+                </button>
 
-              {/* <Link className="btn btn-primary w-100 mt-2 mb-2" href={`/properti/${slug}/booking`}>
+                {/* <Link className="btn btn-primary w-100 mt-2 mb-2" href={`/properti/${slug}/booking`}>
               Booking Sekarang
             </Link> */}
-            </div>
-          </Fragment>
-        )
-      )}
+              </div>
+            </Fragment>
+          )
+        )}
 
+        <OneClick isMobile="d-none d-lg-block" />
+      </div>
       {!isLoading && (
         <small
           className="position-absolute cursor-pointer"
@@ -130,8 +131,7 @@ const Index = (props) => {
             right: '0',
             bottom: '-2rem'
           }}
-          onClick={handleLaporkanIklan}
-        >
+          onClick={handleLaporkanIklan}>
           Laporkan Iklan
         </small>
       )}

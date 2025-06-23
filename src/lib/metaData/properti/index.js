@@ -2,25 +2,32 @@ const axios = require('axios');
 const DataKontrakan = require('../../../redux/action/kontrakan/data-kontrakan.json');
 
 async function getPropertiDetailBySlug(slug) {
+  const fallback = () => {
+    const item = DataKontrakan.find((item) => item.slug === slug);
+    if (item) {
+      console.warn(`Menggunakan fallback untuk slug: ${slug}`);
+    }
+    return item;
+  };
+
   try {
     const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
+    if (!domainApi) {
+      console.warn('❗ domainApi kosong. Gunakan fallback JSON.');
+      return fallback();
+    }
+
     const response = await axios.get(`${domainApi}/api/v1/kontrakanDetail?slug=${slug}`);
     const detail = response.data.data;
+
     if (detail) {
       return detail;
     } else {
-      // fallback dari JSON statis
-      const fallback = DataKontrakan.find((item) => item.slug === slug);
-      if (fallback) {
-        return fallback;
-      }
+      return fallback();
     }
   } catch (error) {
-    console.error('Error fetching properti detail:', error);
-    const fallback = DataKontrakan.find((item) => item.slug === slug);
-    if (fallback) {
-      return fallback;
-    }
+    console.error(`Error fetching properti detail untuk slug: ${slug}`, error.message);
+    return fallback();
   }
 }
 

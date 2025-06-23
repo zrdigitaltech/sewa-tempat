@@ -4,3 +4,4 @@ export { default as HubungiPengiklanPropertiModal } from './HubungiPengiklanProp
 export { default as BeriSaranModal } from './BeriSaran';
 export { default as ShareModal } from './Share';
 export { default as AuthModal } from './Auth';
+export { default as OneClick } from './OneClick';
