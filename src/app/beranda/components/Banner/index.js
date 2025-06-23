@@ -61,7 +61,7 @@ export default function HomeHeroSection() {
         alt="Hero Banner Properti"
         className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
         loading="eager"
-        fetchpriority="high"
+        fetchPriority="high"
         style={{ zIndex: 0 }}
       />
 
