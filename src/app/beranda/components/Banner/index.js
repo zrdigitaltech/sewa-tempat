@@ -53,31 +53,22 @@ export default function HomeHeroSection() {
 
   return (
     <section
-      className="text-white d-flex align-items-center text-center text-md-start position-relative overflow-hidden"
-      style={{ minHeight: '80vh', padding: '3rem 0' }}>
-      {/* Latar belakang gambar utama */}
-      <img
-        src="https://placehold.co/800x600"
-        alt="Hero Banner Properti"
-        className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-        loading="eager"
-        fetchPriority="high"
-        style={{ zIndex: 0 }}
-      />
-
+      className="text-white d-flex align-items-center text-center text-md-start"
+      style={{
+        minHeight: '80vh',
+        backgroundImage: "url('https://placehold.co/800x600')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+        padding: '3rem 0'
+      }}>
       {/* Overlay hitam */}
       <div
         className="position-absolute w-100 h-100"
-        style={{
-          backgroundColor: 'rgba(0,0,0,0.6)',
-          zIndex: 1,
-          top: 0,
-          left: 0
-        }}
+        style={{ backgroundColor: 'rgba(0,0,0,0.6)', top: 0, left: 0 }}
       />
 
-      {/* Konten */}
-      <div className="container position-relative px-3 px-md-5" style={{ zIndex: 2 }}>
+      <div className="container position-relative px-3 px-md-5">
         {isLoading?.banner ? (
           <Fragment>
             <Skeleton height={40} width={300} style={{ marginBottom: '1rem' }} />
