@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { submitRegisterPasangIklan } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { AuthModal } from '@/app/modal';
 
 export default function FormRegister() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,9 @@ export default function FormRegister() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  const [showAuth, setShowAuth] = useState(false);
+  const [authType, setAuthType] = useState('login');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -105,111 +109,126 @@ export default function FormRegister() {
   };
 
   return (
-    <div className="card shadow-lg border-0">
-      <div className="card-body p-4">
-        <h5 className="card-title text-center fw-bold">Daftar</h5>
-        <p className="card-title text-center mb-4">
-          Sudah punya akun?{' '}
-          <a href="/user/login" rel="noreferrer">
-            Masuk
-          </a>{' '}
-          sekarang
-        </p>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Nama Lengkap</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-              placeholder="Masukkan Nama Lengkap"
-            />
-            {errors.name && <div className="invalid-feedback">{errors.name}</div>}
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Nomor Telepon</label>
-            <div className="input-group">
-              <span className="bg-primary input-group-text text-white">+62</span>
+    <Fragment>
+      <div className="card shadow-lg border-0">
+        <div className="card-body p-4">
+          <h5 className="card-title text-center fw-bold">Daftar</h5>
+          <p className="card-title text-center mb-4">
+            Sudah punya akun?{' '}
+            <span
+              onClick={() => {
+                setAuthType('login');
+                setShowAuth(true);
+              }}
+              className="cursor-pointer a-hover fw-semibold text-primary">
+              Masuk
+            </span>{' '}
+            sekarang
+          </p>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="form-label">Nama Lengkap</label>
               <input
                 type="text"
-                name="phone"
-                value={formData.phone}
-                className={`form-control z-1 ${errors.phone ? 'is-invalid' : ''}`}
-                placeholder="Masukkan Nomor"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  // Hanya angka dan tidak boleh diawali dengan 0
-                  if (/^[1-9][0-9]*$/.test(value) || value === '') {
-                    handleChange(e);
-                  }
-                }}
-                onKeyPress={(e) => {
-                  if (!/[0-9]/.test(e.key)) {
-                    e.preventDefault();
-                  }
-                }}
-                maxLength={15}
-              />
-            </div>
-            {errors.phone && <div className="invalid-feedback d-block">{errors.phone}</div>}
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-              placeholder="Masukkan Alamat Email"
-              maxLength={100}
-            />
-            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <div className="input-group">
-              <input
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                value={formData.password}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
-                className={`form-control z-1 ${errors.password ? 'is-invalid' : ''}`}
-                placeholder="Masukkan Password"
+                className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                placeholder="Masukkan Nama Lengkap"
               />
-              <button
-                className="btn btn-primary"
-                type="button"
-                id="button-addon2"
-                onClick={() => setShowPassword((prev) => !prev)}
-                tabIndex={-1}>
-                {showPassword ? (
-                  <FontAwesomeIcon icon={faEyeSlash} />
-                ) : (
-                  <FontAwesomeIcon icon={faEye} />
-                )}
-              </button>
-              {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+              {errors.name && <div className="invalid-feedback">{errors.name}</div>}
             </div>
-          </div>
 
-          {errorMessage && (
-            <UseToasts message={errorMessage} show={true} onClose={() => setErrorMessage('')} />
-          )}
-          <button
-            type="button"
-            className="btn btn-primary w-100"
-            onClick={handleSubmit}
-            disabled={isSubmitting}>
-            {isSubmitting ? 'Memproses...' : 'Daftar Sekarang'}
-          </button>
-        </form>
+            <div className="mb-3">
+              <label className="form-label">Nomor Telepon</label>
+              <div className="input-group">
+                <span className="bg-primary input-group-text text-white">+62</span>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  className={`form-control z-1 ${errors.phone ? 'is-invalid' : ''}`}
+                  placeholder="Masukkan Nomor"
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Hanya angka dan tidak boleh diawali dengan 0
+                    if (/^[1-9][0-9]*$/.test(value) || value === '') {
+                      handleChange(e);
+                    }
+                  }}
+                  onKeyPress={(e) => {
+                    if (!/[0-9]/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
+                  maxLength={15}
+                />
+              </div>
+              {errors.phone && <div className="invalid-feedback d-block">{errors.phone}</div>}
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                placeholder="Masukkan Alamat Email"
+                maxLength={100}
+              />
+              {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <div className="input-group">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className={`form-control z-1 ${errors.password ? 'is-invalid' : ''}`}
+                  placeholder="Masukkan Password"
+                />
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  id="button-addon2"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  tabIndex={-1}>
+                  {showPassword ? (
+                    <FontAwesomeIcon icon={faEyeSlash} />
+                  ) : (
+                    <FontAwesomeIcon icon={faEye} />
+                  )}
+                </button>
+                {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+              </div>
+            </div>
+
+            {errorMessage && (
+              <UseToasts message={errorMessage} show={true} onClose={() => setErrorMessage('')} />
+            )}
+            <button
+              type="button"
+              className="btn btn-primary w-100"
+              onClick={handleSubmit}
+              disabled={isSubmitting}>
+              {isSubmitting ? 'Memproses...' : 'Daftar Sekarang'}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+
+      <AuthModal
+        show={showAuth}
+        authType={authType}
+        setAuthType={setAuthType}
+        onClose={() => setShowAuth(false)}
+        setShowAuth={setShowAuth}
+      />
+    </Fragment>
   );
 }
