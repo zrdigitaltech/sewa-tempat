@@ -105,7 +105,15 @@ export default function Desktop(props) {
           <button
             className="btn btn-primary"
             onClick={() => {
-              router.push('/pasang-iklan-properti');
+              const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
+
+              if (login) {
+                // window.open(domainApi + '/dashboard', '_blank');
+                window.location.href = domainApi + '/dashboard';
+              } else {
+                router.push('/pasang-iklan-properti');
+              }
+
               setOpenDisewa(false);
             }}>
             + Pasang Iklan
@@ -118,7 +126,8 @@ export default function Desktop(props) {
               onClick={() => {
                 setOpenDisewa(false);
                 const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-                window.open(domainApi + '/dashboard', '_blank');
+                window.location.href = domainApi + '/dashboard';
+                // window.open(domainApi + '/dashboard', '_blank');
               }}>
               {login?.username}
             </div>
