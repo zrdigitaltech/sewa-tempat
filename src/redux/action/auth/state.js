@@ -1,5 +1,6 @@
 export const initialState = {
   register: {},
   login: null,
-  isAuthenticated: false
+  isAuthenticated: false,
+  authChecked: false
 };

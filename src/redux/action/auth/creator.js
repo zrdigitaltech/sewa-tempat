@@ -51,18 +51,15 @@ export const loginUser = (formData) => {
 };
 
 export const loginUserFromSession = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     try {
       const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-      const { login } = getState().auth;
-
-      // Cegah request ulang jika sudah login
-      if (login) return;
-
       const response = await axiosClient.get(domainApi + '/api/v1/user');
       dispatch(setLogin(response.data));
+      return { success: true };
     } catch (error) {
-      console.error('Auth session not valid:', error?.response?.data || error);
+      dispatch(resetAuth()); // ← ini akan set isAuthenticated: false + authChecked: true
+      return { success: false };
     }
   };
 };
@@ -71,7 +68,7 @@ export const logout = () => {
   return async (dispatch) => {
     try {
       const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-      await axios.post(domainApi + '/api/v1/logout', {}, { withCredentials: true });
+      await axiosClient.post(domainApi + '/logout');
       dispatch(resetAuth());
     } catch (err) {
       console.error('Logout error:', err);

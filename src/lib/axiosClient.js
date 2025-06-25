@@ -1,10 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  withCredentials: true,
-  headers: {
-    Accept: 'application/json' // ⬅️ PENTING untuk hindari redirect Laravel
-  }
+  withCredentials: true
 });
 
 if (typeof window !== 'undefined') {

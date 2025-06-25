@@ -14,3 +14,4 @@ export { default as UseScripts } from './Scripts';
 export { default as UseToasts } from './Toasts';
 export { default as UseTooltips } from './Tooltips';
 export { default as AuthLoader } from './AuthLoader';
+export { default as SessionWatcher } from './AuthLoader/SessionWatcher';
