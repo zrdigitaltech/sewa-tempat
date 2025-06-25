@@ -51,10 +51,15 @@ export const loginUser = (formData) => {
 };
 
 export const loginUserFromSession = () => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     try {
       const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
-      const response = await axiosClient.get(domainApi + '/api/v1/user'); // akan return user jika session valid
+      const { login } = getState().auth;
+
+      // Cegah request ulang jika sudah login
+      if (login) return;
+
+      const response = await axiosClient.get(domainApi + '/api/v1/user');
       dispatch(setLogin(response.data));
     } catch (error) {
       console.error('Auth session not valid:', error?.response?.data || error);

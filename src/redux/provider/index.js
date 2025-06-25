@@ -35,8 +35,8 @@ export default function Index({ children }) {
 
   return (
     <Provider store={storeRef.current}>
-      <UseScrollToTop />
       <AuthLoader />
+      <UseScrollToTop />
       <UseHeader />
       {/* Tambahkan Suspense untuk loading fallback */}
       <Suspense fallback={<UseRouteLoading />}>{children}</Suspense>

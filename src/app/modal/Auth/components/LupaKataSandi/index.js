@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, Fragment } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { loginUser } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ export default function LoginForm({
   setShowAuth,
   setShowPermintaanBerhasil
 }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const errorTimeoutRef = useRef(null);
 
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -74,8 +74,7 @@ export default function LoginForm({
     <Fragment>
       <div
         className="d-flex flex-column justify-content-center h-100"
-        style={{ minHeight: '585px' }}
-      >
+        style={{ minHeight: '585px' }}>
         <div className="w-100 px-4 d-flex flex-column justify-content-center flex-grow-1">
           <h5 className="text-center fw-bold mb-3">Lupa Kata Sandi?</h5>
           <p className="text-center text-muted mb-4">
