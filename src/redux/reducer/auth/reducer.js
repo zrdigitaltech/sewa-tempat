@@ -10,8 +10,17 @@ export const authReducer = (state = initialState, action) => {
       };
       return state;
 
+    case actionType.loadLogin:
+      return {
+        ...state,
+        login: action.payload,
+        isAuthenticated: true
+      };
+
     case actionType.loadRegisterResetData:
+    case actionType.loadLoginResetData:
       return initialState;
+
     default:
       return state;
   }

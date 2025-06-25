@@ -11,7 +11,8 @@ import {
   UseRouteLoading,
   UseScripts,
   UseScrollToTop,
-  UseScrollToTopButtons
+  UseScrollToTopButtons,
+  AuthLoader
 } from '@/components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,6 +36,7 @@ export default function Index({ children }) {
   return (
     <Provider store={storeRef.current}>
       <UseScrollToTop />
+      <AuthLoader />
       <UseHeader />
       {/* Tambahkan Suspense untuk loading fallback */}
       <Suspense fallback={<UseRouteLoading />}>{children}</Suspense>

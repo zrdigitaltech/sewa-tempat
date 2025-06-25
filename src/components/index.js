@@ -13,3 +13,4 @@ export { default as UseScrollToTopButtons } from './ScrollToTop/buttons';
 export { default as UseScripts } from './Scripts';
 export { default as UseToasts } from './Toasts';
 export { default as UseTooltips } from './Tooltips';
+export { default as AuthLoader } from './AuthLoader';

@@ -41,7 +41,8 @@ export default function Index() {
             <div className="col-auto">
               <Link
                 href="/panduan"
-                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill">
+                className="d-inline-flex align-items-center gap-2 fw-semibold rounded-pill"
+              >
                 Lihat Semua
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
@@ -55,7 +56,8 @@ export default function Index() {
                     <div
                       key={idx}
                       className="flex-shrink-0"
-                      style={{ width: '305px', maxWidth: '70vw' }}>
+                      style={{ width: '305px', maxWidth: '70vw' }}
+                    >
                       <div className="bg-white rounded-3 shadow-sm h-100 overflow-hidden">
                         <div style={{ height: '180px', objectFit: 'cover' }}>
                           <Skeleton height="100%" />
@@ -71,7 +73,8 @@ export default function Index() {
                     <div
                       key={item?.id || idx}
                       className="flex-shrink-0"
-                      style={{ width: '305px', maxWidth: '70vw' }}>
+                      style={{ width: '305px', maxWidth: '70vw' }}
+                    >
                       <div className="card h-100 border-0 shadow-sm hover-shadow transition-all rounded-3">
                         {item.image && (
                           <div className="position-relative">
@@ -98,7 +101,8 @@ export default function Index() {
                             <Link
                               href={`/panduan/${item.slug}`}
                               className="text-dark text-decoration-none ST--Text"
-                              title={item.title}>
+                              title={item.title}
+                            >
                               {item.title}
                             </Link>
                           </div>
@@ -118,7 +122,8 @@ export default function Index() {
                                 by{' '}
                                 <Link
                                   href={`/panduan/author/${item.authorSlug}`}
-                                  className="text-decoration-none">
+                                  className="text-decoration-none"
+                                >
                                   {item.author}
                                 </Link>
                               </span>

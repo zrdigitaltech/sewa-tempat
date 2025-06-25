@@ -54,7 +54,8 @@ export default function HomeHeroSection() {
   return (
     <section
       className="text-white d-flex align-items-center text-center text-md-start position-relative overflow-hidden"
-      style={{ minHeight: '80vh', padding: '3rem 0' }}>
+      style={{ minHeight: '80vh', padding: '3rem 0' }}
+    >
       {/* Latar belakang gambar utama */}
       <img
         src="https://placehold.co/800x600"

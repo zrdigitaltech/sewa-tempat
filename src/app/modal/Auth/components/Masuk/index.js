@@ -1,13 +1,14 @@
 'use client';
-import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-// import { loginUser } from '@/redux/action/auth/creator';
+import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '@/redux/action/auth/creator';
 import { UseToasts } from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import './masuk.scss';
+import { useRouter } from 'next/navigation';
 
 export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
   const dispatch = useDispatch();
@@ -43,14 +44,20 @@ export default function Index({ onClose, handleDaftar, handleLupaKataSandi }) {
 
     setIsSubmitting(true);
     try {
-      // const result = await dispatch(loginUser(formData));
-      const result = { success: true, error: 'Akun tidak ditemukan' };
+      const result = await dispatch(loginUser(formData));
       if (result.success) {
-        onClose?.();
+        onClose();
+        const domainApi = process.env.NEXT_PUBLIC_DOMAIN_API || '';
+        window.open(domainApi + '/dashboard', '_blank');
       } else {
-        showError(result?.error || 'Login gagal. Coba lagi.');
+        const message =
+          typeof result.error === 'string'
+            ? result.error
+            : result?.error?.message || 'Login gagal. Coba lagi.';
+
+        showError(message);
       }
-    } catch {
+    } catch (e) {
       showError('Terjadi kesalahan saat login. Silakan coba lagi.');
     } finally {
       setIsSubmitting(false);
